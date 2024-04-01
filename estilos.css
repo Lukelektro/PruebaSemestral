@@ -1,8 +1,29 @@
-.container-sm {
-  background-color: blue;
+
+/*VARIABLES DE LOS COLORES */
+
+:root {
+  --negro: #222831;
+  --blanco: #f2f2f2;
+  --gris:  #393e46;
+  --naranjo: #f96d00; 
 }
 
-.h1 {
-    font-size: 60px;
-    color: white;
+
+
+.contenido-inico {
+  background-color: var(--blanco);
+  margin: 10rem 20rem; 
+  border: 1px solid var(--gris);
+  border-radius: 1rem;
 }
+
+.color-inicio {
+  background: rgb(34,40,49);
+  background: linear-gradient(150deg, rgba(34,40,49,1) 0%, rgba(57,62,70,1) 41%, rgba(213,122,51,1) 100%);
+}
+
+.formulario-incio {
+  padding: 2rem;
+}
+
+
