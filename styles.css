@@ -23,91 +23,71 @@
   max-width: 71px;
 }
 
-.fondo-about{
-
-  background-color: red;
-
+.container-sm {
+  background-color: blue;
 }
 
-
-body {
-  font-family: "cursive";
-}
-
-a {
-  text-decoration: none;
-}
-
-.sec-hero-pestannas,
-.pestanna-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
-  background: var(--piel);
-  text-align: center;
-  padding: 0 2em;
-  h3 {
-    font-size: 1rem;
-    letter-spacing: 0.3rem;
-    opacity: 0.5;
-  }
-}
-
-.sec-hero-pestannas-container {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 70px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background: var(--gris);
-  z-index: 10;
-  &--top {
-    position: fixed;
-    top: 0;
-  }
-}
-
-.sec-hero-pestanna {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  color: var(--amarillo);
-  letter-spacing: 0.1rem;
-  transition: all 0.5s ease;
-  font-size: 0.8rem;
-  &:hover {
+.h1 {
+    font-size: 60px;
     color: white;
-    background: var(--gris);
-    transition: all 0.5s ease;
-  }
 }
 
-.pestanna-slider {
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 6px;
-  background: #66b1f1;
-  transition: left 0.3s ease;
+
+.logo{
+  margin-left: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
 }
 
-@media (min-width: 800px) {
-  .sec-hero-pestannas,
-  .pestanna-slide {
-    h1 {
-      font-size: 3rem;
-    }
-    h3 {
-      font-size: 1rem;
-    }
-  }
-  .sec-hero-pestanna {
-    font-size: 1rem;
-  }
+/* CSS de Login*/
+
+
+
+#login {
+  display: flex;
+  justify-content: center;
+  background-color: #e0e3ea;
+}
+
+.h1_title{
+  display: flex;
+  justify-content: center;
+}
+
+.col-12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.g-3{
+  border-radius: 20px;
+  margin: 10px 0px;
+  background-color: whitesmoke;
+  padding: 50px;
+  display: flex;
+  width: 500px;
+  --bs-gutter-y: 1rem;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-md-6 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.col-md-3 {
+  flex: 0 0 auto;
+  width: 100%;
 }
