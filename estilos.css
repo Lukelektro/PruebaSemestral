@@ -2,28 +2,112 @@
 /*VARIABLES DE LOS COLORES */
 
 :root {
-  --negro: #222831;
-  --blanco: #f2f2f2;
-  --gris:  #393e46;
-  --naranjo: #f96d00; 
+  --rojo: #4f101a;
+  --gris: #333333;
+  --piel: #dfd4cd;
+  --amarillo: #f4c01e;
+}
+
+/* logo principal*/
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 510px; /* tamaño del logo */
+}
+
+.logo-barra {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 71px;
+}
+
+.fondo-about{
+
+  background-color: red;
+
 }
 
 
-
-.contenido-inico {
-  background-color: var(--blanco);
-  margin: 10rem 20rem; 
-  border: 1px solid var(--gris);
-  border-radius: 1rem;
+body {
+  font-family: "cursive";
 }
 
-.color-inicio {
-  background: rgb(34,40,49);
-  background: linear-gradient(150deg, rgba(34,40,49,1) 0%, rgba(57,62,70,1) 41%, rgba(213,122,51,1) 100%);
+a {
+  text-decoration: none;
 }
 
-.formulario-incio {
-  padding: 2rem;
+.sec-hero-pestannas,
+.pestanna-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background: var(--piel);
+  text-align: center;
+  padding: 0 2em;
+  h3 {
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    opacity: 0.5;
+  }
 }
 
+.sec-hero-pestannas-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: var(--gris);
+  z-index: 10;
+  &--top {
+    position: fixed;
+    top: 0;
+  }
+}
 
+.sec-hero-pestanna {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: var(--amarillo);
+  letter-spacing: 0.1rem;
+  transition: all 0.5s ease;
+  font-size: 0.8rem;
+  &:hover {
+    color: white;
+    background: var(--gris);
+    transition: all 0.5s ease;
+  }
+}
+
+.pestanna-slider {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 6px;
+  background: #66b1f1;
+  transition: left 0.3s ease;
+}
+
+@media (min-width: 800px) {
+  .sec-hero-pestannas,
+  .pestanna-slide {
+    h1 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+  }
+  .sec-hero-pestanna {
+    font-size: 1rem;
+  }
+}
