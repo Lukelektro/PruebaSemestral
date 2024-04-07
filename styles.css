@@ -8,11 +8,14 @@
 
 * {
     box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
 }
 
-
 body {
-    margin: 0
+    margin: 0;
 }
 
 ul {
@@ -23,7 +26,7 @@ ul {
     background-image: url('https://cdn-9.motorsport.com/images/amp/YBeqxXM2/s6/sebastian-vettel-ferrari-sf100.jpg');
     background-size: cover;
     background-position: center;
-    height: 500px;
+    height: 900px;
     position: relative;
 }
 
@@ -37,20 +40,38 @@ ul {
 }
 
 .pagina-principal-content {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: column;
     color: black;
-    font-size: 0px;
-    margin-top: 10px;
+    font-size: 16px;
+    margin-top: 10%;
+    margin-left: 10%;
+    position: absolute;
 }
+
 
 .ajuste-foto-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 370px;
+    width: 440px;
+    margin-bottom: 280px;
+}
+
+.ajuste-foto-texto{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 530px;
+
+}
+.ajuste-foto-letra{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 580px;
+    margin-top: 252px;
+
 }
 
 .pagina-principal-img {
@@ -94,11 +115,12 @@ header .logo {
 header nav {
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
 }
 
-header nav a{
-    margin-left: 20px;
-    
+header nav a {
+    margin-left: 40px;
+    margin-right: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -108,17 +130,112 @@ header nav a{
 
     header nav a {
         margin: 10px 0;
+        text-align: center;
     }
 }
 
-header .logo-container{
+header .logo-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    width: 30px;
-
+    justify-content: flex-start;
+    width: 110px;
+    margin-left: 30px;
 }
 
 header .logo-container img {
-    max-width: 100px;
+    max-width: 150px;
     height: auto;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: -59px;
 }
+
+
+nav ul{
+    list-style: none;
+    display: flex;
+
+}
+
+nav{
+    display: flex;
+    justify-content: flex-start;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0 6px;
+}
+
+nav ul li a{
+    color:#dfd4cd;
+    text-decoration: none;
+    margin: 0px 5px;
+    text-transform: uppercase;
+    
+}
+
+#hero-nosotros{
+    height: 100vh;
+    background-color: #dfd4cd;
+
+}
+
+#hero-nosotros .container{
+    padding-top: 30vh;
+}
+
+#trabajadores{
+    background-color: #333333;
+    color: #dfd4cd;
+    text-align: center;
+}
+
+#trabajadores h2{
+    margin-top: 0;
+}
+
+#trabajadores .container{
+    padding: 100px 0px;
+    padding-top: 30vh;
+}
+
+
+#services{
+    height: 100vh;
+    background-color: #f4c01e;
+}
+
+#services .container{
+    padding-top: 10vh;
+
+}
+
+#contact-us {
+    background-color: #dfd4cd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
