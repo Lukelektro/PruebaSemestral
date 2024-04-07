@@ -21,7 +21,10 @@
 <body>
     <header>
         <div class="container">
-            <p class="logo">Taller MaqWeen</p>
+            <div class="logo-container">
+                <p class="logo">Taller MaqWeen</p>
+                <img src="img/logo-trans-1.png" class="ajuste-logo-menu" alt="logo-empresa">
+            </div>
             <nav>
                 <a href="#hero-principal">Quienes somos</a>
                 <a href="#trabajadores">Trabajadores</a>
@@ -33,8 +36,15 @@
     </header>
 
     <section id="hero-principal">
-        <img src="img/logo.png" alt="logo-empresa">
-        <h1>De la pista a tu taller<br>manteniendo a tu vehiculo de primera calidad</h1>
+        <div class="pagina-principal-container">
+            <div class="pagina-principal-overlay"></div>
+            <div class="pagina-principal-img">
+                <img src="img/logo-trans-2.png" class="ajuste-foto-logo" alt="logo-empresa">
+            </div>
+            <div class="pagina-principal-content">
+                <h1>De la pista a tu taller<br>manteniendo a tu vehiculo de primera calidad</h1>
+            </div>
+        </div>
     </section>
 
     <section id="hero-nosotros">
@@ -74,8 +84,10 @@
                     perspiciatis cumque sapiente itaque repudiandae.</p>
             </div>
             <div class="carta-trabajadorinfo">
-                <h3>necesitas mas informacion?</h3>
-                <button></button>
+                <h3>Conoce a mas trabajadores</h3>
+                <form action="workers.html">
+                    <button class="boton-trabajador">Mas Trabajadores</button>
+                </form>
             </div>
         </div>
     </section>
@@ -217,4 +229,5 @@
     </footer>
 
 </body>
+
 </html>
