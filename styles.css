@@ -55,9 +55,8 @@ ul {
 }
 
 .pagina-principal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.5);
@@ -77,32 +76,35 @@ ul {
     justify-content: center;
     align-items: center;
     width: 440px;
-    margin-bottom: 280px;
+    
 }
 
 .ajuste-foto-texto{
-    position: absolute;
+    width: 68%;
+    top: 45px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 530px;
+    
 
 }
 .ajuste-foto-letra{
+    height: 60%;
+    width: 60%;
     position: absolute;
+    right: 58px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 580px;
-    margin-top: 252px;
+    top: 132px;
+
 
 }
 
 .pagina-principal-img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
 }
 
 .boton-trabajador {
@@ -163,7 +165,7 @@ header .logo-container {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: 110px;
+    width: 300px;
     margin-left: 30px;
 }
 
@@ -241,7 +243,22 @@ nav ul li a{
 }
 
 
+/*NAV*/
+.bg-body-tertiary{
+    background-color: #4f101a !important;
+    width: auto !important;
+    height: 200px !important; 
 
+}
+
+.me-auto {
+    margin-right: 0 !important;
+}
+/*principal*/
+.foto_principal{
+    display: flex;
+    flex-direction: column;
+}
 
 
 
