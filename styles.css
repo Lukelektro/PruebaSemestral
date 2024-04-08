@@ -130,6 +130,8 @@ ul {
     transform: translate(-50%, -50%);
 }
 
+
+
 /* boton diseño para redirigir a la pagina workers.html */
 
 .boton-trabajador {
@@ -248,13 +250,42 @@ nav ul li a{
     text-align: center;
 }
 
+/* seccion trabajadores*/
+
 #trabajadores h2{
-    margin-top: 0;
+    padding-top: 5rem;
+    font-weight: 700;
+    font-size: 4rem;
 }
 
-#trabajadores .container{
-    padding: 100px 0px;
-    padding-top: 30vh;
+.contenedor-trabajador{
+
+    margin: 5rem 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+@media screen and (max-width: 768px) {
+    
+    .contenedor-trabajador{
+
+        padding: 5rem;
+        flex-direction: column;
+    
+    }
+
+}
+
+
+
+
+.carta-trabajador {
+    margin: 2rem;
+}
+
+.carta-trabajador-info {
+    padding-bottom: 5rem;
 }
 
 
