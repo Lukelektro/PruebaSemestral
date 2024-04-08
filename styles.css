@@ -24,8 +24,8 @@ ul {
     list-style: none;
 }
 
-/* CLASES DEL LOGIN */
 
+/* CSS DEL LOGIN */
 
 .main-login {
     display: flex;
@@ -56,6 +56,10 @@ ul {
     color: white!important; 
     border-color: var(--gris)!important; 
 }
+.btn-custom:hover {
+    background-color: var(--gris) !important; 
+}
+
 
 .img-login {
     width: 10rem;
