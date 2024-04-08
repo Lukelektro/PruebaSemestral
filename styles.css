@@ -18,6 +18,8 @@ body {
     margin: 0;
 }
 
+
+
 ul {
     list-style: none;
 }
@@ -40,7 +42,23 @@ ul {
     background-color: var(--piel); 
     border: 1px solid var(--gris); 
     padding: 20px;
-    
+    border-radius: 10px;
+}
+
+.texto-login a {
+    font-size: 20px;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.btn-custom {
+    background-color: var(--rojo) !important; 
+    color: white!important; 
+    border-color: var(--gris)!important; 
+}
+
+.img-login {
+    width: 10rem;
 }
 
 
