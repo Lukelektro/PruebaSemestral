@@ -22,6 +22,30 @@ ul {
     list-style: none;
 }
 
+/* CLASES DEL LOGIN */
+
+
+.main-login {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    background: rgb(51,51,51);
+    background: linear-gradient(150deg, rgba(51,51,51,1) 39%, rgba(71,26,33,1) 65%); 
+}
+  
+.contenedor-login {
+    width: 500px;
+    height: 600px; 
+    background-color: var(--piel); 
+    border: 1px solid var(--gris); 
+    padding: 20px;
+    
+}
+
+
+  
+
 .pagina-principal-container {
     background-image: url('https://cdn-9.motorsport.com/images/amp/YBeqxXM2/s6/sebastian-vettel-ferrari-sf100.jpg');
     background-size: cover;
