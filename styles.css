@@ -45,6 +45,7 @@ ul {
 
 
   
+/* Fondo transparente */
 
 .pagina-principal-container {
     background-image: url('https://cdn-9.motorsport.com/images/amp/YBeqxXM2/s6/sebastian-vettel-ferrari-sf100.jpg');
@@ -71,6 +72,7 @@ ul {
     position: absolute;
 }
 
+/* Margen de los logos, con los width pueden mover el tamaño */
 
 .ajuste-foto-logo {
     display: flex;
@@ -98,12 +100,15 @@ ul {
 
 }
 
+
 .pagina-principal-img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* boton diseño para redirigir a la pagina workers.html */
 
 .boton-trabajador {
     padding: 10px 30px;
@@ -117,6 +122,8 @@ ul {
     background-color: #4f101a;
 }
 
+
+/* de aqui para abajo todo es para cambiar la navbar, hay que rehacerla ya que no es una navbar de bootstrap */
 .container {
     max-width: 1400px;
     margin: auto;
@@ -199,6 +206,9 @@ nav ul li a{
     text-transform: uppercase;
     
 }
+
+
+/* margenes de todas las sections */
 
 #hero-nosotros{
     height: 100vh;
