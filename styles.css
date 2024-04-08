@@ -18,12 +18,14 @@ body {
     margin: 0;
 }
 
+
+
 ul {
     list-style: none;
 }
 
-/* CLASES DEL LOGIN */
 
+/* CSS DEL LOGIN */
 
 .main-login {
     display: flex;
@@ -40,11 +42,32 @@ ul {
     background-color: var(--piel); 
     border: 1px solid var(--gris); 
     padding: 20px;
-    
+    border-radius: 10px;
+}
+
+.texto-login a {
+    font-size: 20px;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.btn-custom {
+    background-color: var(--rojo) !important; 
+    color: white!important; 
+    border-color: var(--gris)!important; 
+}
+.btn-custom:hover {
+    background-color: var(--gris) !important; 
+}
+
+
+.img-login {
+    width: 10rem;
 }
 
 
   
+/* Fondo transparente */
 
 .pagina-principal-container {
     background-image: url('https://cdn-9.motorsport.com/images/amp/YBeqxXM2/s6/sebastian-vettel-ferrari-sf100.jpg');
@@ -70,6 +93,7 @@ ul {
     position: absolute;
 }
 
+/* Margen de los logos, con los width pueden mover el tamaño */
 
 .ajuste-foto-logo {
     display: flex;
@@ -100,12 +124,15 @@ ul {
 
 }
 
+
 .pagina-principal-img {
     display: flex;
     flex-direction: row;
     justify-content: center;
 
 }
+
+/* boton diseño para redirigir a la pagina workers.html */
 
 .boton-trabajador {
     padding: 10px 30px;
@@ -119,6 +146,8 @@ ul {
     background-color: #4f101a;
 }
 
+
+/* de aqui para abajo todo es para cambiar la navbar, hay que rehacerla ya que no es una navbar de bootstrap */
 .container {
     max-width: 1400px;
     margin: auto;
@@ -201,6 +230,9 @@ nav ul li a{
     text-transform: uppercase;
     
 }
+
+
+/* margenes de todas las sections */
 
 #hero-nosotros{
     height: 100vh;

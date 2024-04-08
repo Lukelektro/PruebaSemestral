@@ -26,22 +26,35 @@
 
     <div class="contenedor-login">
 
-      <div>
+      <div class="texto-login">
+        
+        <div class="d-flex justify-content-between">
+          <h2 class="fs-1 fw-bold mb-5">Iniciar Sesion</h2>
+          <img class="img-fluid img-login" src="img/logo-nombre3.png" alt="logo-login">
+          
+        </div>
+        
+
         <form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
+          <div class="mb-5">
+            <label for="exampleInputEmail1" class="form-label fs-3">Correo electronico</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Nunca compartiremos tus datos!</div>
+            <div id="emailHelp" class="form-text fs-5">Nunca compartiremos tus datos!</div>
           </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+          <div class="">
+            <label for="exampleInputPassword1" class="form-label fs-3">Contraseña</label>
             <input type="password" class="form-control" id="exampleInputPassword1">
           </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Registrame</label>
+          <div class="mb-5 text-start">
+            <a href="registro.html">Registrame</a>
           </div>
-          <button type="submit" class="btn btn-primary">Ingrese</button>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="button" class="btn btn-custom" onclick="window.location.href = 'index.html';"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 2rem;">
+            Ingrese
+            </button>
+          </div>
+          
         </form>
       </div>
       
