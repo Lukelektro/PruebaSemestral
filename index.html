@@ -251,30 +251,31 @@
         </div>
     </section>
 
-    <section id="contact-us">
+    <section id="Contacto">
         <div class="contacto-formulario">
-            <h1>contactanos mediante formulario</h1>
+
+            <h1 class="text-center">Contactanos</h1>
 
             <form>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
+                <div class="contenedor-campos">
+                    <div class="form-group campo">
                         <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="input-emailform" placeholder="Email">
+                        <input type="email" class="input-text" id="input-emailform" placeholder="Email">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group campo">
                         <label for="inputPhoneNumber">Telefono</label>
-                        <input type="number" class="form-control" id="input-phoneform"
+                        <input type="number" class="input-text" id="input-phoneform"
                             placeholder="Ingresa tu numero telefonico">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group campo">
                         <label for="inputAddress">Ciudad</label>
-                        <input type="text" class="form-control" id="input-ciudad1form"
+                        <input type="text" class="input-text" id="input-ciudad1form"
                             placeholder="Direccion de tu domicilio">
                     </div>
-                    <div class="form-group col-sm-1">
+                    <div class="form-group campo">
                         <label for="inputState">Sucursal Deseada</label>
-                        <select id="input-sucursalform" class="form-control">
-                            <option selected>Trabajamos en las siguientes sucursales</option>
+                        <select id="input-sucursalform" class="input-text">
+                            <option value="" disabled selected>------  Seleccione  ------</option>
                             <option>Viña del mar</option>
                             <option>Quilpue</option>
                             <option>Concón</option>
@@ -282,10 +283,9 @@
                             <option>Limache</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group campo">
                         <label for="inputDetalle">Detalles de tu Situacion</label>
-                        <input type="text" class="form-control" id="input-detalleproblem"
-                            placeholder="Cuentanos tu problema en breves palabras">
+                        <textarea class="input-text"></textarea>
                     </div>
                 </div>
             </form>
