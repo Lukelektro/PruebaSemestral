@@ -273,15 +273,35 @@ nav ul li a {
 
 /* margenes de todas las sections */
 
-#hero-nosotros {
-    height: 100vh;
-    background-color: #dfd4cd;
-
-}
 
 #hero-nosotros .container {
     padding-top: 30vh;
 }
+
+/* SECCION NOSOTROS*/
+
+#hero-nosotros h1 {
+    padding: 2rem;
+}
+
+@media (min-width: 768px) {
+
+    .contenido-nosotros {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+.contenido-nosotros {
+    padding: 5rem;
+}
+
+.texto-nosotros {
+    color: var(--piel);
+}
+
+/* SECCION TRABAJADORES*/
 
 #trabajadores {
     background-color: #333333;
@@ -289,7 +309,7 @@ nav ul li a {
     text-align: center;
 }
 
-/* seccion trabajadores*/
+
 
 #trabajadores h2 {
     padding-top: 5rem;
@@ -331,17 +351,12 @@ nav ul li a {
 
 
 #services {
-    height: 100vh;
     background-color: #f4c01e;
 }
 
 #services .container {
     padding-top: 10vh;
 
-}
-
-#contact-us {
-    background-color: #dfd4cd;
 }
 
 
