@@ -55,6 +55,7 @@ ul {
     background-color: var(--rojo) !important; 
     color: white!important; 
     border-color: var(--gris)!important; 
+    transition: background-color 0.5s ease;
 }
 .btn-custom:hover {
     background-color: var(--gris) !important; 
@@ -78,8 +79,9 @@ ul {
 }
 
 .pagina-principal-overlay {
-    display: flex;
-    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.5);
@@ -100,52 +102,33 @@ ul {
     justify-content: center;
     align-items: center;
     width: 440px;
-    
+    margin-bottom: 280px;
 }
 
 .ajuste-foto-texto{
-    width: 68%;
-    top: 45px;
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    margin-top: 530px;
 
 }
 .ajuste-foto-letra{
-    height: 60%;
-    width: 60%;
     position: absolute;
-    right: 58px;
     display: flex;
-    top: 132px;
-
+    justify-content: center;
+    align-items: center;
+    margin-left: 580px;
+    margin-top: 252px;
 
 }
 
 
 .pagina-principal-img {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-}
-
-
-
-/* boton diseño para redirigir a la pagina workers.html */
-
-.boton-trabajador {
-    padding: 10px 30px;
-    border-radius: 15px;
-    border: 2px solid var(--amarillo);
-    background-color: #616161;
-    transition: background-color 0.5s ease;
-}
-
-.boton-trabajador:hover {
-    background-color: #4f101a;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -196,7 +179,7 @@ header .logo-container {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: 300px;
+    width: 110px;
     margin-left: 30px;
 }
 
@@ -273,14 +256,12 @@ nav ul li a{
     .contenedor-trabajador{
 
         padding: 5rem;
+        display: flex;
         flex-direction: column;
     
     }
 
 }
-
-
-
 
 .carta-trabajador {
     margin: 2rem;
@@ -288,6 +269,26 @@ nav ul li a{
 
 .carta-trabajador-info {
     padding-bottom: 5rem;
+}
+
+.carta-trabajador-info h3{
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+/* boton diseño para redirigir a la pagina trabajadores.html */
+
+.boton-trabajador {
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: 3px solid darken(var(--gris),70%);
+    background-color: #f4c01e;
+    transition: background-color 0.5s ease;
+    font-weight: 500;
+}
+
+.boton-trabajador:hover {
+    background-color: #4f101a;
 }
 
 
@@ -306,22 +307,7 @@ nav ul li a{
 }
 
 
-/*NAV*/
-.bg-body-tertiary{
-    background-color: #4f101a !important;
-    width: auto !important;
-    height: 200px !important; 
 
-}
-
-.me-auto {
-    margin-right: 0 !important;
-}
-/*principal*/
-.foto_principal{
-    display: flex;
-    flex-direction: column;
-}
 
 
 
