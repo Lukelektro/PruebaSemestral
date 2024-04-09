@@ -1,68 +1,423 @@
-.container-sm {
-  background-color: blue;
+:root {
+  --rojo: #4f101a;
+  --gris: #333333;
+  --piel: #dfd4cd;
+  --amarillo: #f4c01e;
+  --purpura: #
 }
 
-.h1 {
-    font-size: 60px;
-    color: white;
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat',sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--rojo);
 }
 
 
-.logo{
-  margin-left: 10px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+
+ul {
+  list-style: none;
 }
 
-/* CSS de Login*/
 
+/* CSS DEL LOGIN */
 
-
-#login {
+.main-login {
   display: flex;
   justify-content: center;
-  background-color: #e0e3ea;
-}
-
-.h1_title{
-  display: flex;
-  justify-content: center;
-}
-
-.col-12 {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  width: 100%;
+  height: 100vh;
+  background: rgb(51, 51, 51);
+  background: linear-gradient(150deg, rgba(51, 51, 51, 1) 39%, rgba(71, 26, 33, 1) 65%);
 }
 
-.g-3{
-  border-radius: 20px;
-  margin: 10px 0px;
-  background-color: whitesmoke;
-  padding: 50px;
-  display: flex;
+.contenedor-login {
   width: 500px;
-  --bs-gutter-y: 1rem;
+  height: 600px;
+  background-color: var(--piel);
+  border: 1px solid var(--gris);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.texto-login a {
+  font-size: 20px;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.btn-custom {
+  background-color: var(--rojo) !important;
+  color: white !important;
+  border-color: var(--gris) !important;
+  border-radius: 1rem ;
+}
+
+.btn-custom:hover {
+  background-color: var(--amarillo) !important;
+}
+
+
+.img-login {
+  width: 10rem;
+}
+
+
+
+/* Fondo transparente */
+
+.pagina-principal-container {
+  background-image: url('https://cdn-9.motorsport.com/images/amp/YBeqxXM2/s6/sebastian-vettel-ferrari-sf100.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 900px;
+  position: relative;
+}
+
+.pagina-principal-overlay {
+  display: flex;
   flex-direction: column;
-  align-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.pagina-principal-content {
+  color: black;
+  font-size: 16px;
+  margin-top: 10%;
+  margin-left: 10%;
+  position: absolute;
+}
+
+/* Margen de los logos, con los width pueden mover el tamaño */
+/* reajuste los margenes, no me gustaron como habian quedado los anteriores
+ ya que los reescalaba, estos estan en su completa resolucion */
+
+.ajuste-foto-logo {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+  width: 430px;
+
+}
+
+.ajuste-foto-texto {
+  width: 118vh;
+  margin-top: 20px;
+  transition: margin-top 0.5s ease;
+}
+
+.ajuste-foto-letra {
+  margin-top: 290px;
+  margin-left: 230px;
+  position: absolute;
+  transition: margin-top 0.5s ease;
+}
+
+.ajuste-foto-logo,
+.ajuste-foto-letra,
+.ajuste-foto-texto {
+  max-width: 100%;
+  height: auto;
+}
+
+/* aqui agregue un media, para cuando llegue a tamaños de tablet y celulares, tenga la capacidad de tener
+ el mismo tamaño que el deseado, quedo bonito estoy contento con el resultado*/
+
+@media (max-width: 988px) {
+
+  .ajuste-foto-logo {
+      width: 46%;
+  }
+
+  .ajuste-foto-letra {
+      width: 100%;
+      margin-top: 220px;
+  }
+}
+
+@media (max-width: 910px) {
+
+  .ajuste-foto-texto {
+      width: 110%;
+      margin-top: 140px;
+  }
+}
+
+@media (max-width: 710px) {
+
+  .ajuste-foto-texto {
+      width: 110%;
+      margin-top: 270px;
+  }
+}
+
+
+.pagina-principal-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+
+
+/* boton diseño para redirigir a la pagina workers.html */
+
+.boton-trabajador {
+  color: var(--piel);
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 15px;
+  background-color: var(--rojo);
+  transition: background-color 0.5s ease;
+}
+
+.boton-trabajador:hover {
+  background-color: var(--amarillo);
+}
+
+
+/* de aqui para abajo todo es para cambiar la navbar, hay que rehacerla ya que no es una navbar de bootstrap */
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+header {
+  background-color: #4f101a;
+
+}
+
+header .logo {
+  margin: 0px;
+  padding: 13px;
+  font-weight: bolder;
+  color: #dfd4cd;
+  font-size: 1.7em;
+
+}
+
+header nav {
+  display: flex;
+  flex-direction: row-reverse;
   align-items: center;
 }
 
-.col-md-6 {
-  flex: 0 0 auto;
-  width: 100%;
+header nav a {
+  margin-left: 40px;
+  margin-right: 10px;
 }
 
-.col-md-4 {
-  flex: 0 0 auto;
-  width: 100%;
+@media screen and (max-width: 768px) {
+  header nav {
+      flex-direction: column;
+  }
+
+  header nav a {
+      margin: 10px 0;
+      text-align: center;
+  }
 }
 
-.col-md-3 {
-  flex: 0 0 auto;
+header .logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 300px;
+  margin-left: 30px;
+}
+
+header .logo-container img {
+  max-width: 150px;
+  height: auto;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: -59px;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+nav ul li a {
+  color: #dfd4cd;
+  text-decoration: none;
+  margin: 0px 5px;
+  text-transform: uppercase;
+
+}
+
+
+/* margenes de todas las sections */
+
+#hero-nosotros {
+  height: 100vh;
+  background-color: #dfd4cd;
+
+}
+
+#hero-nosotros .container {
+  padding-top: 30vh;
+}
+
+#trabajadores {
+  background-color: #333333;
+  color: #dfd4cd;
+  text-align: center;
+}
+
+/* seccion trabajadores*/
+
+#trabajadores h2 {
+  padding-top: 5rem;
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.contenedor-trabajador {
+
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .contenedor-trabajador {
+      padding: 3rem;
+      flex-direction: column;
+
+  }
+
+}
+
+.carta-trabajador {
+  margin: 2rem;
+}
+
+.carta-trabajador-info {
+  padding-bottom: 5rem;
+}
+
+.carta-trabajador-info h3{
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+
+
+#services {
+  height: 100vh;
+  background-color: #f4c01e;
+}
+
+#services .container {
+  padding-top: 10vh;
+
+}
+
+#contact-us {
+  background-color: #dfd4cd;
+}
+
+
+/*NAV*/
+.bg-body-tertiary {
+  background-color: #4f101a !important;
+  width: auto !important;
+  height: 200px !important;
+
+}
+
+.me-auto {
+  margin-right: 0 !important;
+}
+
+/*principal*/
+.foto_principal {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contacto  */
+
+#Contacto label,h1{
+  font-weight: 600;
+  color: var(--piel);
+  padding: .5rem 0;
+}
+
+#Contacto .btn-custom:hover {
+  background-color: var(--piel) !important;
+}
+
+
+
+.contacto-formulario {
+  
+  background-color: var(--gris);
+  margin: 0 auto;
+  padding: 5rem;
+}
+
+.input-text {
   width: 100%;
+  border: none;
+  padding: .5rem;
+  border-radius: 0.5rem;
+}
+
+.campo{
+  margin-bottom: 1rem;
+}
+
+.campo textarea {
+  height: 15rem;
+  overflow: auto;
+}
+
+
+@media (min-width: 768px){
+
+  .contenedor-campos{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: auto auto 20rem;
+      column-gap: 1rem;
+  }
+  .campo:nth-child(5){
+      grid-column: 1 / 3;
+  }
+
+}
+
+/* FOOTER */
+
+.texto-footer{
+  color: var(--piel) !important;
+  font-weight: 600;
 }
