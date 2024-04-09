@@ -29,18 +29,18 @@ ul {
 
 .main-login {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    background: rgb(51,51,51);
-    background: linear-gradient(150deg, rgba(51,51,51,1) 39%, rgba(71,26,33,1) 65%); 
+    background: rgb(51, 51, 51);
+    background: linear-gradient(150deg, rgba(51, 51, 51, 1) 39%, rgba(71, 26, 33, 1) 65%);
 }
-  
+
 .contenedor-login {
     width: 500px;
-    height: 600px; 
-    background-color: var(--piel); 
-    border: 1px solid var(--gris); 
+    height: 600px;
+    background-color: var(--piel);
+    border: 1px solid var(--gris);
     padding: 20px;
     border-radius: 10px;
 }
@@ -52,13 +52,13 @@ ul {
 }
 
 .btn-custom {
-    background-color: var(--rojo) !important; 
-    color: white!important; 
-    border-color: var(--gris)!important; 
-    transition: background-color 0.5s ease;
+    background-color: var(--rojo) !important;
+    color: white !important;
+    border-color: var(--gris) !important;
 }
+
 .btn-custom:hover {
-    background-color: var(--gris) !important; 
+    background-color: var(--gris) !important;
 }
 
 
@@ -67,7 +67,7 @@ ul {
 }
 
 
-  
+
 /* Fondo transparente */
 
 .pagina-principal-container {
@@ -79,9 +79,8 @@ ul {
 }
 
 .pagina-principal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.5);
@@ -96,39 +95,91 @@ ul {
 }
 
 /* Margen de los logos, con los width pueden mover el tamaño */
+/* reajuste los margenes, no me gustaron como habian quedado los anteriores
+   ya que los reescalaba, estos estan en su completa resolucion */
 
 .ajuste-foto-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 440px;
-    margin-bottom: 280px;
-}
-
-.ajuste-foto-texto{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 530px;
+    margin-top: 90px;
+    width: 430px;
 
 }
-.ajuste-foto-letra{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 580px;
-    margin-top: 252px;
 
+.ajuste-foto-texto {
+    width: 118vh;
+    margin-top: 20px;
+    transition: margin-top 0.5s ease;
+}
+
+.ajuste-foto-letra {
+    margin-top: 290px;
+    margin-left: 230px;
+    position: absolute;
+    transition: margin-top 0.5s ease;
+}
+
+.ajuste-foto-logo,
+.ajuste-foto-letra,
+.ajuste-foto-texto {
+    max-width: 100%;
+    height: auto;
+}
+
+/* aqui agregue un media, para cuando llegue a tamaños de tablet y celulares, tenga la capacidad de tener
+   el mismo tamaño que el deseado, quedo bonito estoy contento con el resultado*/
+
+@media (max-width: 988px) {
+
+    .ajuste-foto-logo {
+        width: 46%;
+    }
+
+    .ajuste-foto-letra {
+        width: 100%;
+        margin-top: 220px;
+    }
+}
+
+@media (max-width: 910px) {
+
+    .ajuste-foto-texto {
+        width: 110%;
+        margin-top: 140px;
+    }
+}
+
+@media (max-width: 710px) {
+
+    .ajuste-foto-texto {
+        width: 110%;
+        margin-top: 270px;
+    }
 }
 
 
 .pagina-principal-img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+
+
+/* boton diseño para redirigir a la pagina workers.html */
+
+.boton-trabajador {
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: 2px solid var(--amarillo);
+    background-color: #616161;
+    transition: background-color 0.5s ease;
+}
+
+.boton-trabajador:hover {
+    background-color: #4f101a;
 }
 
 
@@ -179,7 +230,7 @@ header .logo-container {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: 110px;
+    width: 300px;
     margin-left: 30px;
 }
 
@@ -192,44 +243,44 @@ header .logo-container img {
 }
 
 
-nav ul{
+nav ul {
     list-style: none;
     display: flex;
 
 }
 
-nav{
+nav {
     display: flex;
     justify-content: flex-start;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
     margin: 0 6px;
 }
 
-nav ul li a{
-    color:#dfd4cd;
+nav ul li a {
+    color: #dfd4cd;
     text-decoration: none;
     margin: 0px 5px;
     text-transform: uppercase;
-    
+
 }
 
 
 /* margenes de todas las sections */
 
-#hero-nosotros{
+#hero-nosotros {
     height: 100vh;
     background-color: #dfd4cd;
 
 }
 
-#hero-nosotros .container{
+#hero-nosotros .container {
     padding-top: 30vh;
 }
 
-#trabajadores{
+#trabajadores {
     background-color: #333333;
     color: #dfd4cd;
     text-align: center;
@@ -237,13 +288,13 @@ nav ul li a{
 
 /* seccion trabajadores*/
 
-#trabajadores h2{
+#trabajadores h2 {
     padding-top: 5rem;
     font-weight: 700;
     font-size: 4rem;
 }
 
-.contenedor-trabajador{
+.contenedor-trabajador {
 
     margin: 5rem 0;
     display: flex;
@@ -252,16 +303,18 @@ nav ul li a{
 }
 
 @media screen and (max-width: 768px) {
-    
-    .contenedor-trabajador{
+
+    .contenedor-trabajador {
 
         padding: 5rem;
-        display: flex;
         flex-direction: column;
-    
+
     }
 
 }
+
+
+
 
 .carta-trabajador {
     margin: 2rem;
@@ -271,33 +324,13 @@ nav ul li a{
     padding-bottom: 5rem;
 }
 
-.carta-trabajador-info h3{
-    font-size: 3rem;
-    padding-bottom: 2rem;
-}
 
-/* boton diseño para redirigir a la pagina trabajadores.html */
-
-.boton-trabajador {
-    padding: 10px 30px;
-    border-radius: 15px;
-    border: 3px solid darken(var(--gris),70%);
-    background-color: #f4c01e;
-    transition: background-color 0.5s ease;
-    font-weight: 500;
-}
-
-.boton-trabajador:hover {
-    background-color: #4f101a;
-}
-
-
-#services{
+#services {
     height: 100vh;
     background-color: #f4c01e;
 }
 
-#services .container{
+#services .container {
     padding-top: 10vh;
 
 }
@@ -307,25 +340,20 @@ nav ul li a{
 }
 
 
+/*NAV*/
+.bg-body-tertiary {
+    background-color: #4f101a !important;
+    width: auto !important;
+    height: 200px !important;
 
+}
 
+.me-auto {
+    margin-right: 0 !important;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*principal*/
+.foto_principal {
+    display: flex;
+    flex-direction: column;
+}
