@@ -16,6 +16,7 @@
 
 body {
     margin: 0;
+    background-color: var(--rojo);
 }
 
 
@@ -55,10 +56,11 @@ ul {
     background-color: var(--rojo) !important;
     color: white !important;
     border-color: var(--gris) !important;
+    border-radius: 1rem ;
 }
 
 .btn-custom:hover {
-    background-color: var(--gris) !important;
+    background-color: var(--amarillo) !important;
 }
 
 
@@ -369,11 +371,17 @@ nav ul li a {
     padding: .5rem 0;
 }
 
+#Contacto .btn-custom:hover {
+    background-color: var(--piel) !important;
+}
+
+
+
 .contacto-formulario {
     
     background-color: var(--gris);
     margin: 0 auto;
-    padding: 2rem;
+    padding: 5rem;
 }
 
 .input-text {
@@ -407,5 +415,10 @@ nav ul li a {
 
 }
 
+/* FOOTER */
 
+.texto-footer{
+    color: var(--piel) !important;
+    font-weight: 600;
+}
 
