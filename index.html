@@ -261,7 +261,8 @@
                                     <li class="list-group-item px-0">Duración aproximada de 10 minutos</li>
                                 </ul>
                                 <div class="d-flex justify-content-center" style="width: 100%;">
-                                    <button type="button" class="btn btn-outline-secondary mt-3">Contratar servicio</button>
+                                    <button type="button" onclick="window.location.href = 'servicios.html';" class="btn btn-outline-secondary mt-3">
+                                        Contratar servicio</button>
                                 </div>
                             </div>
                         </div>
@@ -286,7 +287,8 @@
                                     <li class="list-group-item px-0">Duración aproximada de 10 minutos</li>
                                 </ul>
                                 <div class="d-flex justify-content-center" style="width: 100%;">
-                                    <button type="button" class="btn btn-outline-secondary mt-3">Contratar servicio</button>
+                                    <button type="button" onclick="window.location.href = 'servicios.html';" class="btn btn-outline-secondary mt-3">
+                                        Contratar servicio</button>
                                 </div>                            
                             </div>
                         </div>
@@ -311,7 +313,8 @@
                                     <li class="list-group-item px-0">Duración aproximada de 10 minutos</li>
                                 </ul>
                                 <div class="d-flex justify-content-center" style="width: 100%;">
-                                    <button type="button" class="btn btn-outline-secondary mt-3">Contratar servicio</button>
+                                    <button type="button" onclick="window.location.href = 'servicios.html';" class="btn btn-outline-secondary mt-3">
+                                        Contratar servicio</button>
                                 </div>                            
                             </div>
                         </div>
@@ -364,13 +367,33 @@
                 </div>
 
                 <div class="d-grid gap-2 col-2 mx-auto">
-                    <button type="button" class="btn btn-custom " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 2rem;">
+                    <button type="button" class="btn btn-custom " data-bs-toggle="modal" data-bs-target="#modalEnviar" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 2rem;">
                     Enviar
                     </button>
                 </div>
             </form>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalEnviar" tabindex="-1" aria-labelledby="modalEnviar" aria-hidden="true">
+
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5 text-center" id="modalEnviar">Confirmacion</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                Estas seguro de tus datos?  
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Enviar</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <div class="container contenedor-footer">
         <footer class="py-3 my-4">

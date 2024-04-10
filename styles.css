@@ -493,3 +493,20 @@ header nav a {
 .vista-trabajadores {
     padding-top: 15rem;
 }
+
+.vista-trabajadores .titulo-nosotros{
+    font-size: 70px;
+}
+
+.vista-trabajadores .contenido-nosotros{
+    padding: 0 5rem;
+}
+
+.vista-trabajadores p:last-of-type:after {
+    background-color: var(--gris);
+    content: "";
+    display: block;
+    height: 0.5rem;
+    margin-top: 5rem;
+    width: 100%;
+  }
