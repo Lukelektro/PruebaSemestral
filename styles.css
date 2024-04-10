@@ -375,16 +375,48 @@ nav ul li a {
 
 
 /*NAV*/
+
+.me-auto {
+    margin-right: 0 !important;
+}
+
+
 .bg-body-tertiary {
     background-color: #4f101a !important;
     width: auto !important;
     height: 200px !important;
 
 }
-
-.me-auto {
-    margin-right: 0 !important;
+.nav-item a{
+    color: #dfd4cd !important;
 }
+
+header nav a {
+    margin-left: 0px; 
+    margin-right: 0px;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    justify-content: space-between;
+}
+.d-flex {
+    width: 50%;
+    display: flex !important;
+    justify-content: center;
+}
+#navbar{
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    transition: 1s;
+}
+#hero-principal{
+    margin-top: 200px;
+}
+
 
 /*principal*/
 .foto_principal {
