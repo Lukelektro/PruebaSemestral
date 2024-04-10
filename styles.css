@@ -280,9 +280,15 @@ nav ul li a {
 
 /* SECCION NOSOTROS*/
 
-#hero-nosotros h1 {
+#hero-nosotros h1,p {
     padding: 2rem;
+    color: var(--gris);
 }
+
+#hero-nosotros {
+    background-color: var(--piel);
+}
+
 
 @media (min-width: 768px) {
 
@@ -297,9 +303,7 @@ nav ul li a {
     padding: 5rem;
 }
 
-.texto-nosotros {
-    color: var(--piel);
-}
+
 
 /* SECCION TRABAJADORES*/
 
@@ -348,6 +352,11 @@ nav ul li a {
     font-weight: 600;
 }
 
+#trabajadores .btn-custom:hover {
+    background-color: var(--piel) !important;
+}
+
+/* SECCION TRABAJADORES */
 
 
 #services {
@@ -358,6 +367,11 @@ nav ul li a {
     padding-top: 10vh;
 
 }
+
+#services {
+    background-color: #f4c01e;
+}
+
 
 
 /*NAV*/
