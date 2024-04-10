@@ -376,6 +376,10 @@ nav ul li a {
 
 /*NAV*/
 
+.navbar a{
+    font-size: bold;
+}
+
 .me-auto {
     margin-right: 0 !important;
 }
@@ -483,3 +487,9 @@ header nav a {
     font-weight: 600;
 }
 
+
+/* PAGINA TRABAJADORES */
+
+.vista-trabajadores {
+    padding-top: 15rem;
+}
