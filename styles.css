@@ -490,23 +490,101 @@ header nav a {
 
 /* PAGINA TRABAJADORES */
 
-.vista-trabajadores {
+#vista-trabajadores {
     padding-top: 15rem;
+    background-color: var(--piel);
 }
 
-.vista-trabajadores .titulo-nosotros{
+#vista-trabajadores h1{
+    color: #000;
+}
+
+
+#vista-trabajadores .titulo{
     font-size: 70px;
 }
 
-.vista-trabajadores .contenido-nosotros{
-    padding: 0 5rem;
+
+
+
+@media (max-width: 768px) {
+    #vista-trabajadores .contenido-nosotros:after {
+      background-color: var(--gris);
+      content: "";
+      display: block;
+      height: 0.5rem;
+      margin-top: 5rem;
+      width: 100%;
+    }
+
+    #vista-trabajadores .contenido-nosotros{
+        padding: 5rem;
+    }
+
+  }
+  
+
+
+@media (min-width: 768px){
+
+    #vista-trabajadores .contenido-nosotros{
+        padding: 2rem;
+        gap: 1;
+    }
+
+    #vista-trabajadores p:last-of-type:after {
+        background-color: var(--gris);
+        content: "";
+        display: block;
+        height: 0.5rem;
+        margin-top: 7rem;
+        width: 100%;
+        
+    }
+
 }
 
-.vista-trabajadores p:last-of-type:after {
-    background-color: var(--gris);
-    content: "";
-    display: block;
-    height: 0.5rem;
-    margin-top: 5rem;
-    width: 100%;
-  }
+
+/* PAGINA SERVICIOS */
+
+#vista-servicios {
+    padding-top: 15rem;
+    background-color: var(--piel);
+}
+
+#vista-servicios .contenido-nosotros{
+    padding: 3rem ;
+    margin-bottom: 3rem;
+}
+
+#vista-servicios .titulo{
+    font-size: 70px;
+}
+
+
+#vista-servicios h1{
+    color: #000;
+}
+
+.boton-servicios {
+    display: flex;
+    justify-content: center;
+}
+
+.img-carrito {
+    max-width: 5rem;
+    margin-right: 2rem;
+}
+
+
+.boton-servicios .btn-custom:hover {
+    background-color: var(--gris) !important;
+}
+
+
+#vista-servicios .contenedor-imagen{
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
