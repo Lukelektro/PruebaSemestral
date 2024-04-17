@@ -37,6 +37,12 @@ ul {
     background: linear-gradient(150deg, rgba(51, 51, 51, 1) 39%, rgba(71, 26, 33, 1) 65%);
 }
 
+.contenedor-imagen-login {
+
+    display: flex;
+
+}
+
 .contenedor-login {
     width: 500px;
     height: 600px;
