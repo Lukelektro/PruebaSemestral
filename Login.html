@@ -13,7 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
 
   <!-- css -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cs/base.css">
+  <link rel="stylesheet" href="cs/login.css">
 
   <title>Login</title> 
 
@@ -35,9 +36,9 @@
         
 
         <form class="was-validated">
-          <div class="mb-5">  
+          <div class="mb-3">  
             <label for="uname" class="form-label fs-3">Correo electronico</label>
-            <input type="text" class="form-control" placeholder="Ingresa el correo electronico" name="uname" required>
+            <input type="email" class="form-control is-invalid" id="uname" placeholder="Ingresa el correo electronico" name="uname" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
             <div class="invalid-feedback">Invalido.</div>
             <div class="valid-feedback">Se ve bien!</div>
             <div id="emailHelp" class="form-text fs-5">Nunca compartiremos tus datos!</div>
