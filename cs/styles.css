@@ -137,28 +137,6 @@ header .logo {
 
 }
 
-header nav {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-header nav a {
-    margin-left: 40px;
-    margin-right: 10px;
-}
-
-@media screen and (max-width: 768px) {
-    header nav {
-        flex-direction: column;
-    }
-
-    header nav a {
-        margin: 10px 0;
-        text-align: center;
-    }
-}
-
 header .logo-container {
     display: flex;
     flex-direction: row;
@@ -176,30 +154,6 @@ header .logo-container img {
     margin-right: -59px;
 }
 
-
-nav ul {
-    list-style: none;
-    display: flex;
-
-}
-
-nav {
-    display: flex;
-    justify-content: flex-start;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 6px;
-}
-
-nav ul li a {
-    color: #dfd4cd;
-    text-decoration: none;
-    margin: 0px 5px;
-    text-transform: uppercase;
-
-}
 
 
 /* margenes de todas las sections */
@@ -349,12 +303,59 @@ header nav a {
     width: 100%;
     transition: 1s;
 }
+
+nav ul {
+    list-style: none;
+    display: flex;
+
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 6px;
+}
+
+nav ul li a {
+    color: #dfd4cd;
+    text-decoration: none;
+    margin: 0px 5px;
+    text-transform: uppercase;
+
+}
+
+header nav {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+header nav a {
+    margin-left: 40px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header nav a {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+/*principal*/
+
 #hero-principal{
     margin-top: 200px;
 }
 
-
-/*principal*/
 .foto_principal {
     display: flex;
     flex-direction: column;
