@@ -1,8 +1,8 @@
 :root {
-    --rojo: #4f101a;
-    --gris: #333333;
-    --piel: #dfd4cd;
-    --amarillo: #f4c01e;
+    --rojo: #4f101a !important;
+    --gris: #333333 !important;
+    --piel: #dfd4cd !important;
+    --amarillo: #f4c01e !important;
     --purpura: #
 }
 html {
