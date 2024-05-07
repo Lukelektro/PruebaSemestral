@@ -33,3 +33,27 @@ ul {
     list-style: none;
 }
 
+
+
+
+
+/* Mapa */
+
+.contenedor-maps{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#map-container {
+    
+    width: 35%; 
+    height: 270px; 
+    overflow: hidden;
+    text-align: center; 
+}
+
+#map,#map2{
+    height: 100%;
+    width: 100%;
+    position: static;
+}

@@ -1,16 +1,20 @@
 /* Contacto  */
 
-#Contacto h1{
+#Contacto h1,label{
     font-weight: 600;
-    font-size: 2rem;
     color: var(--piel);
     padding: .5rem 0;
     margin-bottom: rem;
     
 }
 
+#Contacto {
+    height: 100%;
+}
+
 
 .btn-contacto{
+    background-color: var(--piel);
     border: 2px solid transparent;
     border-radius: 1rem ;
     padding: 10px 20px;
@@ -23,7 +27,7 @@
 }
 
 .btn-contacto:hover {
-    background-color: var(--piel) ;
+    background-color: var(--amarillo); ;
 }
 
 

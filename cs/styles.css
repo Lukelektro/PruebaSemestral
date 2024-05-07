@@ -290,11 +290,7 @@ header nav a {
     flex-basis: auto;
     justify-content: space-between;
 }
-.d-flex {
-    width: 50%;
-    display: flex !important;
-    justify-content: center;
-}
+
 #navbar{
     top: 0;
     position: fixed;
