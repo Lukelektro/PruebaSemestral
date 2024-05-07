@@ -19,8 +19,6 @@
   <title>Login</title> 
 
 </head>
-
-<body>
     
   <main class="main-login">
 
@@ -34,33 +32,34 @@
           
         </div>
         
-
-        <form class="was-validated">
-          <div class="mb-3">  
-            <label for="uname" class="form-label fs-3">Correo electronico</label>
-            <input type="email" class="form-control is-invalid" id="uname" placeholder="Ingresa el correo electronico" name="uname" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-            <div class="invalid-feedback">Invalido.</div>
-            <div class="valid-feedback">Se ve bien!</div>
+        <form id="form-login" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="email" class="form-label fs-3">Correo electronico</label>
+            <input type="email" class="form-control" placeholder="Ingresa tu email" id="email" required>
+            <div class="invalid-feedback">
+              Por favor ingresa un correo electrónico válido.
+            </div>
             <div id="emailHelp" class="form-text fs-5">Nunca compartiremos tus datos!</div>
           </div>
-          <div class="">
-            <label for="pwd" class="form-label fs-3">Contraseña</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+          <div class="mb-3">
+            <label for="contraseña" class="form-label fs-3">Contraseña</label>
+            <input type="password" class="form-control" placeholder="Ingresa la contraseña" id="contraseña" required>
+            <div class="invalid-feedback">
+              Por favor ingresa una contraseña.
+            </div>
           </div>
           <div class="mb-5 text-start">
             <a href="registro.html">Registrame</a>
           </div>
+
           <div class="d-grid gap-2 col-6 mx-auto">
-            <button type="submit" class="btn btn-custom" 
-            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 2rem;">
-            Ingrese
-            </button>
+            <button class=" btn btn-login" type="submit">Ingresar</button>
           </div>
-          
         </form>
+
+        
       </div>
       
-      <!--onclick="window.location.href = 'index.html';" --> 
 
     </div>
 
@@ -72,7 +71,10 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
- 
+  <!--  JQuery  -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/login.js"></script>
+
 </body>
 
 </html>

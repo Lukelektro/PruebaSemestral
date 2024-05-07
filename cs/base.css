@@ -5,6 +5,13 @@
     --amarillo: #f4c01e;
     --purpura: #
 }
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
 * {
     box-sizing: border-box;
@@ -13,6 +20,7 @@
     padding: 0;
     font-family: 'Montserrat',sans-serif;
 }
+
 
 body {
     margin: 0;
@@ -24,3 +32,4 @@ body {
 ul {
     list-style: none;
 }
+
