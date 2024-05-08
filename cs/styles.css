@@ -208,6 +208,12 @@ header .logo-container img {
 
 /* SECCION TRABAJADORES*/
 
+.carrusel-trabajadores {
+    max-width: 1600px;
+    margin: 0 auto; 
+    margin-bottom: 100px;
+}
+
 #trabajadores {
     background-color: #333333;
     color: var(--piel);
@@ -280,11 +286,6 @@ header .logo-container img {
 
 /* tamaño del carrusel */
 
-.carrusel-trabajadores {
-    max-width: 1600px;
-    margin: 0 auto; 
-    margin-bottom: 100px;
-}
 
 .titulo-trabajodone{
     font-size: 70px;
