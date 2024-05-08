@@ -181,10 +181,6 @@ header .logo-container img {
 /* SECCION NOSOTROS*/
 
 /*margen de la seccion */
-#hero-nosotros .container {
-    padding-top: 30vh;
-}
-
 #hero-nosotros h1,p {
     padding: 2rem;
     color: var(--gris);
@@ -276,6 +272,25 @@ header .logo-container img {
 
 }
 
+/*seccion Trabajos realizados y cotización*/
+
+#trabajo-done h1{
+    color: var(--piel);
+}
+
+/* tamaño del carrusel */
+
+.carrusel-trabajadores {
+    max-width: 1600px;
+    margin: 0 auto; 
+    margin-bottom: 100px;
+}
+
+.titulo-trabajodone{
+    font-size: 70px;
+    margin-top: 10px;
+
+}
 /* SECCION Servicios */
 
 

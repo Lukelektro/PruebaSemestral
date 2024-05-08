@@ -16,62 +16,21 @@
     <!-- css -->
     <link rel="stylesheet" href="cs/base.css">
     <link rel="stylesheet" href="cs/styles.css">
-    
+
     <title>Taller MaqWeen</title>
 
 </head>
 
 <body>
-<!--
+
     <header id="navbar" class="contenedor-navbar">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container fluid">
-
-
                 <div class="logo-container" href="Login.html">
                     <a href="index.html"><img src="img/logo-nombre2.png" class="ajuste-logo-letras"
                             alt="logo-nombre" /></a>
                     <a href="index.html"><img src="img/logo-trans-1.png" class="ajuste-logo-menu"
                             alt="logo-empresa" /></a>
-                </div>
-
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#hero-nosotros">Quienes somos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#services">Servicios</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#trabajadores">Trabajadores</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#trabajo-done-carrusel">Trabajos realizados</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#services">Servicios</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact-us">Contactanos</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    -->
-
-    <header id="navbar" class="contenedor-navbar">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container fluid">
-                <div class="logo-container" href="Login.html">
-                    <a href="index.html"><img src="img/logo-nombre2.png" class="ajuste-logo-letras" alt="logo-nombre" /></a>
-                    <a href="index.html"><img src="img/logo-trans-1.png" class="ajuste-logo-menu" alt="logo-empresa" /></a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
@@ -95,7 +54,7 @@
             </div>
         </nav>
     </header>
-    
+
     </header>
 
     <section id="hero-principal">
@@ -124,13 +83,28 @@
             <div class="texto-nosotros">
 
                 <h1>10 años de Experiencia</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam
-                    culpa
-                    ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus.
-                    Repellendus
-                    perferendis neque voluptatum.
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio iure eum, iste similique vel
+                    culpa aut necessitatibus accusantium veniam adipisci dignissimos ea veritatis illo minima corporis
+                    nostrum impedit, possimus ullam.
+                    Molestiae illum obcaecati quidem fugiat natus animi optio quaerat delectus in quos numquam ipsam quo
+                    impedit commodi aspernatur enim quod iusto iure modi, rerum maxime harum deleniti. Nobis, dolorem
+                    repellendus!
+                    Architecto id tenetur explicabo quos odio provident optio, esse, repellendus ullam illo quas
                 </p>
-                 
+
+                <p>* Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo magnam atque quasi quisquam,
+                    voluptates
+                    officia, fugiat officiis, tempora impedit repellat vero blanditiis odit maiores esse molestias enim
+                    provident commodi distinctio.</p>
+
+                <p>* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates, accusantium. Explicabo nisi
+                    quam aspernatur tempore eius. Rerum harum facere voluptate, nobis aliquam placeat, ipsum ea
+                    obcaecati vel nemo, ratione culpa.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis in libero sapiente voluptatum,
+                    placeat fugit suscipit architecto itaque repellat labore neque accusamus molestias exercitationem
+                    vel nobis totam deserunt recusandae quo!</p>
+
             </div>
         </div>
     </section>
@@ -138,80 +112,172 @@
     <section id="trabajadores">
 
         <h2>Nuestros trabajadores</h2>
-
-        <div class="contenedor-trabajador">
-
-
-
-            <div class="card carta-trabajador" style="width: 18rem;">
-                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
-                    class="card-img-top" alt="imagen-trabajador1">
-                <div class="card-body">
-                    <h5 class="card-title">Federico Fernet</h5>         
-                    <br>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Tiempo completo</li>
-                        <li class="list-group-item">Experto tecnico</li>
-                        <li class="list-group-item">10 años de servicio</li>
-                    </ul>
-                    <br>
-                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover" title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+        <!--Estructura del carrusel-->
+        <div class="carrusel-trabajadores">
+            <div id="trabajo-done-carrusel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="100000">
+                        <!-- Grupo de Tarjetas 1 -->
+                        <div class="card-group">
+                            <!-- CARTA -->
+                            <div class="card carta-trabajador" style="width: 18rem;">
+                                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
+                                    class="card-img-top" alt="imagen-trabajador1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Federico Fernet</h5>
+                                    <br>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Tiempo completo</li>
+                                        <li class="list-group-item">Experto tecnico</li>
+                                        <li class="list-group-item">10 años de servicio</li>
+                                    </ul>
+                                    <br>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover"
+                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                </div>
+                            </div>
+                            <!-- CARTA -->
+                            <div class="card carta-trabajador" style="width: 18rem;">
+                                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
+                                    class="card-img-top" alt="imagen-trabajador1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Federico Fernet</h5>
+                                    <br>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Tiempo completo</li>
+                                        <li class="list-group-item">Experto tecnico</li>
+                                        <li class="list-group-item">10 años de servicio</li>
+                                    </ul>
+                                    <br>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover"
+                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                </div>
+                            </div>
+                            <!-- CARTA -->
+                            <div class="card carta-trabajador" style="width: 18rem;">
+                                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
+                                    class="card-img-top" alt="imagen-trabajador1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Federico Fernet</h5>
+                                    <br>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Tiempo completo</li>
+                                        <li class="list-group-item">Experto tecnico</li>
+                                        <li class="list-group-item">10 años de servicio</li>
+                                    </ul>
+                                    <br>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover"
+                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                </div>
+                            </div>
+                            <!-- CARTA -->
+                            <div class="card carta-trabajador" style="width: 18rem;">
+                                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
+                                    class="card-img-top" alt="imagen-trabajador1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Federico Fernet</h5>
+                                    <br>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Tiempo completo</li>
+                                        <li class="list-group-item">Experto tecnico</li>
+                                        <li class="list-group-item">10 años de servicio</li>
+                                    </ul>
+                                    <br>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover"
+                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="100000">
+                        <!-- Grupo de Tarjetas 2 -->
+                        <div class="card-group">
+                            <!-- CARTA -->
+                            <div class="card carta-trabajador" style="width: 18rem;">
+                                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
+                                    class="card-img-top" alt="imagen-trabajador1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Federico Fernet</h5>
+                                    <br>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Tiempo completo</li>
+                                        <li class="list-group-item">Experto tecnico</li>
+                                        <li class="list-group-item">10 años de servicio</li>
+                                    </ul>
+                                    <br>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover"
+                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                </div>
+                            </div>
+                            <!-- CARTA -->
+                            <div class="card carta-trabajador" style="width: 18rem;">
+                                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
+                                    class="card-img-top" alt="imagen-trabajador1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Federico Fernet</h5>
+                                    <br>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Tiempo completo</li>
+                                        <li class="list-group-item">Experto tecnico</li>
+                                        <li class="list-group-item">10 años de servicio</li>
+                                    </ul>
+                                    <br>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover"
+                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                </div>
+                            </div>
+                            <!-- CARTA -->
+                            <div class="card carta-trabajador" style="width: 18rem;">
+                                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
+                                    class="card-img-top" alt="imagen-trabajador1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Federico Fernet</h5>
+                                    <br>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Tiempo completo</li>
+                                        <li class="list-group-item">Experto tecnico</li>
+                                        <li class="list-group-item">10 años de servicio</li>
+                                    </ul>
+                                    <br>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover"
+                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                </div>
+                            </div>
+                            <!-- CARTA -->
+                            <div class="card carta-trabajador" style="width: 18rem;">
+                                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
+                                    class="card-img-top" alt="imagen-trabajador1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Federico Fernet</h5>
+                                    <br>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Tiempo completo</li>
+                                        <li class="list-group-item">Experto tecnico</li>
+                                        <li class="list-group-item">10 años de servicio</li>
+                                    </ul>
+                                    <br>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover"
+                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card carta-trabajador" style="width: 18rem;">
-                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
-                    class="card-img-top" alt="imagen-trabajador1">
-                <div class="card-body">
-                    <h5 class="card-title">Hernando Martinez</h5>
-                    <br>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Tiempo completo</li>
-                        <li class="list-group-item">Experto tecnico</li>
-                        <li class="list-group-item">10 años de servicio</li>
-                    </ul>
-                    <br>
-                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover" title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
-                </div>
-            </div>
-
-            <div class="card carta-trabajador" style="width: 18rem;">
-                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
-                    class="card-img-top" alt="imagen-trabajador1">
-                <div class="card-body">
-                    <h5 class="card-title">Federico Guiter</h5>
-                    <br>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Tiempo completo</li>
-                        <li class="list-group-item">Experto tecnico</li>
-                        <li class="list-group-item">10 años de servicio</li>
-                    </ul>
-                    <br>
-                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover" title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
-                </div>
-            </div>
-
-            <div class="card carta-trabajador" style="width: 18rem;">
-                <img src="img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg"
-                    class="card-img-top" alt="imagen-trabajador1">
-                <div class="card-body">
-                    <h5 class="card-title">Federico Guiter</h5>
-                    <br>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Tiempo completo</li>
-                        <li class="list-group-item">Experto tecnico</li>
-                        <li class="list-group-item">10 años de servicio</li>
-                    </ul>
-                    <br>
-                    <button type="button" class="btn btn-outline-secondary" data-toggle="popover" title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
-                </div>
+        
+                <button class="carousel-control-prev" type="button" data-bs-target="#trabajo-done-carrusel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#trabajo-done-carrusel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
             </div>
         </div>
-
         <div class="carta-trabajador-info">
             <h3>Conoce a mas trabajadores</h3>
-
-
             <button type="button" class="btn btn-custom " onclick="window.location.href = 'trabajadores.html';"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 2rem;">
                 Mas trabajadores
@@ -220,65 +286,12 @@
         </div>
     </section>
 
-    <section id="trabajo-done-carrusel">
-        <div class="container">
-            <div class="row">
+    <section id="trabajo-done">
 
-
-                <div id="carrusel-trabajos" class="carousel slide">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carrusel-trabajos" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carrusel-trabajos" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carrusel-trabajos" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carrusel-trabajos" data-bs-slide-to="3"
-                            aria-label="Slide 4"></button>
-                        <button type="button" data-bs-target="#carrusel-trabajos" data-bs-slide-to="4"
-                            aria-label="Slide 5"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="img/trabajo-cliente1.jpg" class="d-block w-100" alt="imagenes-trabajoshecho1">
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/trabajo-cliente2.jpg" class="d-block w-100" alt="imagenes-trabajoshecho2">
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/trabajo-cliente3.jpg" class="d-block w-100" alt="imagenes-trabajoshecho3">
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/trabajo-cliente4.jpg" class="d-block w-100" alt="imagenes-trabajoshecho4">
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/trabajo-cliente5.jpg" class="d-block w-100" alt="imagenes-trabajoshecho5">
-                            <div class="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carrusel-trabajos"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carrusel-trabajos"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
+        <br>
+        <h1 class="text-center fw-bold pb-5 titulo-trabajodone">PartnerShip</h1>
+        <br>
+        <h1 class="text-center fw-bold pb-2">una muestra de nuestras marcas con las cuales trabajamos</h1>
     </section>
 
 
@@ -374,7 +387,7 @@
         <br>
     </section>
 
-    
+
 
     <div class="container contenedor-footer">
         <footer class="py-3 my-4">
@@ -389,17 +402,17 @@
                 </li>
             </ul>
             <div class="contenedor-maps">
-            
+
                 <div id="map-container">
                     <h3 class="texto-footer">Viña del mar</h3>
                     <div id="map"></div>
                 </div>
-    
+
                 <div id="map-container">
                     <h3 class="texto-footer">Quilpue</h3>
                     <div id="map2"></div>
                 </div>
-               
+
             </div>
             <p class="text-center text-muted texto-footer mt-4">© 2024 Mq Ween, Inc</p>
         </footer>
@@ -419,15 +432,16 @@
     <!-- Java -->
     <script>
         $(function () {
-          $('[data-toggle="popover"]').popover()
+            $('[data-toggle="popover"]').popover()
         })
-      </script>
+    </script>
 
     <script src="js/app.js"></script>
     <script src="js/map.js"></script>
 
     <!-- API Google maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDbHPBuZkWfS1x2-HAklCMeaFEkYhOq2I&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDbHPBuZkWfS1x2-HAklCMeaFEkYhOq2I&callback=initMap"
+        async defer></script>
 
 
 </body>
