@@ -36,6 +36,7 @@ header .logo-container img {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 450px; /* a saber porque chucha si le pongo margin aca se mueve toda el contenido de la navbar pero no el logo */
 }
 
 .navbar-nav .nav-link {
