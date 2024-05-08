@@ -202,6 +202,22 @@ nav ul li a {
 }
 
 
+/* a partir de aca, empezaremos a mejorar la navbar */
+.contenedor-navbar {
+    padding-top: 1px; /* Ajusta el padding superior de la barra de navegación */
+    padding-bottom: 1px; /* Ajusta el padding inferior de la barra de navegación */
+}
+
+.navbar-nav .nav-link {
+    font-size: 17px; /* Reducir el tamaño del texto de los enlaces */
+}
+
+.logo-container {
+    margin-right: 10px; /* Ajusta el margen derecho del contenedor del logo */
+}
+
+
+
 /* margenes de todas las sections */
 
 
