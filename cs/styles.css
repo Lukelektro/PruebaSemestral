@@ -141,14 +141,14 @@ header .logo-container {
     align-items: center;
     justify-content: flex-start;
     width: 300px;
-    margin-left: 30px;
+    margin-right: 50px;
 }
 
 header .logo-container img {
-    max-width: 150px;
+    max-width: 120px;
     height: auto;
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-right: -59px;
 }
 
@@ -158,73 +158,21 @@ header .logo-container img {
     font-size: bold;
 }
 
-.me-auto {
-    margin-right: 0 !important;
-}
-
-
 .bg-body-tertiary {
     background-color: #4f101a !important;
-    width: auto !important;
-    height: 200px !important;
-
 }
+
 .nav-item a{
     color: #dfd4cd !important;
 }
 
-header nav a {
-    margin-left: 0px; 
-    margin-right: 0px;
-}
-
-.navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-    justify-content: space-between;
-}
-
+/* NO ELIMINAR, GRACIAS A ESTO, LA NAVBAR SE MUEVE */
 #navbar{
     top: 0;
     position: fixed;
     z-index: 1000;
     width: 100%;
     transition: 1s;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-
-}
-
-nav {
-    display: flex;
-    justify-content: flex-start;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 6px;
-}
-
-nav ul li a {
-    color: #dfd4cd;
-    text-decoration: none;
-    margin: 0px 5px;
-    text-transform: uppercase;
-
-}
-
-header nav {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-header nav a {
-    margin-left: 40px;
-    margin-right: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -238,31 +186,17 @@ header nav a {
     }
 }
 
-
-/* a partir de aca, empezaremos a mejorar la navbar */
-.contenedor-navbar {
-    padding-top: 1px; /* Ajusta el padding superior de la barra de navegación */
-    padding-bottom: 1px; /* Ajusta el padding inferior de la barra de navegación */
-}
-
 .navbar-nav .nav-link {
-    font-size: 17px; /* Reducir el tamaño del texto de los enlaces */
-}
-
-.logo-container {
-    margin-right: 10px; /* Ajusta el margen derecho del contenedor del logo */
+    font-size: 19px;
 }
 
 
+/* SECCION NOSOTROS*/
 
-/* margenes de todas las sections */
-
-
+/*margen de la seccion */
 #hero-nosotros .container {
     padding-top: 30vh;
 }
-
-/* SECCION NOSOTROS*/
 
 #hero-nosotros h1,p {
     padding: 2rem;
@@ -359,8 +293,9 @@ header nav a {
 
 /*principal*/
 
+/*si se agranda o se achica la navbar, debes cambiar si o si #hero-principal, ya que se le tiene un margen en base a la navbar para que no colicionen*/
 #hero-principal{
-    margin-top: 200px;
+    margin-top: 30px;
 }
 
 .foto_principal {
