@@ -1,3 +1,14 @@
+/*para cambiar las cartas a color gris */
+
+.color-gris {
+    background-color: #535252;
+    border-radius: 30px;
+}
+
+.color-gris-chico {
+    background-color: #535252;
+}
+
 /* lo tengo en caso de, nose si seguir con styles o pasar a index tdo lo que tenga que ver con index */
 /*header con el navbar*/
 header {
@@ -210,6 +221,8 @@ p {
     width: 650px;
     margin-left: 650px;
     transition: margin-left 0.5s ease;
+    margin-bottom: -50px;
+    margin-top: -30px;
 }
 
 @media (max-width: 1597px) {
@@ -256,9 +269,17 @@ p {
 }
 
 @keyframes difuminacion {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 
@@ -269,10 +290,27 @@ p {
     margin-bottom: 100px;
 }
 
-.titulo-trabajadores{
+.titulo-trabajadores {
     width: 80vh;
     transition: margin-top 0.5s ease;
     margin-bottom: -80px;
+}
+
+/*para que las cartas tengan borde*/
+
+#trabajadores .card {
+    border: 5px solid var(--piel);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.9);
+}
+
+/*para que las fotos de las cartas tengan todas una misma forma*/
+
+#trabajadores .card img {
+    border-radius: 50%;
+    width: 290px;
+    height: 290px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 /* margen de los botones del carrusel */
@@ -412,8 +450,20 @@ p {
     background-color: var(--gris);
 }
 
+#services .card {
+    border: 5px solid var(--piel);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+}
+
 #services h1 {
     color: var(--piel);
+}
+
+.titulo-servicios {
+    width: 80vh;
+    margin-bottom: -80px;
+    margin-top: -160px;
+    margin-left: 250px;
 }
 
 #services .container {
