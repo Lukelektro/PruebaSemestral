@@ -1,6 +1,4 @@
 
-
-
 /* Fondo transparente */
 
 .pagina-principal-container {
@@ -154,6 +152,91 @@ header .logo-container img {
     margin-right: -59px;
 }
 
+/*NAV*/
+
+.navbar a{
+    font-size: bold;
+}
+
+.me-auto {
+    margin-right: 0 !important;
+}
+
+
+.bg-body-tertiary {
+    background-color: #4f101a !important;
+    width: auto !important;
+    height: 200px !important;
+
+}
+.nav-item a{
+    color: #dfd4cd !important;
+}
+
+header nav a {
+    margin-left: 0px; 
+    margin-right: 0px;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    justify-content: space-between;
+}
+
+#navbar{
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    transition: 1s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 6px;
+}
+
+nav ul li a {
+    color: #dfd4cd;
+    text-decoration: none;
+    margin: 0px 5px;
+    text-transform: uppercase;
+
+}
+
+header nav {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+header nav a {
+    margin-left: 40px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header nav a {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
 
 
 /* a partir de aca, empezaremos a mejorar la navbar */
@@ -272,93 +355,6 @@ header .logo-container img {
 #services .container {
     padding-top: 10vh;
 
-}
-
-
-/*NAV*/
-
-.navbar a{
-    font-size: bold;
-}
-
-.me-auto {
-    margin-right: 0 !important;
-}
-
-
-.bg-body-tertiary {
-    background-color: #4f101a !important;
-    width: auto !important;
-    height: 200px !important;
-
-}
-.nav-item a{
-    color: #dfd4cd !important;
-}
-
-header nav a {
-    margin-left: 0px; 
-    margin-right: 0px;
-}
-
-.navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-    justify-content: space-between;
-}
-
-#navbar{
-    top: 0;
-    position: fixed;
-    z-index: 1000;
-    width: 100%;
-    transition: 1s;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-
-}
-
-nav {
-    display: flex;
-    justify-content: flex-start;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 6px;
-}
-
-nav ul li a {
-    color: #dfd4cd;
-    text-decoration: none;
-    margin: 0px 5px;
-    text-transform: uppercase;
-
-}
-
-header nav {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-header nav a {
-    margin-left: 40px;
-    margin-right: 10px;
-}
-
-@media screen and (max-width: 768px) {
-    header nav {
-        flex-direction: column;
-    }
-
-    header nav a {
-        margin: 10px 0;
-        text-align: center;
-    }
 }
 
 /*principal*/
