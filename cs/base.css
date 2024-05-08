@@ -1,9 +1,16 @@
 :root {
-    --rojo: #4f101a;
-    --gris: #333333;
-    --piel: #dfd4cd;
-    --amarillo: #f4c01e;
+    --rojo: #4f101a !important;
+    --gris: #333333 !important;
+    --piel: #dfd4cd !important;
+    --amarillo: #f4c01e !important;
     --purpura: #
+}
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 * {
@@ -14,6 +21,7 @@
     font-family: 'Montserrat',sans-serif;
 }
 
+
 body {
     margin: 0;
     background-color: var(--rojo);
@@ -23,4 +31,29 @@ body {
 
 ul {
     list-style: none;
+}
+
+
+
+
+
+/* Mapa */
+
+.contenedor-maps{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#map-container {
+    
+    width: 35%; 
+    height: 270px; 
+    overflow: hidden;
+    text-align: center; 
+}
+
+#map,#map2{
+    height: 100%;
+    width: 100%;
+    position: static;
 }

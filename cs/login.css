@@ -31,16 +31,32 @@
     text-decoration: none;
 }
 
-.btn-custom {
+.btn-login {
+    border: 2px solid transparent;
+    border-radius: 1rem ;
     background-color: var(--rojo) !important;
     color: white !important;
     border-color: var(--gris) !important;
-    border-radius: 1rem ;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5rem;
+    cursor: pointer;
+    width: auto;
+    
 }
 
-.btn-custom:hover {
+.btn-login:hover {
     background-color: var(--amarillo) !important;
+    color: var(--gris) !important;
+    
 }
+   
+.button-40:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
 
 
 .img-login {
