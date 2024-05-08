@@ -1,7 +1,5 @@
 /* lo tengo en caso de, nose si seguir con styles o pasar a index tdo lo que tenga que ver con index */
-
 /*header con el navbar*/
-
 header {
     background-color: #4f101a;
 }
@@ -20,12 +18,13 @@ header .logo-container img {
     margin-right: -59px;
 }
 
+
 /*navbar*/
 .bg-body-tertiary {
     background-color: #4f101a !important;
 }
 
-.navbar a{
+.navbar a {
     font-size: bold;
 }
 
@@ -33,7 +32,8 @@ header .logo-container img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 450px; /* a saber porque chucha si le pongo margin aca se mueve toda el contenido de la navbar pero no el logo */
+    margin-left: 390px;
+    /* a saber porque chucha si le pongo margin aca se mueve toda el contenido de la navbar pero no el logo */
 }
 
 .navbar-nav .nav-link {
@@ -42,14 +42,14 @@ header .logo-container img {
     color: #dfd4cd;
 }
 
-/* margen entre los elementos del navbar, si le quieren dar un margen a esto cosa de ustedes, lo dejo igual pero no me gusto
+/* margen entre los elementos del navbar, si le quieren dar un margen a esto cosa de ustedes, lo dejo igual pero no me gusto */
+/*deben cambiar tambien el margin-left de .navbar-nav para que se acople bonito*/
 .navbar-nav .nav-item {
-    margin: 0 10px; 
+    margin: 0 10px;
 }
-*/
 
 /* NO ELIMINAR, GRACIAS A ESTO, LA NAVBAR SE MUEVE */
-#navbar{
+#navbar {
     top: 0;
     position: fixed;
     z-index: 1000;
@@ -58,7 +58,7 @@ header .logo-container img {
 }
 
 .ajuste-logo-menu,
-.ajuste-logo-letras{
+.ajuste-logo-letras {
     margin-left: -400px;
 }
 
@@ -77,7 +77,6 @@ header .logo-container img {
 /*principal*/
 
 /* Estas 3 clases son del fondo transparente, favor de no cambiar */
-
 .pagina-principal-container {
     background-image: url('https://cdn-9.motorsport.com/images/amp/YBeqxXM2/s6/sebastian-vettel-ferrari-sf100.jpg');
     background-size: cover;
@@ -103,7 +102,7 @@ header .logo-container img {
 }
 
 /*si se agranda o se achica la navbar, debes cambiar si o si #hero-principal, ya que se le tiene un margen en base a la navbar para que no colicionen*/
-#hero-principal{
+#hero-principal {
     margin-top: 97px;
 }
 
@@ -122,7 +121,6 @@ header .logo-container img {
 /* Margen de los logos, con los width pueden mover el tamaño */
 /* reajuste los margenes, no me gustaron como habian quedado los anteriores
    ya que los reescalaba, estos estan en su completa resolucion */
-
 .ajuste-foto-logo {
     display: flex;
     justify-content: center;
@@ -153,7 +151,6 @@ header .logo-container img {
 }
 
 /* Media para acoplar la pagina principal a tablets o dispositivos moviles*/
-
 @media (max-width: 988px) {
 
     .ajuste-foto-logo {
@@ -183,10 +180,10 @@ header .logo-container img {
 }
 
 /* SECCION NOSOTROS*/
-
 /*margen de la seccion */
-#hero-nosotros h1,p {
-    padding: 2rem;
+#hero-nosotros h1,
+p {
+    padding: 0.6rem;
     color: var(--gris);
 }
 
@@ -199,36 +196,95 @@ header .logo-container img {
     .contenido-nosotros {
         display: grid;
         gap: 2rem;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 .contenido-nosotros {
-    padding: 3rem 2rem 5rem 2rem;
+    padding: 0rem 10rem 5rem 10rem;
+    text-align: center;
 }
 
+/*ajuste del titulo */
+.ajuste-tit-sobre-us {
+    width: 650px;
+    margin-left: 650px;
+    transition: margin-left 0.5s ease;
+}
+
+@media (max-width: 1597px) {
+
+    .ajuste-tit-sobre-us {
+        margin-left: 470px
+    }
+}
+
+@media (max-width: 1327px) {
+
+    .ajuste-tit-sobre-us {
+        margin-left: 310px
+    }
+}
+
+@media (max-width: 1090px) {
+
+    .ajuste-tit-sobre-us {
+        margin-left: 190px
+    }
+}
+
+/* Boton para redireccionar a sobre nosotros.html */
+.boton-sobre-nosotros {
+    background: var(--gris);
+    cursor: pointer;
+    border: none;
+    padding: 16px 32px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 28px;
+    transition: background-color 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(270deg, var(--rojo), var(--gris), var(--amarillo), var(--purpura), var(--gris), var(--verde));
+    background-size: 600% 600%;
+    animation: difuminacion 7s ease infinite;
+    margin-left: 220px;
+}
+
+@keyframes difuminacion {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
 
 /* SECCION TRABAJADORES*/
-
 .carrusel-trabajadores {
     max-width: 1600px;
-    margin: 0 auto; 
+    margin: 0 auto;
     margin-bottom: 100px;
 }
 
-/* margen de los botones del carrusel */
+.titulo-trabajadores{
+    width: 80vh;
+    transition: margin-top 0.5s ease;
+    margin-bottom: -80px;
+}
 
+/* margen de los botones del carrusel */
 .carousel-control-prev {
-    margin-left: -150px; 
+    margin-left: -150px;
 }
 
 .carousel-control-next {
-    margin-right: -150px; 
+    margin-right: -150px;
 }
 
 /* fondo y texto de la seccion */
-
 #trabajadores {
     background-color: #333333;
     color: var(--piel);
@@ -258,7 +314,7 @@ header .logo-container img {
     padding-bottom: 5rem;
 }
 
-.carta-trabajador-info h3{
+.carta-trabajador-info h3 {
     margin-bottom: 2rem;
     font-weight: 600;
 }
@@ -268,7 +324,6 @@ header .logo-container img {
 }
 
 /* boton diseño para redirigir a la pagina workers.html */
-
 .boton-trabajador {
     color: var(--piel);
     font-weight: 600;
@@ -293,8 +348,7 @@ header .logo-container img {
 }
 
 /*seccion Trabajos realizados y cotización*/
-
-#trabajo-done h1{
+#partner-con-api h1 {
     color: var(--piel);
 }
 
@@ -303,16 +357,16 @@ header .logo-container img {
     background-color: var(--piel);
 }
 
-#vista-trabajadores h1{
+#vista-trabajadores h1 {
     color: #000;
 }
 
 
-#vista-trabajadores .titulo{
+#vista-trabajadores .titulo {
     font-size: 70px;
 }
 
-.titulo-trabajodone{
+.titulo-partnetship {
     font-size: 70px;
     margin-top: 10px;
 
@@ -320,23 +374,23 @@ header .logo-container img {
 
 @media (max-width: 768px) {
     #vista-trabajadores .contenido-nosotros:after {
-      background-color: var(--gris);
-      content: "";
-      display: block;
-      height: 0.5rem;
-      margin-top: 5rem;
-      width: 100%;
+        background-color: var(--gris);
+        content: "";
+        display: block;
+        height: 0.5rem;
+        margin-top: 5rem;
+        width: 100%;
     }
 
-    #vista-trabajadores .contenido-nosotros{
+    #vista-trabajadores .contenido-nosotros {
         padding: 5rem;
     }
 
-  }
-  
-@media (min-width: 768px){
+}
 
-    #vista-trabajadores .contenido-nosotros{
+@media (min-width: 768px) {
+
+    #vista-trabajadores .contenido-nosotros {
         padding: 2rem;
         gap: 1;
     }
@@ -348,18 +402,17 @@ header .logo-container img {
         height: 0.5rem;
         margin-top: 7rem;
         width: 100%;
-        
+
     }
 
 }
 
 /* PAGINA SERVICIOS */
-
 #services {
     background-color: var(--gris);
 }
 
-#services h1{
+#services h1 {
     color: var(--piel);
 }
 
@@ -373,17 +426,17 @@ header .logo-container img {
     background-color: var(--piel);
 }
 
-#vista-servicios .contenido-nosotros{
-    padding: 3rem ;
+#vista-servicios .contenido-nosotros {
+    padding: 3rem;
     margin-bottom: 3rem;
 }
 
-#vista-servicios .titulo{
+#vista-servicios .titulo {
     font-size: 70px;
 }
 
 
-#vista-servicios h1{
+#vista-servicios h1 {
     color: #000;
 }
 
@@ -403,16 +456,15 @@ header .logo-container img {
 }
 
 
-#vista-servicios .contenedor-imagen{
-    flex: 1; 
+#vista-servicios .contenedor-imagen {
+    flex: 1;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
 }
 
 /* FOOTER */
-
-.texto-footer{
+.texto-footer {
     color: var(--piel) !important;
     font-weight: 600;
 }

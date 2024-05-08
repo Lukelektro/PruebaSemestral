@@ -3,7 +3,13 @@
     --gris: #333333 !important;
     --piel: #dfd4cd !important;
     --amarillo: #f4c01e !important;
-    --purpura: #
+    --purpura: #612CEE !important;
+    --verde: #5FD315 !important;
+    --celeste: #26CAC0 !important;
+    --naranja: #FF7F50 !important;
+    --azul: #1E90FF !important;
+    --rosa: #FF1493 !important;
+    --blanco: #FFFFFF !important;
 }
 html {
     font-size: 100%;

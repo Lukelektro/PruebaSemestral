@@ -1,15 +1,18 @@
+
+// Permite a la navbar salirse de los bordes de la pantalla
 let ubicacionPrincipal = window.pageYOffset;
-window.onscroll = function(){
 
-
+// Permite que la navbar se oculte al hacer scroll hacia abajo y aparezca al hacer scroll hacia arriba
+window.onscroll = function () {
     let Desplazamiento = window.pageYOffset;
-    if(ubicacionPrincipal >= Desplazamiento){
+    if (ubicacionPrincipal >= Desplazamiento) {
         document.getElementById('navbar').style.top = '0px';
-
     }
-    else{
+    else {
         document.getElementById('navbar').style.top = '-200px';
-
     }
     ubicacionPrincipal = Desplazamiento;
 }
+
+
+

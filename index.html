@@ -22,9 +22,10 @@
 </head>
 
 <body>
-
+    <!--Navbar-->
     <header id="navbar" class="contenedor-navbar">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <!--Imagenes que forman el logo-->
             <div class="container-fluid">
                 <div class="logo-container" href="Login.html">
                     <a href="index.html"><img src="img/logo-nombre2.png" class="ajuste-logo-letras"
@@ -32,6 +33,7 @@
                     <a href="index.html"><img src="img/logo-trans-1.png" class="ajuste-logo-menu"
                             alt="logo-empresa" /></a>
                 </div>
+                <!--Primera lista-->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
                         <li class="nav-item">
@@ -44,10 +46,16 @@
                             <a class="nav-link" href="#trabajadores">Trabajadores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#trabajo-done-carrusel">Trabajos realizados</a>
+                            <a class="nav-link" href="#partner-con-api">Colaboradores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Contacto.html">Contáctanos</a>
+                        </li>
+                    </ul>
+                    <!--Segunda lista solo para la autentificación-->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+                        <li class="nav-item me-auto">
+                            <a class="nav-link" href="Login.html">Autentificación</a>
                         </li>
                     </ul>
                 </div>
@@ -55,6 +63,7 @@
         </nav>
     </header>
 
+    <!--Hero principal: lo que contiene las fotos-->
     <section id="hero-principal">
         <div class="pagina-principal-container">
             <div class="pagina-principal-overlay">
@@ -70,48 +79,49 @@
         </div>
     </section>
 
+    <!--vista previa del Sobre Nosotros-->
     <section id="hero-nosotros">
-
-        <h1 class="text-center pt-5">Conoce sobre Nosotros</h1>
+        <div>
+            <img src="img/about-us-letras.png" class="ajuste-tit-sobre-us" alt="titulo-sobre-nosotros"> 
+        </div>
 
         <div class="contenido-nosotros">
+            <img class="img-fluid" src="img/about-us.jpg" alt="img-nosotros">
 
-            <img class="img-fluid" loading="lazy" src="img/about-us.jpg" alt="img nosotros">
-
-            <div class="texto-nosotros">
-
-                <h1>10 años de Experiencia</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio iure eum, iste similique vel
-                    culpa aut necessitatibus accusantium veniam adipisci dignissimos ea veritatis illo minima corporis
-                    nostrum impedit, possimus ullam.
-                    Molestiae illum obcaecati quidem fugiat natus animi optio quaerat delectus in quos numquam ipsam quo
-                    impedit commodi aspernatur enim quod iusto iure modi, rerum maxime harum deleniti. Nobis, dolorem
-                    repellendus!
-                    Architecto id tenetur explicabo quos odio provident optio, esse, repellendus ullam illo quas
+            <div class="texto-nosotros ">
+                <h1 class="text-center fw-bold pb-3">MQween: Donde la Magia de Radiador Springs y la Pasión por los
+                    Autos Cobran Vida</h1>
+                <p class="fw-bold">Bienvenidos a MQween, el taller de mecánica más emblemático de Radiador Springs. En
+                    nuestro taller,
+                    nos dedicamos a mantener en perfecto estado a todos los vehículos que pasan por nuestras puertas,
+                    desde los más veloces hasta los más clásicos.
                 </p>
 
-                <p>* Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo magnam atque quasi quisquam,
-                    voluptates
-                    officia, fugiat officiis, tempora impedit repellat vero blanditiis odit maiores esse molestias enim
-                    provident commodi distinctio.</p>
+                <p class="fw-bold">CMQween es mucho más que un simple taller de mecánica, somos una
+                    familia apasionada por el mundo del motor y de las peliculas. En nuestro taller, combinamos
+                    habilidad técnica con el
+                    amor por los autos para ofrecer un servicio excepcional a nuestros clientes.</p>
 
-                <p>* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates, accusantium. Explicabo nisi
-                    quam aspernatur tempore eius. Rerum harum facere voluptate, nobis aliquam placeat, ipsum ea
-                    obcaecati vel nemo, ratione culpa.</p>
+                <p class="fw-bold">no solo nos importa la eficiencia y la precisión en cada reparación, sino
+                    también la
+                    pasión y el amor por los autos que compartimos con la comunidad de Radiador Springs.</p>
 
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis in libero sapiente voluptatum,
-                    placeat fugit suscipit architecto itaque repellat labore neque accusamus molestias exercitationem
-                    vel nobis totam deserunt recusandae quo!</p>
+                <p class="fw-bold">Nos distinguimos de la competencia por nuestra dedicación a mantener viva la esencia
+                    y el espíritu de la película Cars de Disney en cada aspecto de nuestro trabajo. Desde la atención
+                    amigable hasta la precisión en cada reparación, en MQween, nos esforzamos por ofrecer una
+                    experiencia única que combine el encanto de Radiador Springs con la confiabilidad de un taller
+                    moderno.</p>
 
+                <button class="boton-sobre-nosotros" onclick="window.location.href = 'sobre-nosotros.html';">Conoce mas
+                    sobre nosotros</button>
             </div>
         </div>
     </section>
 
     <!--Seccion Trabajadores-->
     <section id="trabajadores">
-
-        <h2>Nuestros trabajadores</h2>
-
+        <!--titulo nuestros trabajadores-->
+            <img class="titulo-trabajadores" src="img/nuestros-trabajadores.png" alt="img-trabajadores">
         <!--Estructura del carrusel-->
         <div class="carrusel-trabajadores">
             <div id="trabajo-done-carrusel" class="carousel slide" data-bs-ride="carousel">
@@ -264,11 +274,13 @@
                     </div>
                 </div>
 
+                <!-- Botones de control: Anterior -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#trabajo-done-carrusel"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
                 </button>
+                <!-- Botones de control: Siguiente-->
                 <button class="carousel-control-next" type="button" data-bs-target="#trabajo-done-carrusel"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -277,10 +289,10 @@
 
             </div>
         </div>
-
+        <!--Boton para ver mas trabajadores (redirecciona a trabajadores.html)-->
         <div class="carta-trabajador-info">
             <h3>Conoce a mas trabajadores</h3>
-            <button type="button" class="btn btn-custom " onclick="window.location.href = 'trabajadores.html';"
+            <button type="button" class="btn btn-custom" onclick="window.location.href = 'trabajadores.html';"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 2rem;">
                 Mas trabajadores
             </button>
@@ -288,12 +300,11 @@
         </div>
     </section>
 
-    <section id="trabajo-done">
-
+    <section id="partner-con-api">
         <br>
-        <h1 class="text-center fw-bold pb-5 titulo-trabajodone">PartnerShip</h1>
+        <h1 class="text-center fw-bold pb-5 titulo-partnership">Asociados</h1>
         <br>
-        <h1 class="text-center fw-bold pb-2">una muestra de nuestras marcas con las cuales trabajamos</h1>
+        <h1 class="text-center fw-bold pb-2">una muestra de las marcas con las cuales trabajamos</h1>
     </section>
 
 
