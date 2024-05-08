@@ -9,6 +9,16 @@
     background-color: #535252;
 }
 
+/* estructura de los titulos (favor de editarlas si quieren otros colors llamando al ID de la seccion que quieran editar)*/
+h1{
+    font-family: 'Nunito', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+    padding: 5px;
+    /* color y text-shadow implementenlo directamente en los id con el h1*/
+}
+
 /* lo tengo en caso de, nose si seguir con styles o pasar a index tdo lo que tenga que ver con index */
 /*header con el navbar*/
 header {
@@ -43,8 +53,9 @@ header .logo-container img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 390px;
+    margin-left: 230px;
     /* a saber porque chucha si le pongo margin aca se mueve toda el contenido de la navbar pero no el logo */
+    float: right;
 }
 
 .navbar-nav .nav-link {
@@ -192,10 +203,22 @@ header .logo-container img {
 
 /* SECCION NOSOTROS*/
 /*margen de la seccion */
-#hero-nosotros h1,
-p {
+#hero-nosotros p {
     padding: 0.6rem;
     color: var(--gris);
+}
+
+#hero-nosotros h1 {
+    color: #C5A014;
+    /* este es el borde que esta bueno, lo demas lo estoy testeando
+    text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
+    /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
+    text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+    -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+    -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+    -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+    -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+    -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
 }
 
 #hero-nosotros {
@@ -265,7 +288,7 @@ p {
     background: linear-gradient(270deg, var(--rojo), var(--gris), var(--amarillo), var(--purpura), var(--gris), var(--verde));
     background-size: 600% 600%;
     animation: difuminacion 7s ease infinite;
-    margin-left: 220px;
+    margin-left: 80px;
 }
 
 @keyframes difuminacion {
