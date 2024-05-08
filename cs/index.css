@@ -20,10 +20,6 @@ header .logo-container img {
     margin-right: -59px;
 }
 
-.container.fluid {
-    float: left !important;
-}
-
 /*navbar*/
 .bg-body-tertiary {
     background-color: #4f101a !important;
