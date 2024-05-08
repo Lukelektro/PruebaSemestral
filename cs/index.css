@@ -10,17 +10,18 @@ header .logo-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    margin-left: -320px;
 }
 
 /* controla el tamaño de la imagen del logo, recuerden que el logo es una mezcla de dos imagenes */
 header .logo-container img {
     height: auto;
-    max-width: 120px;
-    margin-top: 10px;
+    max-width: 110px;
     margin-left: 40px;
     margin-right: -59px;
+}
+
+.container.fluid {
+    float: left !important;
 }
 
 /*navbar*/
@@ -59,6 +60,12 @@ header .logo-container img {
     width: 100%;
     transition: 1s;
 }
+
+.ajuste-logo-menu,
+.ajuste-logo-letras{
+    margin-left: -400px;
+}
+
 
 @media screen and (max-width: 768px) {
     header nav {
