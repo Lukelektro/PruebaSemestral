@@ -386,63 +386,15 @@ p {
 }
 
 /*seccion Trabajos realizados y cotización*/
-#partner-con-api h1 {
-    color: var(--piel);
-}
-
-#vista-trabajadores {
-    padding-top: 15rem;
+#partner-con-api {
     background-color: var(--piel);
+    color: var(--gris);
+    text-align: center;
 }
 
-#vista-trabajadores h1 {
-    color: #000;
-}
-
-
-#vista-trabajadores .titulo {
-    font-size: 70px;
-}
-
-.titulo-partnetship {
-    font-size: 70px;
+.titulo-partnership {
+    font-size: 50px;
     margin-top: 10px;
-
-}
-
-@media (max-width: 768px) {
-    #vista-trabajadores .contenido-nosotros:after {
-        background-color: var(--gris);
-        content: "";
-        display: block;
-        height: 0.5rem;
-        margin-top: 5rem;
-        width: 100%;
-    }
-
-    #vista-trabajadores .contenido-nosotros {
-        padding: 5rem;
-    }
-
-}
-
-@media (min-width: 768px) {
-
-    #vista-trabajadores .contenido-nosotros {
-        padding: 2rem;
-        gap: 1;
-    }
-
-    #vista-trabajadores p:last-of-type:after {
-        background-color: var(--gris);
-        content: "";
-        display: block;
-        height: 0.5rem;
-        margin-top: 7rem;
-        width: 100%;
-
-    }
-
 }
 
 /* PAGINA SERVICIOS */
