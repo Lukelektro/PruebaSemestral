@@ -299,7 +299,7 @@ p {
 /*para que las cartas tengan borde*/
 
 #trabajadores .card {
-    border: 5px solid var(--piel);
+    border: 5px solid var(--amarillo);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.9);
 }
 
