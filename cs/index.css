@@ -1,1 +1,414 @@
 /* lo tengo en caso de, nose si seguir con styles o pasar a index tdo lo que tenga que ver con index */
+
+/*header con el navbar*/
+
+header {
+    background-color: #4f101a;
+}
+
+header .logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: -320px;
+}
+
+/* controla el tamaño de la imagen del logo, recuerden que el logo es una mezcla de dos imagenes */
+header .logo-container img {
+    height: auto;
+    max-width: 120px;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: -59px;
+}
+
+/*navbar*/
+.bg-body-tertiary {
+    background-color: #4f101a !important;
+}
+
+.navbar a{
+    font-size: bold;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    font-size: 19px;
+    text-align: center;
+    color: #dfd4cd;
+}
+
+/* margen entre los elementos del navbar, si le quieren dar un margen a esto cosa de ustedes, lo dejo igual pero no me gusto
+.navbar-nav .nav-item {
+    margin: 0 10px; 
+}
+*/
+
+/* NO ELIMINAR, GRACIAS A ESTO, LA NAVBAR SE MUEVE */
+#navbar{
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    transition: 1s;
+}
+
+@media screen and (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header nav a {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+/*principal*/
+
+/* Estas 3 clases son del fondo transparente, favor de no cambiar */
+
+.pagina-principal-container {
+    background-image: url('https://cdn-9.motorsport.com/images/amp/YBeqxXM2/s6/sebastian-vettel-ferrari-sf100.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 900px;
+    position: relative;
+}
+
+.pagina-principal-overlay {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.pagina-principal-content {
+    color: black;
+    font-size: 16px;
+    margin-top: 10%;
+    margin-left: 10%;
+    position: absolute;
+}
+
+/*si se agranda o se achica la navbar, debes cambiar si o si #hero-principal, ya que se le tiene un margen en base a la navbar para que no colicionen*/
+#hero-principal{
+    margin-top: 97px;
+}
+
+.foto_principal {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-principal-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+/* Margen de los logos, con los width pueden mover el tamaño */
+/* reajuste los margenes, no me gustaron como habian quedado los anteriores
+   ya que los reescalaba, estos estan en su completa resolucion */
+
+.ajuste-foto-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+    width: 430px;
+
+}
+
+.ajuste-foto-texto {
+    width: 108vh;
+    margin-top: 20px;
+    transition: margin-top 0.5s ease;
+}
+
+.ajuste-foto-letra {
+    margin-top: 290px;
+    margin-left: 230px;
+    position: absolute;
+    transition: margin-top 0.5s ease;
+}
+
+.ajuste-foto-logo,
+.ajuste-foto-letra,
+.ajuste-foto-texto {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media para acoplar la pagina principal a tablets o dispositivos moviles*/
+
+@media (max-width: 988px) {
+
+    .ajuste-foto-logo {
+        width: 46%;
+    }
+
+    .ajuste-foto-letra {
+        width: 100%;
+        margin-top: 220px;
+    }
+}
+
+@media (max-width: 910px) {
+
+    .ajuste-foto-texto {
+        width: 110%;
+        margin-top: 140px;
+    }
+}
+
+@media (max-width: 710px) {
+
+    .ajuste-foto-texto {
+        width: 110%;
+        margin-top: 270px;
+    }
+}
+
+/* SECCION NOSOTROS*/
+
+/*margen de la seccion */
+#hero-nosotros h1,p {
+    padding: 2rem;
+    color: var(--gris);
+}
+
+#hero-nosotros {
+    background-color: var(--piel);
+}
+
+@media (min-width: 768px) {
+
+    .contenido-nosotros {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+.contenido-nosotros {
+    padding: 3rem 2rem 5rem 2rem;
+}
+
+
+
+/* SECCION TRABAJADORES*/
+
+.carrusel-trabajadores {
+    max-width: 1600px;
+    margin: 0 auto; 
+    margin-bottom: 100px;
+}
+
+/* margen de los botones del carrusel */
+
+.carousel-control-prev {
+    margin-left: -150px; 
+}
+
+.carousel-control-next {
+    margin-right: -150px; 
+}
+
+/* fondo y texto de la seccion */
+
+#trabajadores {
+    background-color: #333333;
+    color: var(--piel);
+    text-align: center;
+}
+
+
+#trabajadores h2 {
+    padding-top: 5rem;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.contenedor-trabajador {
+
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+.carta-trabajador {
+    margin: 2rem;
+}
+
+.carta-trabajador-info {
+    padding-bottom: 5rem;
+}
+
+.carta-trabajador-info h3{
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+#trabajadores .btn-custom:hover {
+    background-color: var(--rojo) !important;
+}
+
+/* boton diseño para redirigir a la pagina workers.html */
+
+.boton-trabajador {
+    color: var(--piel);
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 15px;
+    background-color: var(--rojo);
+    transition: background-color 0.5s ease;
+}
+
+.boton-trabajador:hover {
+    background-color: var(--amarillo);
+}
+
+@media screen and (max-width: 768px) {
+
+    .contenedor-trabajador {
+        padding: 3rem;
+        flex-direction: column;
+
+    }
+
+}
+
+/*seccion Trabajos realizados y cotización*/
+
+#trabajo-done h1{
+    color: var(--piel);
+}
+
+#vista-trabajadores {
+    padding-top: 15rem;
+    background-color: var(--piel);
+}
+
+#vista-trabajadores h1{
+    color: #000;
+}
+
+
+#vista-trabajadores .titulo{
+    font-size: 70px;
+}
+
+.titulo-trabajodone{
+    font-size: 70px;
+    margin-top: 10px;
+
+}
+
+@media (max-width: 768px) {
+    #vista-trabajadores .contenido-nosotros:after {
+      background-color: var(--gris);
+      content: "";
+      display: block;
+      height: 0.5rem;
+      margin-top: 5rem;
+      width: 100%;
+    }
+
+    #vista-trabajadores .contenido-nosotros{
+        padding: 5rem;
+    }
+
+  }
+  
+@media (min-width: 768px){
+
+    #vista-trabajadores .contenido-nosotros{
+        padding: 2rem;
+        gap: 1;
+    }
+
+    #vista-trabajadores p:last-of-type:after {
+        background-color: var(--gris);
+        content: "";
+        display: block;
+        height: 0.5rem;
+        margin-top: 7rem;
+        width: 100%;
+        
+    }
+
+}
+
+/* PAGINA SERVICIOS */
+
+#services {
+    background-color: var(--gris);
+}
+
+#services h1{
+    color: var(--piel);
+}
+
+#services .container {
+    padding-top: 10vh;
+
+}
+
+#vista-servicios {
+    padding-top: 15rem;
+    background-color: var(--piel);
+}
+
+#vista-servicios .contenido-nosotros{
+    padding: 3rem ;
+    margin-bottom: 3rem;
+}
+
+#vista-servicios .titulo{
+    font-size: 70px;
+}
+
+
+#vista-servicios h1{
+    color: #000;
+}
+
+.boton-servicios {
+    display: flex;
+    justify-content: center;
+}
+
+.img-carrito {
+    max-width: 5rem;
+    margin-right: 2rem;
+}
+
+
+.boton-servicios .btn-custom:hover {
+    background-color: var(--gris) !important;
+}
+
+
+#vista-servicios .contenedor-imagen{
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+/* FOOTER */
+
+.texto-footer{
+    color: var(--piel) !important;
+    font-weight: 600;
+}
