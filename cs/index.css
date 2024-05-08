@@ -307,10 +307,10 @@ p {
 
 #trabajadores .card img {
     border-radius: 50%;
-    width: 290px;
-    height: 290px;
+    width: 330px;
+    height: 360px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 /* margen de los botones del carrusel */
