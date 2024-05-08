@@ -214,12 +214,23 @@ header .logo-container img {
     margin-bottom: 100px;
 }
 
+/* margen de los botones del carrusel */
+
+.carousel-control-prev {
+    margin-left: -150px; 
+}
+
+.carousel-control-next {
+    margin-right: -150px; 
+}
+
+/* fondo y texto de la seccion */
+
 #trabajadores {
     background-color: #333333;
     color: var(--piel);
     text-align: center;
 }
-
 
 
 #trabajadores h2 {
@@ -250,7 +261,7 @@ header .logo-container img {
 }
 
 #trabajadores .btn-custom:hover {
-    background-color: var(--piel) !important;
+    background-color: var(--rojo) !important;
 }
 
 /* boton diseño para redirigir a la pagina workers.html */
