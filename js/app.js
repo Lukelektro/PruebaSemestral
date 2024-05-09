@@ -9,7 +9,7 @@ window.onscroll = function () {
         document.getElementById('navbar').style.top = '0px';
     }
     else {
-        document.getElementById('navbar').style.top = '-200px';
+        document.getElementById('navbar').style.top = '-530px';
     }
     ubicacionPrincipal = Desplazamiento;
 }

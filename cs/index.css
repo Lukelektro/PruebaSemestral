@@ -10,19 +10,31 @@
 }
 
 /* estructura de los titulos (favor de editarlas si quieren otros colors llamando al ID de la seccion que quieran editar)*/
-h1{
+h1 {
     font-family: 'Nunito', sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: italic;
     padding: 5px;
-    /* color y text-shadow implementenlo directamente en los id con el h1*/
 }
 
-/* lo tengo en caso de, nose si seguir con styles o pasar a index tdo lo que tenga que ver con index */
-/*header con el navbar*/
-header {
+h2 {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    position: absolute;
+}
+
+header bg-custom {
     background-color: #4f101a;
+}
+
+
+/* controla el tamaño de la imagen del logo, recuerden que el logo es una mezcla de dos imagenes */
+header .logo-container img {
+    height: auto;
+    max-width: 100px;
+    margin-right: -20px; /* permite apegar las imagenes */
 }
 
 header .logo-container {
@@ -31,12 +43,18 @@ header .logo-container {
     align-items: center;
 }
 
-/* controla el tamaño de la imagen del logo, recuerden que el logo es una mezcla de dos imagenes */
-header .logo-container img {
-    height: auto;
-    max-width: 110px;
-    margin-left: 40px;
-    margin-right: -59px;
+
+/*para centrar el logo en dispositivos moviles*/
+@media screen and (max-width: 1156px) {
+    header .logo-container {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .navbar-nav {
+        display: block;
+        justify-content: center;
+    }
 }
 
 
@@ -53,9 +71,6 @@ header .logo-container img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 230px;
-    /* a saber porque chucha si le pongo margin aca se mueve toda el contenido de la navbar pero no el logo */
-    float: right;
 }
 
 .navbar-nav .nav-link {
@@ -78,12 +93,6 @@ header .logo-container img {
     width: 100%;
     transition: 1s;
 }
-
-.ajuste-logo-menu,
-.ajuste-logo-letras {
-    margin-left: -400px;
-}
-
 
 @media screen and (max-width: 768px) {
     header nav {
@@ -126,6 +135,29 @@ header .logo-container img {
 /*si se agranda o se achica la navbar, debes cambiar si o si #hero-principal, ya que se le tiene un margen en base a la navbar para que no colicionen*/
 #hero-principal {
     margin-top: 97px;
+    position: relative;
+}
+
+#hero-principal h2 {
+    color: var(--gris);
+    left: 0;
+    font-size: 120px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    bottom: 0;
+    text-shadow: 4px 4px 0 #4f101a, -1px -1px 0 #4f101a, 1px -1px 0 #4f101a, -1px 1px 0 #4f101a, 4px 4px 2px rgba(0,0,0,0.1238);
+}
+
+#hero-principal h2 span {
+    color: var(--amarillo);
+    font-family: "Poetsen One", sans-serif;
+}
+
+/* para cuando se achique la pantalla, mantenga formato */
+@media (max-width: 1030px) {
+    #hero-principal h2 {
+        font-size: 80px; 
+    }
 }
 
 .foto_principal {
@@ -143,61 +175,32 @@ header .logo-container img {
 /* Margen de los logos, con los width pueden mover el tamaño */
 /* reajuste los margenes, no me gustaron como habian quedado los anteriores
    ya que los reescalaba, estos estan en su completa resolucion */
+
 .ajuste-foto-logo {
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 90px;
     width: 430px;
-
-}
-
-.ajuste-foto-texto {
-    width: 108vh;
-    margin-top: 20px;
-    transition: margin-top 0.5s ease;
+    height: auto;
 }
 
 .ajuste-foto-letra {
+    max-width: 100%;
     margin-top: 290px;
     margin-left: 230px;
     position: absolute;
     transition: margin-top 0.5s ease;
-}
-
-.ajuste-foto-logo,
-.ajuste-foto-letra,
-.ajuste-foto-texto {
-    max-width: 100%;
     height: auto;
 }
 
-/* Media para acoplar la pagina principal a tablets o dispositivos moviles*/
-@media (max-width: 988px) {
-
-    .ajuste-foto-logo {
-        width: 46%;
-    }
+/* Lamentablemente tuve la horrible idea de hacer hero principal con imagenes, este media arregla ese error, a futuro se puede hacer un h1 nomas pero no encuentro la fuente*/
+@media (max-width: 1169px) {
 
     .ajuste-foto-letra {
-        width: 100%;
-        margin-top: 220px;
-    }
-}
-
-@media (max-width: 910px) {
-
-    .ajuste-foto-texto {
-        width: 110%;
-        margin-top: 140px;
-    }
-}
-
-@media (max-width: 710px) {
-
-    .ajuste-foto-texto {
-        width: 110%;
-        margin-top: 270px;
+        width: 70%;
+        margin-top: 350px;
     }
 }
 
@@ -209,16 +212,20 @@ header .logo-container img {
 }
 
 #hero-nosotros h1 {
+    text-align: center;
+    align-items: center;
     color: #C5A014;
     /* este es el borde que esta bueno, lo demas lo estoy testeando
     text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
     /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
     text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
-    -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
-    -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
-    -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
-    -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
-    -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
+    font-size: 100px;
+
 }
 
 #hero-nosotros {
@@ -237,36 +244,6 @@ header .logo-container img {
 .contenido-nosotros {
     padding: 0rem 10rem 5rem 10rem;
     text-align: center;
-}
-
-/*ajuste del titulo */
-.ajuste-tit-sobre-us {
-    width: 650px;
-    margin-left: 650px;
-    transition: margin-left 0.5s ease;
-    margin-bottom: -50px;
-    margin-top: -30px;
-}
-
-@media (max-width: 1597px) {
-
-    .ajuste-tit-sobre-us {
-        margin-left: 470px
-    }
-}
-
-@media (max-width: 1327px) {
-
-    .ajuste-tit-sobre-us {
-        margin-left: 310px
-    }
-}
-
-@media (max-width: 1090px) {
-
-    .ajuste-tit-sobre-us {
-        margin-left: 190px
-    }
 }
 
 /* Boton para redireccionar a sobre nosotros.html */
@@ -307,6 +284,25 @@ header .logo-container img {
 
 
 /* SECCION TRABAJADORES*/
+#trabajadores h1 {
+    text-align: center;
+    align-items: center;
+    color: #C5A014;
+    /* este es el borde que esta bueno, lo demas lo estoy testeando
+    text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
+    /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
+    text-shadow: -2px 0px var(--piel), 0 2px var(--piel), 2px 0px var(--piel), 0 -2px var(--piel),
+        -2px 2px var(--piel), -2px -2px var(--piel), 2px 2px var(--piel), 2px -2px var(--piel),
+        -2px 0px var(--piel), 0 2px var(--piel), 2px 0px var(--piel), 0 -2px var(--piel),
+        -2px 2px var(--piel), -2px -2px var(--piel), 2px 2px var(--piel), 2px -2px var(--piel),
+        -2px 0px var(--piel), 0 2px var(--piel), 2px 0px var(--piel), 0 -2px var(--piel),
+        -2px 2px var(--piel), -2px -2px var(--piel), 2px 2px var(--piel), 2px -2px var(--piel);
+    font-size: 100px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
 .carrusel-trabajadores {
     max-width: 1600px;
     margin: 0 auto;
@@ -415,9 +411,23 @@ header .logo-container img {
     text-align: center;
 }
 
-.titulo-partnership {
-    font-size: 50px;
-    margin-top: 10px;
+#partner-con-api h1 {
+    text-align: center;
+    align-items: center;
+    color: #C5A014;
+    /* este es el borde que esta bueno, lo demas lo estoy testeando
+    text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
+    /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
+    text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
+    font-size: 100px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 
 /* PAGINA SERVICIOS */
@@ -425,7 +435,7 @@ header .logo-container img {
     background-color: var(--gris);
 }
 
-#services .card {
+#services #services .card {
     border: 5px solid var(--piel);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
 }
@@ -435,10 +445,22 @@ header .logo-container img {
 }
 
 .titulo-servicios {
-    width: 80vh;
-    margin-bottom: -80px;
-    margin-top: -160px;
-    margin-left: 250px;
+    text-align: center;
+    align-items: center;
+    color: #C5A014;
+    /* este es el borde que esta bueno, lo demas lo estoy testeando
+    text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
+    /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
+    text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
+    font-size: 100px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 
 #services .container {
@@ -455,11 +477,6 @@ header .logo-container img {
     padding: 3rem;
     margin-bottom: 3rem;
 }
-
-#vista-servicios .titulo {
-    font-size: 70px;
-}
-
 
 #vista-servicios h1 {
     color: #000;
@@ -479,7 +496,6 @@ header .logo-container img {
 .boton-servicios .btn-custom:hover {
     background-color: var(--gris) !important;
 }
-
 
 #vista-servicios .contenedor-imagen {
     flex: 1;

@@ -12,7 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 
     <!-- css -->
     <link rel="stylesheet" href="cs/base.css">
@@ -24,10 +26,16 @@
 
 <body>
     <!--Navbar-->
-    <header id="navbar" class="contenedor-navbar">
+    <header id="navbar" class="contenedor-navbar bg-custom">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <!--Imagenes que forman el logo-->
-            <div class="container-fluid">
+            <div class="container">
+                <!--Boton para colapsar el menu-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--Logo de la empresa-->
                 <div class="logo-container" href="Login.html">
                     <a href="index.html"><img src="img/logo-nombre2.png" class="ajuste-logo-letras"
                             alt="logo-nombre" /></a>
@@ -55,7 +63,7 @@
                     </ul>
                     <!--Segunda lista solo para la autentificación-->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
-                        <li class="nav-item me-auto">
+                        <li class="nav-item">
                             <a class="nav-link" href="Login.html">Autentificación</a>
                         </li>
                     </ul>
@@ -71,29 +79,24 @@
                 <div class="pagina-principal-img">
                     <img src="img/logo-trans-2.png" class="ajuste-foto-logo" alt="logo-empresa">
                     <img src="img/letra-logo.png" class="ajuste-foto-letra" alt="letras-logo">
-
+                    <h2>Para que tu auto <br><span>siga de primeras!</span></h2>
                 </div>
-                <img src="img/texto-motivado.png" class="ajuste-foto-texto" alt="">
             </div>
-
-            <div class="pagina-principal-content"></div>
         </div>
     </section>
 
     <!--vista previa del Sobre Nosotros-->
     <section id="hero-nosotros">
         <div>
-            <img src="img/about-us-letras.png" class="ajuste-tit-sobre-us" alt="titulo-sobre-nosotros"> 
+            <h1>Sobre Nosotros</h1>
         </div>
 
         <div class="contenido-nosotros">
             <img class="img-fluid" src="img/about-us.jpg" alt="img-nosotros">
 
-            <h1> ESTO ES UNA PRUEBA</h1>
-
             <div class="texto-nosotros ">
-                <h1 class="text-center fw-bold pb-3">MQween: Donde la Magia de Radiador Springs y la Pasión por los
-                    Autos Cobran Vida</h1>
+                <h3 class="text-center fw-bold pb-3">MQween: Donde la Magia de Radiador Springs y la Pasión por los
+                    Autos Cobran Vida</h3>
                 <p class="fw-bold">Bienvenidos a MQween, el taller de mecánica más emblemático de Radiador Springs. En
                     nuestro taller,
                     nos dedicamos a mantener en perfecto estado a todos los vehículos que pasan por nuestras puertas,
@@ -124,7 +127,7 @@
     <!--Seccion Trabajadores-->
     <section id="trabajadores">
         <!--titulo nuestros trabajadores-->
-            <img class="titulo-trabajadores" src="img/nuestros-trabajadores.png" alt="img-trabajadores">
+        <h1>Nuestros<br>Trabajadores</h1>
         <!--Estructura del carrusel-->
         <div class="carrusel-trabajadores">
             <div id="trabajo-done-carrusel" class="carousel slide" data-bs-ride="carousel">
@@ -145,8 +148,9 @@
                                         <li class="list-group-item color-gris-chico text-white">10 años de servicio</li>
                                     </ul>
                                     <br>
-                                    <button type="button" class="btn btn-outline-secondary text-white" data-toggle="popover"
-                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                    <button type="button" class="btn btn-outline-secondary text-white"
+                                        data-toggle="popover" title="se te redireccionará a trabajadores">Consultar
+                                        disponibilidad</button>
                                 </div>
                             </div>
                             <!-- CARTA -->
@@ -158,12 +162,14 @@
                                     <br>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item color-gris-chico text-white">Tiempo completo</li>
-                                        <li class="list-group-item color-gris-chico text-white">Siempre esta cochino</li>
+                                        <li class="list-group-item color-gris-chico text-white">Siempre esta cochino
+                                        </li>
                                         <li class="list-group-item color-gris-chico text-white">12 años de servicio</li>
                                     </ul>
                                     <br>
-                                    <button type="button" class="btn btn-outline-secondary text-white" data-toggle="popover"
-                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                    <button type="button" class="btn btn-outline-secondary text-white"
+                                        data-toggle="popover" title="se te redireccionará a trabajadores">Consultar
+                                        disponibilidad</button>
                                 </div>
                             </div>
                             <!-- CARTA -->
@@ -175,12 +181,14 @@
                                     <br>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item color-gris-chico text-white">Tiempo completo</li>
-                                        <li class="list-group-item color-gris-chico text-white">Hizo un auto con palos y piedras</li>
+                                        <li class="list-group-item color-gris-chico text-white">Hizo un auto con palos y
+                                            piedras</li>
                                         <li class="list-group-item color-gris-chico text-white">6 años de servicio</li>
                                     </ul>
                                     <br>
-                                    <button type="button" class="btn btn-outline-secondary text-white" data-toggle="popover"
-                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                    <button type="button" class="btn btn-outline-secondary text-white"
+                                        data-toggle="popover" title="se te redireccionará a trabajadores">Consultar
+                                        disponibilidad</button>
                                 </div>
                             </div>
                             <!-- CARTA -->
@@ -192,12 +200,14 @@
                                     <br>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item color-gris-chico text-white">Tiempo completo</li>
-                                        <li class="list-group-item color-gris-chico text-white">No sabe lo que es un auto</li>
+                                        <li class="list-group-item color-gris-chico text-white">No sabe lo que es un
+                                            auto</li>
                                         <li class="list-group-item color-gris-chico text-white">23 años de servicio</li>
                                     </ul>
                                     <br>
-                                    <button type="button" class="btn btn-outline-secondary text-white" data-toggle="popover"
-                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                    <button type="button" class="btn btn-outline-secondary text-white"
+                                        data-toggle="popover" title="se te redireccionará a trabajadores">Consultar
+                                        disponibilidad</button>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +225,8 @@
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item color-gris-chico text-white">Tiempo completo</li>
                                         <li class="list-group-item color-gris-chico text-white">Trabaja curao</li>
-                                        <li class="list-group-item color-gris-chico text-white">190 años de servicio</li>
+                                        <li class="list-group-item color-gris-chico text-white">190 años de servicio
+                                        </li>
                                     </ul>
                                     <br>
                                     <button type="button" class="btn btn-outline-secondary" data-toggle="popover"
@@ -235,8 +246,9 @@
                                         <li class="list-group-item color-gris-chico text-white">53 años de servicio</li>
                                     </ul>
                                     <br>
-                                    <button type="button" class="btn btn-outline-secondary text-white" data-toggle="popover"
-                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                    <button type="button" class="btn btn-outline-secondary text-white"
+                                        data-toggle="popover" title="se te redireccionará a trabajadores">Consultar
+                                        disponibilidad</button>
                                 </div>
                             </div>
                             <!-- CARTA -->
@@ -249,11 +261,13 @@
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item color-gris-chico text-white">Tiempo completo</li>
                                         <li class="list-group-item color-gris-chico text-white">Pasao a pata</li>
-                                        <li class="list-group-item color-gris-chico text-white">123 años de servicio</li>
+                                        <li class="list-group-item color-gris-chico text-white">123 años de servicio
+                                        </li>
                                     </ul>
                                     <br>
-                                    <button type="button" class="btn btn-outline-secondary text-white" data-toggle="popover"
-                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                    <button type="button" class="btn btn-outline-secondary text-white"
+                                        data-toggle="popover" title="se te redireccionará a trabajadores">Consultar
+                                        disponibilidad</button>
                                 </div>
                             </div>
                             <!-- CARTA -->
@@ -265,12 +279,14 @@
                                     <br>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item color-gris-chico text-white">Tiempo completo</li>
-                                        <li class="list-group-item color-gris-chico text-white">No nacio con su genero actual</li>
+                                        <li class="list-group-item color-gris-chico text-white">No nacio con su genero
+                                            actual</li>
                                         <li class="list-group-item color-gris-chico text-white">10 años de servicio</li>
                                     </ul>
                                     <br>
-                                    <button type="button" class="btn btn-outline-secondary text-white" data-toggle="popover"
-                                        title="se te redireccionará a trabajadores">Consultar disponibilidad</button>
+                                    <button type="button" class="btn btn-outline-secondary text-white"
+                                        data-toggle="popover" title="se te redireccionará a trabajadores">Consultar
+                                        disponibilidad</button>
                                 </div>
                             </div>
                         </div>
@@ -278,17 +294,17 @@
                 </div>
 
                 <!-- Botones de control: Anterior -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#trabajo-done-carrusel"
+                <!-- <button class="carousel-control-prev" type="button" data-bs-target="#trabajo-done-carrusel"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-control-pre</button>v-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
                 </button>
                 <!-- Botones de control: Siguiente-->
-                <button class="carousel-control-next" type="button" data-bs-target="#trabajo-done-carrusel"
+                <!-- <button class="carousel-control-next" type="button" data-bs-target="#trabajo-done-carrusel"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Siguiente</span>
-                </button>
+                </button>-->
 
             </div>
         </div>
@@ -297,15 +313,15 @@
             <h3>Conoce a mas trabajadores</h3>
             <button type="button" class="btn btn-custom" onclick="window.location.href = 'trabajadores.html';"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 2rem;">
-                Mas trabajadores
-            </button>
+        </div> Mas trabajadores
+        </button>
 
         </div>
     </section>
 
     <section id="partner-con-api">
         <br>
-        <h1 class="text-center fw-bold pb-5 titulo-partnership">Asociados</h1>
+        <h1>Asociados</h1>
         <h1>una muestra de las marcas con las cuales trabajamos</h1>
         <br>
     </section>
@@ -315,9 +331,7 @@
     <section id="services">
         <div class="container">
             <div id="cartas-servicio">
-
-                <img class="titulo-servicios" src="img/servicios-disp.png" alt="img-servicios-disp">
-
+                <h1 class="titulo-servicios">Servicios disponibles</h1>
                 <!--Carta 1-->
                 <div class="card mb-5 mx-5 rounded-5">
                     <div class="row g-0 color-gris">
@@ -328,12 +342,14 @@
                         <div class="col-md-6">
                             <div class="card-body">
                                 <h3 class="card-title fw-bold text-center text-white">Limpieza Superficial</h3>
-                                <p class="card-text text-white">Limpieza superficial para aquellos que les gusta lo bueno y lo
+                                <p class="card-text text-white">Limpieza superficial para aquellos que les gusta lo
+                                    bueno y lo
                                     económico</p>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
                                     <li class="list-group-item px-0 color-gris-chico text-white">Federico Fernet</li>
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de 10 minutos</li>
+                                    <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
+                                        10 minutos</li>
                                 </ul>
                                 <div class="d-flex justify-content-center" style="width: 100%;">
                                     <button type="button" onclick="window.location.href = 'servicios.html';"
@@ -355,12 +371,14 @@
                         <div class="col-md-6">
                             <div class="card-body">
                                 <h3 class="card-title fw-bold text-center text-white">Cambio de aceite</h3>
-                                <p class="card-text text-white">Cambio de aceite para aquellos que les gusta lo bueno y lo
+                                <p class="card-text text-white">Cambio de aceite para aquellos que les gusta lo bueno y
+                                    lo
                                     económico</p>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
                                     <li class="list-group-item px-0 color-gris-chico text-white">Matias Gonzalez</li>
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de 50 minutos</li>
+                                    <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
+                                        50 minutos</li>
                                 </ul>
                                 <div class="d-flex justify-content-center" style="width: 100%;">
                                     <button type="button" onclick="window.location.href = 'servicios.html';"
@@ -382,12 +400,14 @@
                         <div class="col-md-6">
                             <div class="card-body">
                                 <h3 class="card-title fw-bold text-center text-white">Cambio de bujia</h3>
-                                <p class="card-text text-white">Cambio de bujia para aquellos que les gusta lo bueno y lo
+                                <p class="card-text text-white">Cambio de bujia para aquellos que les gusta lo bueno y
+                                    lo
                                     económico</p>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
                                     <li class="list-group-item px-0 color-gris-chico text-white">Federico Guiter</li>
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de 2 horas</li>
+                                    <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
+                                        2 horas</li>
                                 </ul>
                                 <div class="d-flex justify-content-center" style="width: 100%;">
                                     <button type="button" onclick="window.location.href = 'servicios.html';"
@@ -460,6 +480,7 @@
     <!-- API Google maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDbHPBuZkWfS1x2-HAklCMeaFEkYhOq2I&callback=initMap"
         async defer></script>
+
 
 
 </body>
