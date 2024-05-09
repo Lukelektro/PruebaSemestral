@@ -348,15 +348,6 @@ header .logo-container {
     margin-top: 8px;
 }
 
-/* margen de los botones del carrusel */
-.carousel-control-prev {
-    margin-left: -150px;
-}
-
-.carousel-control-next {
-    margin-right: -150px;
-}
-
 /* fondo y texto de la seccion */
 #trabajadores {
     background-color: #333333;
