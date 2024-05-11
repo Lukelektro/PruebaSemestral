@@ -161,11 +161,16 @@ h2 {
         gap: 2rem;
         grid-template-columns: repeat(2, 1fr);
     }
+  
 }
 
 .contenido-nosotros {
     padding: 0rem 10rem 5rem 10rem;
     text-align: center;
+}
+
+.texto-nosotros {
+    align-items: center
 }
 
 /* Boton para redireccionar a sobre nosotros.html */
@@ -183,11 +188,9 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
     background: linear-gradient(270deg, var(--rojo), var(--gris), var(--amarillo), var(--purpura), var(--gris), var(--verde));
     background-size: 600% 600%;
     animation: difuminacion 7s ease infinite;
-    margin-left: 80px;
 }
 
 @keyframes difuminacion {
@@ -228,7 +231,6 @@ h2 {
 .carrusel-trabajadores {
     max-width: 1600px;
     margin: 0 auto;
-    margin-bottom: 100px;
 }
 
 .titulo-trabajadores {
@@ -276,6 +278,17 @@ h2 {
 
 }
 
+@media screen and (max-width: 768px) {
+
+    .contenedor-trabajador {
+        padding: 3rem;
+        flex-direction: column;
+    }
+}
+.car-group {
+    flex-direction: column;
+}
+
 .carta-trabajador {
     margin: 2rem;
 }
@@ -289,32 +302,32 @@ h2 {
     font-weight: 600;
 }
 
-#trabajadores .btn-custom:hover {
-    background-color: var(--rojo) !important;
+/* BOTON TRABAJADOR Y SU CONTENEDOR*/
+
+.contenedor-boton-trabajador {
+
+    padding: 3rem 0;
+
 }
 
-/* boton diseño para redirigir a la pagina workers.html */
 .boton-trabajador {
-    color: var(--piel);
+    margin-top: 1.5rem;
+    background-color: var(--piel);
+    border: 2px solid transparent;
+    border-radius: 1rem ;
+    padding: 10px 70px;
+    font-size: 16px;
     font-weight: 600;
-    padding: 10px 30px;
-    border-radius: 15px;
-    background-color: var(--rojo);
+    line-height: 1.5rem;
+    cursor: pointer;
+    width: auto;
     transition: background-color 0.5s ease;
+    color: var(--gris);
 }
 
 .boton-trabajador:hover {
     background-color: var(--amarillo);
-}
-
-@media screen and (max-width: 768px) {
-
-    .contenedor-trabajador {
-        padding: 3rem;
-        flex-direction: column;
-
-    }
-
+    color: var(--gris);
 }
 
 /*seccion Trabajos realizados y cotización*/
@@ -401,15 +414,4 @@ h2 {
     margin-right: 2rem;
 }
 
-
-.boton-servicios .btn-custom:hover {
-    background-color: var(--gris) !important;
-}
-
-#vista-servicios .contenedor-imagen {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
