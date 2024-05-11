@@ -25,85 +25,8 @@ h2 {
     position: absolute;
 }
 
-header bg-custom {
-    background-color: #4f101a;
-}
 
 
-/* controla el tamaño de la imagen del logo, recuerden que el logo es una mezcla de dos imagenes */
-header .logo-container img {
-    height: auto;
-    max-width: 100px;
-    margin-right: -20px; /* permite apegar las imagenes */
-}
-
-header .logo-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-
-/*para centrar el logo en dispositivos moviles*/
-@media screen and (max-width: 1156px) {
-    header .logo-container {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .navbar-nav {
-        display: block;
-        justify-content: center;
-    }
-}
-
-
-/*navbar*/
-.bg-body-tertiary {
-    background-color: #4f101a !important;
-}
-
-.navbar a {
-    font-size: bold;
-}
-
-.navbar-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.navbar-nav .nav-link {
-    font-size: 19px;
-    text-align: center;
-    color: #dfd4cd;
-}
-
-/* margen entre los elementos del navbar, si le quieren dar un margen a esto cosa de ustedes, lo dejo igual pero no me gusto */
-/*deben cambiar tambien el margin-left de .navbar-nav para que se acople bonito*/
-.navbar-nav .nav-item {
-    margin: 0 10px;
-}
-
-/* NO ELIMINAR, GRACIAS A ESTO, LA NAVBAR SE MUEVE */
-#navbar {
-    top: 0;
-    position: fixed;
-    z-index: 1000;
-    width: 100%;
-    transition: 1s;
-}
-
-@media screen and (max-width: 768px) {
-    header nav {
-        flex-direction: column;
-    }
-
-    header nav a {
-        margin: 10px 0;
-        text-align: center;
-    }
-}
 
 /*principal*/
 
@@ -504,8 +427,3 @@ header .logo-container {
     align-items: center;
 }
 
-/* FOOTER */
-.texto-footer {
-    color: var(--piel) !important;
-    font-weight: 600;
-}

@@ -1,11 +1,7 @@
-
-$(document).ready(function(){
-
+window.onload = function() {
     initMap();
     initMap2();
-    
-});
-
+};
 
 let map1;
 let map2;

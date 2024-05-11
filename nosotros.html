@@ -14,9 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
 
     <!-- css -->
-    <link rel="stylesheet" href="cs/index.css">
     <link rel="stylesheet" href="cs/base.css">
-    <link rel="stylesheet" href="cs/contacto.css">
+    <link rel="stylesheet" href="cs/nosotros.css">
 
     <!-- API GoogleMaps -->
 
@@ -76,85 +75,65 @@
 
 
 
-    <!-- Seccion Contactos -->
-    <section id="Contacto">
-        <div class="contacto-formulario">
+    <!-- Seccion nosotros -->
+    <section class="nosotros">
 
-            <h1 class="text-center">Contactanos</h1>
+        <h1>Conoce Mas Sobre Nosotros</h1>
 
-            <form id="form-contacto" class="needs-validation" novalidate>
-                <div class="contenedor-campos">
-                    <div class="campo">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control  input-text" id="email" placeholder="Email" required>
-                        <div class="invalid-feedback">
-                            Por favor ingresa tu email.
-                        </div>
-                    </div>
-                    <div class="campo">
-                        <label for="inputPhoneNumber">Telefono</label>
-                        <input type="number" class="form-control input-text" id="input-phoneform" placeholder="Ingresa tu numero telefonico" required>
-                        <div class="invalid-feedback">
-                            Por favor ingresa tu número de teléfono.
-                        </div>
-                    </div>
-                    <div class="campo">
-                        <label for="inputAddress">Ciudad</label>
-                        <input type="text" class="form-control input-text" autocomplete="street-address" id="input-ciudad1form" placeholder="Direccion de tu domicilio" required>
-                        <div class="invalid-feedback">
-                            Por favor ingresa tu dirección.
-                        </div>
-                    </div>
-                    <div class="campo">
-                        <label for="inputState">Sucursal Deseada</label>
-                        <select id="input-sucursalform" class="form-control input-text" required>
-                            <option value="" disabled selected>------ Seleccione ------</option>
-                            <option>Viña del mar</option>
-                            <option>Quilpue</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Por favor selecciona una sucursal.
-                        </div>
-                    </div>
-                    <div class="campo">
-                        <label for="inputDetalle">Detalles de tu Situacion</label>
-                        <textarea class="form-control input-text" required></textarea>
-                        <div class="invalid-feedback">
-                            Por favor ingresa los detalles de tu situación.
-                        </div>
-                    </div>
-                </div>
+        <div class="contenedor-nosotros">
+
+            <div >
+                <img class="imagen-nosotros" src="img/nosotros.jpg" alt="imagen-nosotros">
+            </div>
+
+            <div>
+                <h2>20 años de experiencia</h2> 
+
+                <p>CMQween es mucho más que un simple taller de mecánica, somos una
+                    familia apasionada por el mundo del motor y de las peliculas. En nuestro taller, combinamos
+                    habilidad técnica con el
+                    amor por los autos para ofrecer un servicio excepcional a nuestros clientes.
+                </p>
+
+                <p>no solo nos importa la eficiencia y la precisión en cada reparación, sino
+                    también la
+                    pasión y el amor por los autos que compartimos con la comunidad de Radiador Springs.
+                </p>
+            </div>
             
-                <div class="d-grid gap-2 col-2 mx-auto">
-                    <button type="submit" class="btn btn-contacto">Enviar</button>
-                </div>
-            </form>
-
         </div>
     </section>
 
-    <!-- Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="successModalLabel">Enviado</h5>
-                </div>
-                <div class="modal-body">
-                    <p>Su mensaje ha sido correctamente enviado.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
+    <section class="mas-nosotros">
+        <h1>Mas sobre Nosotros</h1>
+
+        <div class="mas-nosotros-contenedor">
+            <div class="contenedor-icono">
+                <img class="icono" src="img/icono1.svg" alt="Icono seguridad">       
+                <h3>Seguridad</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt molestiae suscipit ipsa culpa hic quidem praesentium dolores, minima possimus officia, assumenda nemo placeat eius vero dignissimos fugiat voluptatum atque enim?</p>
+            </div>
+            <div class="contenedor-icono">
+                <img class="icono" src="img/icono2.svg" alt="Icono precio">       
+                <h3>Precio</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt molestiae suscipit ipsa culpa hic quidem praesentium dolores, minima possimus officia, assumenda nemo placeat eius vero dignissimos fugiat voluptatum atque enim?</p>
+            </div>
+            <div class="contenedor-icono">
+                <img class="icono" src="img/icono3.svg" alt="Icono Tiempo">       
+                <h3>Tiempo</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt molestiae suscipit ipsa culpa hic quidem praesentium dolores, minima possimus officia, assumenda nemo placeat eius vero dignissimos fugiat voluptatum atque enim?</p>
             </div>
         </div>
-    </div>
+        
+    </section>
+
+   
 
     <!--FOOTER-->
 
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a class="nav-link px-2 text-muted texto-footer" href="#hero-nosotros">Quienes
+            <li class="nav-item"><a class="nav-link px-2 text-muted texto-footer" href="nosotros.html">Quienes
                     somos</a></li>
             <li class="nav-item"><a class="nav-link px-2 text-muted texto-footer"
                     href="#trabajadores">Trabajadores</a></li>
@@ -204,3 +183,19 @@
 </body>
 
 </html>
+
+
+<!--<p class="fw-bold">CMQween es mucho más que un simple taller de mecánica, somos una
+                    familia apasionada por el mundo del motor y de las peliculas. En nuestro taller, combinamos
+                    habilidad técnica con el
+                    amor por los autos para ofrecer un servicio excepcional a nuestros clientes.</p>
+
+                <p class="fw-bold">no solo nos importa la eficiencia y la precisión en cada reparación, sino
+                    también la
+                    pasión y el amor por los autos que compartimos con la comunidad de Radiador Springs.</p>
+
+                <p class="fw-bold">Nos distinguimos de la competencia por nuestra dedicación a mantener viva la esencia
+                    y el espíritu de la película Cars de Disney en cada aspecto de nuestro trabajo. Desde la atención
+                    amigable hasta la precisión en cada reparación, en MQween, nos esforzamos por ofrecer una
+                    experiencia única que combine el encanto de Radiador Springs con la confiabilidad de un taller
+                    moderno.</p> -->
