@@ -62,6 +62,20 @@ ul {
 }
 
 /* NAVBAR */
+
+.navbar-toggler{
+    border: none;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+#navbar-toggler img {
+    width: 30px; /* Cambia esto al ancho que quieras */
+    height: 30px; /* Cambia esto a la altura que quieras */
+}
+
 header bg-custom {
     background-color: #4f101a;
 }
@@ -138,8 +152,6 @@ header .logo-container {
         justify-content: center;
     }
 }
-
-
 
 
 /* FOOTER */

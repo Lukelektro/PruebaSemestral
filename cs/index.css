@@ -9,21 +9,6 @@
     background-color: #535252;
 }
 
-/*editor de clases de bootstrap*/
-
-.navbar-toggler{
-    border: none;
-}
-
-.navbar-toggler:focus{
-    box-shadow: none;
-}
-
-#navbar-toggler img {
-    width: 30px; /* Cambia esto al ancho que quieras */
-    height: 30px; /* Cambia esto a la altura que quieras */
-}
-
 /* estructura de los titulos (favor de editarlas si quieren otros colors llamando al ID de la seccion que quieran editar)*/
 h1 {
     font-family: 'Nunito', sans-serif;
