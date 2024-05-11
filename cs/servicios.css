@@ -1,0 +1,89 @@
+/* PAGINA SERVICIOS */
+#services {
+    background-color: var(--gris);
+}
+
+#services #services .card {
+    border: 5px solid var(--piel);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+#services h1 {
+    color: var(--piel);
+}
+
+.titulo-servicios {
+    text-align: center;
+    align-items: center;
+    color: #C5A014;
+    /* este es el borde que esta bueno, lo demas lo estoy testeando
+    text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
+    /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
+    text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
+    font-size: 100px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+#services .container {
+    padding-top: 10vh;
+
+}
+
+#vista-servicios {
+    padding-top: 15rem;
+    background-color: var(--piel);
+}
+
+#vista-servicios .contenido-servicio {
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+#vista-servicios .texto-servicio {
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+
+#vista-servicios h1 {
+    color: #000;
+}
+
+.boton-servicios {
+    display: flex;
+    justify-content: center;
+}
+
+.img-carrito {
+    max-width: 5rem;
+    margin-right: 2rem;
+}
+
+
+.boton-servicios .btn-custom:hover {
+    background-color: var(--gris) !important;
+}
+
+#vista-servicios .contenedor-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+
+    .contenido-servicio {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+  
+}
