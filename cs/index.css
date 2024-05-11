@@ -185,6 +185,7 @@ h2 {
 }
 
 .texto-nosotros {
+    display: grid;
     align-items: center
 }
 
@@ -203,7 +204,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(270deg, var(--rojo), var(--gris), var(--amarillo), var(--purpura), var(--gris), var(--verde));
+    background: linear-gradient(270deg, var(--rojo), var(--gris), var(--amarillo));
     background-size: 600% 600%;
     animation: difuminacion 7s ease infinite;
 }
