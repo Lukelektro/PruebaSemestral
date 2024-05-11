@@ -1,40 +1,4 @@
 /* PAGINA SERVICIOS */
-#services {
-    background-color: var(--gris);
-}
-
-#services #services .card {
-    border: 5px solid var(--piel);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-}
-
-#services h1 {
-    color: var(--piel);
-}
-
-.titulo-servicios {
-    text-align: center;
-    align-items: center;
-    color: #C5A014;
-    /* este es el borde que esta bueno, lo demas lo estoy testeando
-    text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
-    /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
-    text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
-        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
-        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
-        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
-        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
-        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
-    font-size: 100px;
-    line-height: 1;
-    margin: 0;
-    padding: 0;
-}
-
-#services .container {
-    padding-top: 10vh;
-
-}
 
 #vista-servicios {
     padding-top: 15rem;
