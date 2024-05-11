@@ -185,6 +185,7 @@ h2 {
 }
 
 .texto-nosotros {
+    display: grid;
     align-items: center
 }
 
@@ -203,7 +204,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(270deg, var(--rojo), var(--gris), var(--amarillo), var(--purpura), var(--gris), var(--verde));
+    background: linear-gradient(270deg, var(--rojo), var(--gris), var(--amarillo));
     background-size: 600% 600%;
     animation: difuminacion 7s ease infinite;
 }
@@ -320,9 +321,7 @@ h2 {
 /* BOTON TRABAJADOR Y SU CONTENEDOR*/
 
 .contenedor-boton-trabajador {
-
     padding: 3rem 0;
-
 }
 
 .boton-trabajador {
@@ -371,66 +370,10 @@ h2 {
     padding: 0;
 }
 
-/* PAGINA SERVICIOS */
+/* SECCION SERVICIOS */
 #services {
     background-color: var(--gris);
 }
-<<<<<<< HEAD
-
-#services .container {
-    padding-top: 10vh;
-
-}
-
-#services .card {
-    border: 5px solid var(--piel);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-}
-
-.titulo-servicios {
-    color: var(--piel);
-    text-align: center;
-    align-items: center;
-    /* este es el borde que esta bueno, lo demas lo estoy testeando
-    text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
-    /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
-    text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
-        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
-        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
-        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
-        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
-        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
-    font-size: 100px;
-    line-height: 1;
-    margin: 0;
-    padding: 0;
-}
-
-#vista-servicios {
-    padding-top: 15rem;
-    background-color: var(--piel);
-}
-
-#vista-servicios .contenido-nosotros {
-    padding: 3rem;
-    margin-bottom: 3rem;
-}
-
-#vista-servicios h1 {
-    color: #000;
-}
-
-.boton-servicios {
-    display: flex;
-    justify-content: center;
-}
-
-.img-carrito {
-    max-width: 5rem;
-    margin-right: 2rem;
-}
-=======
->>>>>>> a7386d902018077b650295237e8eeb21361b2003
 
 #services #services .card {
     border: 5px solid var(--piel);
