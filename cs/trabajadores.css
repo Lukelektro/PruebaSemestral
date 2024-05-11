@@ -1,0 +1,29 @@
+/* Globales para los tags*/
+section {
+    background-color: var(--gris);
+    padding-top: 10rem;
+    text-align: center;
+    color: var(--piel);
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 2rem;
+}
+
+h3 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
