@@ -1,0 +1,81 @@
+/* Globales para los tags*/
+body{
+    background-color: var(--rojo);
+}
+
+h1 {
+    font-family: 'Nunito', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+    padding: 5px;
+}
+
+/* Contenedores */
+/*       Y      */
+/* media query */
+
+#contenedor-nosotros {
+    background-color: var(--amarillo);
+    padding-top: 7.5rem;
+}
+
+.contenedor-titulo-fondo{
+    background-color: var(--gris);
+    font-size: 50px;
+}
+
+@media (min-width: 768px){
+    .mas-nosotros-contenedor {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* colores de las secciones */
+#nosotros{
+    background-color: var(--gris);
+}
+
+#nosotros h1{
+    color: #F88300;
+    text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
+}
+
+#nosotros p{
+    color: var(--piel);
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 53px;
+}
+
+/*seccion mas-nosotros*/
+
+#mas-nosotros {
+    background-color: var(--gris);
+    text-align: center;
+    color: var(--piel);
+}
+
+#mas-nosotros h1{
+    color: var(--gris);
+    text-shadow: -2px 0px #E08932, 0 2px #E08932, 2px 0px #E08932, 0 -2px #E08932,
+        -2px 2px #E08932, -2px -2px #E08932, 2px 2px #E08932, 2px -2px #E08932,
+        -2px 0px #E08932, 0 2px #E08932, 2px 0px #E08932, 0 -2px #E08932,
+        -2px 2px #E08932, -2px -2px #E08932, 2px 2px #E08932, 2px -2px #E08932,
+        -2px 0px #E08932, 0 2px #E08932, 2px 0px #E08932, 0 -2px #E08932,
+        -2px 2px #E08932, -2px -2px #E08932, 2px 2px #E08932, 2px -2px #E08932;
+    font-size: 40px;
+}
+
+/* Icono */
+.icono {
+    width: 100px;
+    height: 100px;    
+}
