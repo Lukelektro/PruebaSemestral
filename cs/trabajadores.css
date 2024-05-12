@@ -27,3 +27,27 @@ p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
+/*Contenedores*/
+.contenido-trabajadores {
+    padding: 0rem 10rem 5rem 10rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+
+    .contenido-trabajadores {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+  
+}
+/* Imagen */
+
+.img-trabajadores {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

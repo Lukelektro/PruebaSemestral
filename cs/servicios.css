@@ -1,48 +1,90 @@
-/* PAGINA SERVICIOS */
-
-#vista-servicios {
-    padding-top: 15rem;
-    background-color: var(--piel);
+/* Globales para los tags*/
+section {
+    background-color: var(--gris);
+    padding-top: 10rem;
+    text-align: center;
+    color: var(--piel);
 }
 
-#vista-servicios .contenido-servicio {
-    padding: 3rem;
+h1 {
+    font-weight: bold;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 2rem;
+}
+
+h3 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Estilos para la contenedores servicios */
+
+.contenido-servicio {
+    padding: 1rem 3rem 3rem 3rem;
+}
+
+.texto-servicio {
+    padding: 3rem 0 3rem 0;
     margin-bottom: 3rem;
 }
 
-#vista-servicios .texto-servicio {
-    padding: 3rem;
-    margin-bottom: 3rem;
-}
-
-
-#vista-servicios h1 {
-    color: #000;
-}
-
-.boton-servicios {
+.contenedor-boton-servicios {
     display: flex;
     justify-content: center;
+}
+
+/* botones*/
+.boton-servicio{
+    background-color: var(--amarillo);
+    border: 2px solid transparent;
+    border-radius: 1rem ;
+    padding: 1.5rem 4rem;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5rem;
+    cursor: pointer;
+    width: auto;
+    transition: background-color 0.5s ease;
+    
+}
+
+.boton-servicio:hover {
+    background-color: var(--rojo); 
+    color: var(--piel);
+}
+
+
+/* imagenes */
+.img-servicio {
+    width: 100%;
+    height: 90%;
 }
 
 .img-carrito {
     max-width: 5rem;
     margin-right: 2rem;
+    color: var(--gris);
 }
 
-
-.boton-servicios .btn-custom:hover {
-    background-color: var(--gris) !important;
-}
-
-#vista-servicios .contenedor-imagen {
+.contenedor-imagen {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
 
     .contenido-servicio {
         display: grid;
