@@ -9,21 +9,6 @@
     background-color: #535252;
 }
 
-/*editor de clases de bootstrap*/
-
-.navbar-toggler{
-    border: none;
-}
-
-.navbar-toggler:focus{
-    box-shadow: none;
-}
-
-#navbar-toggler img {
-    width: 30px; /* Cambia esto al ancho que quieras */
-    height: 30px; /* Cambia esto a la altura que quieras */
-}
-
 /* estructura de los titulos (favor de editarlas si quieren otros colors llamando al ID de la seccion que quieran editar)*/
 h1 {
     font-family: 'Nunito', sans-serif;
@@ -50,29 +35,15 @@ h2 {
     background-size: cover;
     background-position: center;
     height: 900px;
-    position: relative;
 }
 
 .pagina-principal-overlay {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
     background-color: rgba(255, 255, 255, 0.5);
-}
-
-.pagina-principal-content {
-    color: black;
-    font-size: 16px;
-    margin-top: 10%;
-    margin-left: 10%;
-    position: absolute;
 }
 
 /*si se agranda o se achica la navbar, debes cambiar si o si #hero-principal, ya que se le tiene un margen en base a la navbar para que no colicionen*/
 #hero-principal {
     margin-top: 97px;
-    position: relative;
 }
 
 #hero-principal h2 {
@@ -90,23 +61,12 @@ h2 {
     font-family: "Poetsen One", sans-serif;
 }
 
-/* para cuando se achique la pantalla, mantenga formato */
+/* para cuando se achique la pantalla, mantenga formato el titulo de "para que tu auto siga de primeras" */
+
 @media (max-width: 1030px) {
     #hero-principal h2 {
         font-size: 80px; 
     }
-}
-
-.foto_principal {
-    display: flex;
-    flex-direction: column;
-}
-
-.pagina-principal-img {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
 }
 
 /* Margen de los logos, con los width pueden mover el tamaño */
@@ -114,22 +74,14 @@ h2 {
    ya que los reescalaba, estos estan en su completa resolucion */
 
 .ajuste-foto-logo {
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 90px;
     width: 430px;
-    height: auto;
 }
 
 .ajuste-foto-letra {
-    max-width: 100%;
     margin-top: 290px;
     margin-left: 230px;
-    position: absolute;
     transition: margin-top 0.5s ease;
-    height: auto;
 }
 
 /* Lamentablemente tuve la horrible idea de hacer hero principal con imagenes, este media arregla ese error, a futuro se puede hacer un h1 nomas pero no encuentro la fuente*/
@@ -142,19 +94,11 @@ h2 {
 }
 
 /* SECCION NOSOTROS*/
-/*margen de la seccion */
-#hero-nosotros p {
-    padding: 0.6rem;
-    color: var(--gris);
-}
 
 #hero-nosotros h1 {
     text-align: center;
     align-items: center;
     color: #C5A014;
-    /* este es el borde que esta bueno, lo demas lo estoy testeando
-    text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
-    /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
     text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
         -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
         -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
@@ -162,7 +106,6 @@ h2 {
         -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
         -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
     font-size: 100px;
-
 }
 
 #hero-nosotros {
@@ -179,31 +122,12 @@ h2 {
   
 }
 
-.contenido-nosotros {
-    padding: 0rem 10rem 5rem 10rem;
-    text-align: center;
-}
-
-.texto-nosotros {
-    display: grid;
-    align-items: center
-}
-
 /* Boton para redireccionar a sobre nosotros.html */
 .boton-sobre-nosotros {
     background: var(--gris);
     cursor: pointer;
-    border: none;
-    padding: 16px 32px;
-    color: white;
     font-size: 20px;
-    font-weight: bold;
-    position: relative;
-    border-radius: 28px;
     transition: background-color 0.5s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: linear-gradient(270deg, var(--rojo), var(--gris), var(--amarillo));
     background-size: 600% 600%;
     animation: difuminacion 7s ease infinite;
@@ -213,11 +137,9 @@ h2 {
     0% {
         background-position: 0% 50%;
     }
-
     50% {
         background-position: 100% 50%;
     }
-
     100% {
         background-position: 0% 50%;
     }
@@ -229,9 +151,6 @@ h2 {
     text-align: center;
     align-items: center;
     color: #C5A014;
-    /* este es el borde que esta bueno, lo demas lo estoy testeando
-    text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
-    /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
     text-shadow: -2px 0px var(--rojo), 0 2px var(--rojo), 2px 0px var(--rojo), 0 -2px var(--rojo),
         -2px 2px var(--rojo), -2px -2px var(--rojo), 2px 2px var(--rojo), 2px -2px var(--rojo),
         -2px 0px var(--rojo), 0 2px var(--rojo), 2px 0px var(--rojo), 0 -2px var(--rojo),
@@ -244,102 +163,32 @@ h2 {
     padding: 0;
 }
 
-#trabajadores a {
-    text-decoration: none;
-    color: #333333;
-}
-
-.carrusel-trabajadores {
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-.titulo-trabajadores {
-    width: 80vh;
-    transition: margin-top 0.5s ease;
-    margin-bottom: -80px;
-}
-
 /*para que las cartas tengan borde*/
-
 #trabajadores .card {
     border: 5px solid var(--amarillo);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.9);
 }
 
-/*para que las fotos de las cartas tengan todas una misma forma*/
-
-#trabajadores .card img {
-    border-radius: 50%;
-    width: 330px;
-    height: 360px;
-    margin: 0 auto;
-    margin-top: 8px;
-}
-
-/* fondo y texto de la seccion */
+/*fondo y texto de la seccion*/
 #trabajadores {
     background-color: #333333;
     color: var(--piel);
     text-align: center;
 }
 
-
+/*titulo de la seccion trabajadores*/
 #trabajadores h2 {
     padding-top: 5rem;
     font-weight: 700;
     font-size: 4rem;
 }
 
-.contenedor-trabajador {
-
-    margin: 1rem 0;
-    display: flex;
-    justify-content: center;
-
-}
-
-@media screen and (max-width: 768px) {
-
-    .contenedor-trabajador {
-        padding: 3rem;
-        flex-direction: column;
-    }
-}
-.car-group {
-    flex-direction: column;
-}
-
-.carta-trabajador {
-    margin: 2rem;
-}
-
-.carta-trabajador-info {
-    padding-bottom: 5rem;
-}
-
-.carta-trabajador-info h3 {
-    margin-bottom: 2rem;
-    font-weight: 600;
-}
-
 /* BOTON TRABAJADOR Y SU CONTENEDOR*/
-
-.contenedor-boton-trabajador {
-    padding: 3rem 0;
-}
-
 .boton-trabajador {
-    margin-top: 1.5rem;
     background-color: var(--amarillo);
-    border: 2px solid transparent;
-    border-radius: 1rem ;
-    padding: 10px 70px;
     font-size: 16px;
-    font-weight: 600;
-    line-height: 1.5rem;
+    line-height: 1.8rem;
     cursor: pointer;
-    width: auto;
     transition: background-color 0.5s ease;
     color: var(--gris);
 }
@@ -357,8 +206,6 @@ h2 {
 }
 
 #partner-con-api h1 {
-    text-align: center;
-    align-items: center;
     color: #C5A014;
     /* este es el borde que esta bueno, lo demas lo estoy testeando
     text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
@@ -370,16 +217,7 @@ h2 {
         -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
         -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
     font-size: 100px;
-    line-height: 1;
-    margin: 0;
-    padding: 0;
 }
-
-.group-imagenes-logo img{
-    width: 25%;
-}
-
-
 
 /* SECCION SERVICIOS */
 #services {
@@ -396,8 +234,6 @@ h2 {
 }
 
 .titulo-servicios {
-    text-align: center;
-    align-items: center;
     color: #C5A014;
     /* este es el borde que esta bueno, lo demas lo estoy testeando
     text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
@@ -409,13 +245,6 @@ h2 {
         -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
         -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
     font-size: 100px;
-    line-height: 1;
-    margin: 0;
-    padding: 2rem 0;
 }
 
-#services .container {
-    padding-top: 1rem;
-
-}
 
