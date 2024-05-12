@@ -1,4 +1,12 @@
 
+/* funcion para cambiar el intervalo de tiempo del carousel */
+$(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 3000
+    });
+  });
+
+
 // Permite a la navbar salirse de los bordes de la pantalla
 let ubicacionPrincipal = window.pageYOffset;
 
@@ -13,6 +21,7 @@ window.onscroll = function () {
     }
     ubicacionPrincipal = Desplazamiento;
 }
+
 
 
 

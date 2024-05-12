@@ -96,7 +96,7 @@
         <div class="contenido-nosotros">
             <img class="img-fluid" src="img/about-us.jpg" alt="img-nosotros">
 
-            <div class="texto-nosotros ">
+            <div class="texto-nosotros">
                 <h3 class="text-center fw-bold pb-3">MQween: Donde la Magia de Radiador Springs y la Pasión por los
                     Autos Cobran Vida</h3>
                 <p class="fw-bold">Bienvenidos a MQween, el taller de mecánica más emblemático de Radiador Springs. En
@@ -114,10 +114,7 @@
 
     <!--Seccion Trabajadores-->
     <section id="trabajadores">
-        <!--titulo nuestros trabajadores-->
         <h1>Nuestros<br>Trabajadores</h1>
-        <!--Estructura del carrusel-->
-        <!-- Grupo de Tarjetas 1 -->
         <div class="card-group">
             <!-- CARTA -->
             <div class="card carta-trabajador rounded-5 color-gris">
@@ -195,146 +192,140 @@
                 </div>
             </div>
         </div>
-        <!--Boton para ver mas trabajadores (redirecciona a trabajadores.html)-->
 
+        <!--Boton para ver mas trabajadores (redirecciona a trabajadores.html)-->
         <div class="contenedor-boton-trabajador">
             <h3>Conoce a mas trabajadores</h3>
-            <button type="submit" class="btn boton-trabajador">Mas trabajadores</button>
+            <button type="submit" class="btn boton-trabajador"><a href="trabajadores.html">Mas trabajadores</a></button>
         </div>
     </section>
 
     <section id="partner-con-api">
         <h1>Asociados</h1>
         <br>
-        <p>una muestra de las marcas con las cuales trabajamos</p>
+        <p class="fw-bold fs-1">una muestra de las marcas con las cuales trabajamos</p>
 
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="group-imagenes-logo">
-                    <img src="img/logo-autos/buick-logo.png" alt="buick-logo">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-
+                <div class="carousel-item active">
+                    <div class="group-imagenes-logo row justify-content-center"">
+                    <img src=" img/logo-autos/buick-logo.png" alt="buick-logo">
+                        <img src="img/logo-autos/ford-logo.png" alt="ford-logo">
+                        <img src="img/logo-autos/holden-logo.png" alt="holden-logo">
+                        <img src="img/logo-autos/honda-logo.png" alt="honda-logo">
+                        <img src="img/logo-autos/hotweels-logo.png" alt="hotweels-logo">
+                        <img src="img/logo-autos/hyundai-logo.png" alt="hyundai-logo">
+                        <img src="img/logo-autos/kawasaki-logo.png" alt="kawasaki-logo">
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <div class="group-imagenes-logo">
-                    <img src="img/logo-autos/cars-logo.png" alt="cars-logo">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                <div class="carousel-item">
+                    <div class="group-imagenes-logo row justify-content-center">
+                        <img src="img/logo-autos/cars-logo.png" alt="cars-logo">
+                        <img src="img/logo-autos/kia-logo.png" alt="kia-logo">
+                        <img src="img/logo-autos/mini-logo.png" alt="mini-logo">
+                        <img src="img/logo-autos/mitsu-logo.png" alt="mitsu-logo">
+                        <img src="img/logo-autos/nissan-logo.png" alt="nissan-logo">
+                        <img src="img/logo-autos/toyota-logo.png" alt="toyota-logo">
+                        <img src="img/logo-autos/tesla-logo.png" alt="tesla-logo">
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
 
+        <p class="fw-bold fs-1"> ¿no encuentras tu auto? , buscalo manualmente!</p>
+        <br>
     </section>
 
 
     <!--Seccion Servicios-->
     <section id="services">
-        <div class="container">
-            <div id="cartas-servicio">
-                <h1 class="titulo-servicios">Servicios disponibles</h1>
-                <!--Carta 1-->
-                <div class="card mb-5 mx-5 rounded-5">
-                    <div class="row g-0 color-gris">
-                        <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
-                            <img src="img/servicio-1.png" class="img-fluid rounded-5 carta-img-servicio h-100"
-                                alt="servicio-1">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card-body">
-                                <h3 class="card-title fw-bold text-center text-white">Limpieza Superficial</h3>
-                                <p class="card-text text-white">Limpieza superficial para aquellos que les gusta lo
-                                    bueno y lo
-                                    económico</p>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Federico Fernet</li>
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
-                                        10 minutos</li>
-                                </ul>
-                                <div class="d-flex justify-content-center" style="width: 100%;">
-                                    <button type="button" onclick="window.location.href = 'servicios.html';"
-                                        class="btn btn-outline-secondary mt-3 text-white">
-                                        Contratar servicio</button>
-                                </div>
+            <h1 class="titulo-servicios">Servicios disponibles</h1>
+            <!--Carta 1-->
+            <div class="card mb-5 mx-5 rounded-5">
+                <div class="row g-0 color-gris">
+                    <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
+                        <img src="img/servicio-1.png" class="img-fluid rounded-5 h-100"
+                            alt="servicio-1">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body mt-4">
+                            <h3 class="card-title fw-bold text-center text-white">Limpieza Superficial</h3>
+                            <p class="card-text text-white text-center">Limpieza superficial para aquellos que les gusta lo
+                                bueno y lo
+                                económico</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
+                                <li class="list-group-item px-0 color-gris-chico text-white">Federico Fernet</li>
+                                <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
+                                    10 minutos</li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-5" style="width: 100%;">
+                                <button type="button" onclick="window.location.href = 'servicios.html';"
+                                    class="btn btn-outline-secondary mt-3 text-white">
+                                    Contratar servicio</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!--Carta 2-->
-                <div class="card mb-5 mx-5 rounded-5">
-                    <div class="row g-0 color-gris">
-                        <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
-                            <img src="img/servicio-2.jpg" class="img-fluid rounded-5 carta-img-servicio h-100"
-                                alt="servicio-1">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card-body">
-                                <h3 class="card-title fw-bold text-center text-white">Cambio de aceite</h3>
-                                <p class="card-text text-white">Cambio de aceite para aquellos que les gusta lo bueno y
-                                    lo
-                                    económico</p>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Matias Gonzalez</li>
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
-                                        50 minutos</li>
-                                </ul>
-                                <div class="d-flex justify-content-center" style="width: 100%;">
-                                    <button type="button" onclick="window.location.href = 'servicios.html';"
-                                        class="btn btn-outline-secondary mt-3 text-white">
-                                        Contratar servicio</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Carta 3-->
-                <div class="card mb-5 mx-5 rounded-5">
-                    <div class="row g-0 color-gris">
-                        <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
-                            <img src="img/servicio-3.jpg" class="img-fluid rounded-5 carta-img-servicio h-100"
-                                alt="servicio-1">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card-body">
-                                <h3 class="card-title fw-bold text-center text-white">Cambio de bujia</h3>
-                                <p class="card-text text-white">Cambio de bujia para aquellos que les gusta lo bueno y
-                                    lo
-                                    económico</p>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Federico Guiter</li>
-                                    <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
-                                        2 horas</li>
-                                </ul>
-                                <div class="d-flex justify-content-center" style="width: 100%;">
-                                    <button type="button" onclick="window.location.href = 'servicios.html';"
-                                        class="btn btn-outline-secondary mt-3 text-white">
-                                        Contratar servicio</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
-        </div>
-        <br>
+            <!--Carta 2-->
+            <div class="card mb-5 mx-5 rounded-5">
+                <div class="row g-0 color-gris">
+                    <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
+                        <img src="img/servicio-2.jpg" class="img-fluid rounded-5 h-100"
+                            alt="servicio-1">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body mt-4">
+                            <h3 class="card-title fw-bold text-center text-white">Cambio de aceite</h3>
+                            <p class="card-text text-white text-center">Cambio de aceite para aquellos que les gusta lo bueno y
+                                lo
+                                económico</p>
+                            <ul class="list-group list-group-flush mx-auto mt-5">
+                                <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
+                                <li class="list-group-item px-0 color-gris-chico text-white">Matias Gonzalez</li>
+                                <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
+                                    50 minutos</li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-5" style="width: 100%;">
+                                <button type="button" onclick="window.location.href = 'servicios.html';"
+                                    class="btn btn-outline-secondary mt-3 text-white">
+                                    Contratar servicio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Carta 3-->
+            <div class="card mb-5 mx-5 rounded-5">
+                <div class="row g-0 color-gris">
+                    <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
+                        <img src="img/servicio-3.jpg" class="img-fluid rounded-5 h-100"
+                            alt="servicio-1">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body mt-4">
+                            <h3 class="card-title fw-bold text-center text-white">Cambio de bujia</h3>
+                            <p class="card-text text-white text-center">Cambio de bujia para aquellos que les gusta lo bueno y
+                                lo
+                                económico</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
+                                <li class="list-group-item px-0 color-gris-chico text-white">Federico Guiter</li>
+                                <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
+                                    2 horas</li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-5" style="width: 100%;">
+                                <button type="button" onclick="window.location.href = 'servicios.html';"
+                                    class="btn btn-outline-secondary mt-3 text-white">
+                                    Contratar servicio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
     </section>
 
 
