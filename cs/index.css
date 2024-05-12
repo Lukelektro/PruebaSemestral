@@ -232,12 +232,12 @@ h2 {
     /* este es el borde que esta bueno, lo demas lo estoy testeando
     text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
     /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
-    text-shadow: -2px 0px var(--piel), 0 2px var(--piel), 2px 0px var(--piel), 0 -2px var(--piel),
-        -2px 2px var(--piel), -2px -2px var(--piel), 2px 2px var(--piel), 2px -2px var(--piel),
-        -2px 0px var(--piel), 0 2px var(--piel), 2px 0px var(--piel), 0 -2px var(--piel),
-        -2px 2px var(--piel), -2px -2px var(--piel), 2px 2px var(--piel), 2px -2px var(--piel),
-        -2px 0px var(--piel), 0 2px var(--piel), 2px 0px var(--piel), 0 -2px var(--piel),
-        -2px 2px var(--piel), -2px -2px var(--piel), 2px 2px var(--piel), 2px -2px var(--piel);
+    text-shadow: -2px 0px var(--rojo), 0 2px var(--rojo), 2px 0px var(--rojo), 0 -2px var(--rojo),
+        -2px 2px var(--rojo), -2px -2px var(--rojo), 2px 2px var(--rojo), 2px -2px var(--rojo),
+        -2px 0px var(--rojo), 0 2px var(--rojo), 2px 0px var(--rojo), 0 -2px var(--rojo),
+        -2px 2px var(--rojo), -2px -2px var(--rojo), 2px 2px var(--rojo), 2px -2px var(--rojo),
+        -2px 0px var(--rojo), 0 2px var(--rojo), 2px 0px var(--rojo), 0 -2px var(--rojo),
+        -2px 2px var(--rojo), -2px -2px var(--rojo), 2px 2px var(--rojo), 2px -2px var(--rojo);
     font-size: 100px;
     line-height: 1;
     margin: 0;
@@ -331,7 +331,7 @@ h2 {
 
 .boton-trabajador {
     margin-top: 1.5rem;
-    background-color: var(--piel);
+    background-color: var(--amarillo);
     border: 2px solid transparent;
     border-radius: 1rem ;
     padding: 10px 70px;
@@ -345,8 +345,8 @@ h2 {
 }
 
 .boton-trabajador:hover {
-    background-color: var(--amarillo);
-    color: var(--gris);
+    background-color: var(--rojo);
+    color: var(--blanco);
 }
 
 /*seccion Asociados y cotización*/
@@ -386,7 +386,7 @@ h2 {
     background-color: var(--gris);
 }
 
-#services #services .card {
+#services .card {
     border: 5px solid var(--piel);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
 }
