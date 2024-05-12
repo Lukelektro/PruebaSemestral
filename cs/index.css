@@ -244,6 +244,11 @@ h2 {
     padding: 0;
 }
 
+#trabajadores a {
+    text-decoration: none;
+    color: #333333;
+}
+
 .carrusel-trabajadores {
     max-width: 1600px;
     margin: 0 auto;
@@ -344,7 +349,7 @@ h2 {
     color: var(--gris);
 }
 
-/*seccion Trabajos realizados y cotización*/
+/*seccion Asociados y cotización*/
 #partner-con-api {
     background-color: var(--piel);
     color: var(--gris);
@@ -369,6 +374,12 @@ h2 {
     margin: 0;
     padding: 0;
 }
+
+.group-imagenes-logo img{
+    width: 450px;
+}
+
+
 
 /* SECCION SERVICIOS */
 #services {
