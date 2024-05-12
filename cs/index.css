@@ -232,9 +232,6 @@ h2 {
 
 .titulo-servicios {
     color: #C5A014;
-    /* este es el borde que esta bueno, lo demas lo estoy testeando
-    text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris);*/
-    /* este lo hace mas grueso y mas grande, como les gusta mis perritas locas, este se queda */
     text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
         -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
         -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
