@@ -24,6 +24,14 @@ window.onscroll = function () {
     ubicacionPrincipal = Desplazamiento;
 }
 
+// Permite que el boton de ir arriba aparezca al hacer scroll
+$(function () {
+    $('[data-toggle="popover"]').popover()
+})
 
+var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
 
-
+myModal.addEventListener('shown.bs.modal', function () {
+myInput.focus()
+})
