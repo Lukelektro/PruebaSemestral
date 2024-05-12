@@ -28,7 +28,6 @@ h2 {
 
 
 /*principal*/
-
 /* Estas 3 clases son del fondo transparente, favor de no cambiar */
 .pagina-principal-container {
     background-image: url('https://cdn-9.motorsport.com/images/amp/YBeqxXM2/s6/sebastian-vettel-ferrari-sf100.jpg');
@@ -53,7 +52,7 @@ h2 {
     margin-left: 40px;
     margin-bottom: 40px;
     bottom: 0;
-    text-shadow: 4px 4px 0 #4f101a, -1px -1px 0 #4f101a, 1px -1px 0 #4f101a, -1px 1px 0 #4f101a, 4px 4px 2px rgba(0,0,0,0.1238);
+    text-shadow: 4px 4px 0 #4f101a, -1px -1px 0 #4f101a, 1px -1px 0 #4f101a, -1px 1px 0 #4f101a, 4px 4px 2px rgba(0, 0, 0, 0.1238);
 }
 
 #hero-principal h2 span {
@@ -62,17 +61,15 @@ h2 {
 }
 
 /* para cuando se achique la pantalla, mantenga formato el titulo de "para que tu auto siga de primeras" */
-
 @media (max-width: 1030px) {
     #hero-principal h2 {
-        font-size: 80px; 
+        font-size: 80px;
     }
 }
 
 /* Margen de los logos, con los width pueden mover el tamaño */
 /* reajuste los margenes, no me gustaron como habian quedado los anteriores
    ya que los reescalaba, estos estan en su completa resolucion */
-
 .ajuste-foto-logo {
     margin-top: 90px;
     width: 430px;
@@ -94,7 +91,6 @@ h2 {
 }
 
 /* SECCION NOSOTROS*/
-
 #hero-nosotros h1 {
     text-align: center;
     align-items: center;
@@ -113,13 +109,12 @@ h2 {
 }
 
 @media (min-width: 768px) {
-
     .contenido-nosotros {
         display: grid;
         gap: 2rem;
         grid-template-columns: repeat(2, 1fr);
     }
-  
+
 }
 
 /* Boton para redireccionar a sobre nosotros.html */
@@ -137,9 +132,11 @@ h2 {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -240,5 +237,3 @@ h2 {
         -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
     font-size: 100px;
 }
-
-
