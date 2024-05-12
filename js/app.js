@@ -1,9 +1,11 @@
 
 /* funcion para cambiar el intervalo de tiempo del carousel */
 $(document).ready(function(){
+
     $('.carousel').carousel({
       interval: 3000
     });
+    
   });
 
 
