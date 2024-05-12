@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
 
     <!-- css -->
     <link rel="stylesheet" href="cs/base.css">
@@ -24,20 +26,18 @@
 </head>
 
 <body>
-
-
-     <!--Navbar-->
-     <header id="navbar" class="contenedor-navbar bg-custom">
+    <!--Navbar-->
+    <header id="navbar" class="bg-custom">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container">
+            <div class="container-fluid">
                 <!--Boton para colapsar el menu-->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <img src="img/icons/bars-arrow-down.svg" alt="icono menu">
                 </button>
                 <!--Logo de la empresa-->
-                <div class="logo-container" href="Login.html">
+                <div class="logo-container">
                     <a href="index.html"><img src="img/logo-nombre2.png" class="ajuste-logo-letras"
                             alt="logo-nombre" /></a>
                     <a href="index.html"><img src="img/logo-trans-1.png" class="ajuste-logo-menu"
@@ -45,7 +45,7 @@
                 </div>
                 <!--Primera lista-->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+                    <ul class="navbar-nav me-auto fw-bold">
                         <li class="nav-item">
                             <a class="nav-link" href="nosotros.html">Quiénes somos</a>
                         </li>
@@ -63,7 +63,7 @@
                         </li>
                     </ul>
                     <!--Segunda lista solo para la autentificación-->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+                    <ul class="navbar-nav fw-bold">
                         <li class="nav-item">
                             <a class="nav-link" href="Login.html">Autentificación</a>
                         </li>
@@ -73,64 +73,98 @@
         </nav>
     </header>
 
+    <div style="background-color: var(--rojo); height: 7rem;"></div>
+    <!--esta pagina nose porque si le pongo esto, funciona background color-->
 
-
-    <!-- Seccion nosotros -->
-    <section class="nosotros">
-
-        <h1>Conoce Mas Sobre Nosotros</h1>
-
-        <div class="contenedor-nosotros">
-
-            <div >
-                <img class="imagen-nosotros" src="img/nosotros.jpg" alt="imagen-nosotros">
+    <!--Nosotros-->
+    <section id="nosotros">
+        <div class="container-fluid">
+            <div class="row">
+                <h1 class="text-center contenedor-titulo-fondo p-5">¿Quienes somos?</h1>
+                <div class="col-lg-6 d-flex justify-content-center flex-column">
+                    <img class="w-100 img-fluid m-0 mb-3 rounded-5" src="img/nosotros.jpg" alt="imagen-nosotros">
+                    <img class="w-100 img-fluid m-0 mb-3 rounded-5" src="img/fondo-principal.avif"
+                        alt="imagen-nosotros">
+                </div>
+                <div class="col-lg-6">
+                    <p class="fw-bold">Desde nuestras raíces en las carreras hasta nuestros talleres accesibles para
+                        todos, en CMQween celebramos nuestra trayectoria única. Como una familia apasionada por los
+                        motores y las películas, cada reparación es una oportunidad para fusionar habilidad técnica con
+                        amor por los autos. Nuestro compromiso va más allá de la eficiencia; se trata de mantener viva
+                        la pasión por los vehículos, al igual que en Radiador Springs.
+                    </p>
+                    <p class="fw-bold">Imagina el día en que nuestro fundador, un entusiasta de las carreras, decidió
+                        abrir un taller con un toque diferente. Inspirado por las historias de Radiador Springs,
+                        convirtió su pasión en una misión para ofrecer un servicio excepcional, donde la técnica y el
+                        amor por los autos se funden en cada reparación. Así nació CMQween, una mezcla única de
+                        velocidad y cariño por los motores.
+                    </p>
+                    <p class="fw-bold">Nuestros clientes no solo confían en nuestra habilidad técnica, sino también en
+                        nuestra capacidad para entender la conexión emocional que tienen con sus vehículos. Al igual que
+                        el vínculo entre Relámpago McQueen y Mate en Cars, nosotros valoramos esa relación especial y
+                        nos esforzamos por mantenerla en cada interacción. En CMQween, tu auto no es solo una máquina;
+                        es parte de tu historia, y nos comprometemos a cuidarlo como tal.
+                    </p>
+                    <p class="fw-bold">En nuestro taller, nos encanta celebrar la cultura del automóvil y del cine. Cada
+                        conversación sobre autos icónicos de películas es como revivir las emociones de Radiador Springs
+                        en la vida real. Desde el legendario Doc Hudson hasta el imparable Rayo McQueen, cada personaje
+                        nos recuerda la importancia de la amistad y la pasión por la velocidad.
+                    </p>
+                    <p class="fw-bold">Como parte de la comunidad de entusiastas, nos enorgullece contribuir al legado
+                        de los autos en la pantalla grande y en la vida cotidiana. Desde las emocionantes carreras hasta
+                        las historias de amistad y superación, en CMQween estamos comprometidos a mantener viva la magia
+                        de Cars en cada servicio que ofrecemos. Así que, ¿listo para un viaje emocionante con nosotros?
+                        En CMQween, ¡tu auto siempre es el protagonista de una gran historia!
+                    </p>
+                    <p class="fw-bold">Y así, mientras continuamos nuestro viaje desde las pistas de carreras hasta los
+                        corazones de nuestros clientes, en CMQween nos comprometemos a seguir siendo ese lugar donde la
+                        pasión por los autos se une con el arte del cine. En cada giro de llave, en cada conversación
+                        sobre películas de culto, estamos escribiendo nuestra propia historia, una que refleja nuestra
+                        dedicación a mantener viva la llama del amor por los autos en cada comunidad que tocamos.
+                        ¡Bienvenido a CMQween, donde los sueños automovilísticos se hacen realidad!
+                    </p>
+                </div>
             </div>
-
-            <div>
-                <h2>20 años de experiencia</h2> 
-
-                <p>CMQween es mucho más que un simple taller de mecánica, somos una
-                    familia apasionada por el mundo del motor y de las peliculas. En nuestro taller, combinamos
-                    habilidad técnica con el
-                    amor por los autos para ofrecer un servicio excepcional a nuestros clientes.
-                </p>
-
-                <p>no solo nos importa la eficiencia y la precisión en cada reparación, sino
-                    también la
-                    pasión y el amor por los autos que compartimos con la comunidad de Radiador Springs.
-                </p>
-            </div>
-            
         </div>
     </section>
 
-    <section class="mas-nosotros">
-        <h1>Mas sobre Nosotros</h1>
-
-        <div class="mas-nosotros-contenedor">
+    <section id="mas-nosotros" class="p-5 color-seccion">
+        <h1 class="pb-5">¿Que ofrecemos a diferencia de la competencia?</h1>
+        <div class="mas-nosotros-contenedor container p-1">
             <div class="contenedor-icono">
-                <img class="icono" src="img/icono1.svg" alt="Icono seguridad">       
-                <h3>Seguridad</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt molestiae suscipit ipsa culpa hic quidem praesentium dolores, minima possimus officia, assumenda nemo placeat eius vero dignissimos fugiat voluptatum atque enim?</p>
+                <img class="icono" src="img/icono1.svg" alt="Icono seguridad">
+                <h1>Seguridad</h1>
+                <p class="fw-bold">En CMQween, la seguridad de tu vehículo y tu bienestar son nuestra principal
+                    preocupación. Nos destacamos por nuestro enfoque meticuloso en cada reparación, realizando
+                    inspecciones exhaustivas y utilizando únicamente piezas certificadas para garantizar que tu
+                    automóvil esté en condiciones óptimas para enfrentar cualquier desafío en la carretera. Desde la
+                    revisión de frenos hasta la inspección de sistemas de seguridad, cada paso que damos está diseñado
+                    para brindarte la tranquilidad y confianza que necesitas al volante.</p>
             </div>
             <div class="contenedor-icono">
-                <img class="icono" src="img/icono2.svg" alt="Icono precio">       
-                <h3>Precio</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt molestiae suscipit ipsa culpa hic quidem praesentium dolores, minima possimus officia, assumenda nemo placeat eius vero dignissimos fugiat voluptatum atque enim?</p>
+                <img class="icono" src="img/icono2.svg" alt="Icono precio">
+                <h1>Precio</h1>
+                <p class="fw-bold">Además de nuestra dedicación a la seguridad, en CMQween nos enorgullecemos de ofrecer
+                    servicios de alta calidad a precios justos y transparentes. Creemos firmemente que mantener tu
+                    vehículo en condiciones óptimas no debería ser un lujo inalcanzable, por lo que nos esforzamos por
+                    mantener tarifas competitivas sin sacrificar la calidad de nuestro trabajo. Con nosotros, puedes
+                    estar seguro de que no habrá sorpresas desagradables en tu factura final; solo recibirás un servicio
+                    confiable y asequible que se adapte a tus necesidades y presupuesto.</p>
             </div>
             <div class="contenedor-icono">
-                <img class="icono" src="img/icono3.svg" alt="Icono Tiempo">       
-                <h3>Tiempo</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt molestiae suscipit ipsa culpa hic quidem praesentium dolores, minima possimus officia, assumenda nemo placeat eius vero dignissimos fugiat voluptatum atque enim?</p>
+                <img class="icono" src="img/icono3.svg" alt="Icono Tiempo">
+                <h1>Tiempo</h1>
+                <p class="fw-bold">Y cuando se trata de tu tiempo, entendemos lo valioso que es. Es por eso que en
+                    CMQween nos comprometemos a ofrecer un servicio rápido y eficiente sin comprometer la excelencia.
+                    Con técnicos altamente capacitados y un enfoque centrado en la eficiencia, trabajamos diligentemente
+                    para minimizar el tiempo de inactividad de tu vehículo y devolvértelo en óptimas condiciones en el
+                    menor tiempo posible. En un mundo donde cada minuto cuenta, en CMQween te ofrecemos la rapidez que
+                    necesitas sin comprometer la calidad.</p>
             </div>
         </div>
-        
     </section>
-
-   
 
     <!--FOOTER-->
-
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a class="nav-link px-2 text-muted texto-footer" href="nosotros.html">Quienes
@@ -158,9 +192,7 @@
         <p class="text-center text-muted texto-footer mt-4">© 2024 Mq Ween, Inc</p>
     </footer>
 
-
     <!-- Jquery -->
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <!-- Popper.js -->
@@ -169,19 +201,18 @@
         crossorigin="anonymous"></script>
 
     <!-- Bootstrap -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
     <!-- scripts -->
     <script src="js/map.js"></script>
     <script src="js/contacto.js"></script>
+    <script src="js/app.js"></script>
 
     <!-- API Google maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDbHPBuZkWfS1x2-HAklCMeaFEkYhOq2I&callback=initMap"
-            async defer></script>
+        async defer></script>
 </body>
 
 </html>
-
-
