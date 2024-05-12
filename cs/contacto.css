@@ -35,14 +35,12 @@
 
 
 .contacto-formulario {
-    
     margin: 20rem 0;
     background-color: var(--gris);
     margin: 0 auto;
     padding: 5rem;
     display: grid;
-    gap: 2rem;
-
+    gap: 6rem;
 }
 
 .input-text {
