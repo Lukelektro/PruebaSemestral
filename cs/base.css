@@ -105,6 +105,28 @@ header .container-fluid{
 }
 
 
+/*Media para cambiar el modal en pantalla Telefono*/
+@media (min-width: 768px) {
+    .modal-xl {
+        max-width: 90%; /
+    }
+    .calendly-inline-widget {
+        height: 1000px !important;  
+    }
+}
+/*Media para cambiar el modal en pantalla pc*/
+@media (min-width: 1199.98px) {
+    .modal-xl {
+        max-width: 90%; 
+    }
+    .calendly-inline-widget {
+        height: 500px !important; 
+    }
+}
+
+
+
+
 
 /* FOOTER */
 .texto-footer {
