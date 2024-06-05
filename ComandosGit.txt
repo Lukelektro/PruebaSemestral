@@ -1,0 +1,6 @@
+git init #inicia el repositorio local
+git remote add origin #vinculacion repositorio local con repositorio remoto
+git status #muestra aquellos cambios no confirmados
+git add [nombre del archivo a agregar]o git add . #el primero solo agrega archivo especifico y el segundo todos los archivos modificados
+git commit -m "agrege mensaje"
+git push -u origin [branch] #para subir al repositorio remoto
