@@ -1,0 +1,89 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block title %}Contáctanos{% endblock %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/contacto.css' %}">
+
+
+    <!-- Seccion Contactos -->
+    <section id="Contacto">
+        <div class="contacto-formulario">
+
+            <h1 class="text-center">Contactanos</h1>
+
+            <form id="form-contacto" class="needs-validation" novalidate>
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control  input-text" id="email" placeholder="Email" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa tu email.
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="inputPhoneNumber">Telefono</label>
+                        <input type="number" class="form-control input-text" id="input-phoneform" placeholder="Ingresa tu numero telefonico" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa tu número de teléfono.
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="inputAddress">Ciudad</label>
+                        <input type="text" class="form-control input-text" autocomplete="street-address" id="input-ciudad1form" placeholder="Direccion de tu domicilio" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa tu dirección.
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="inputState">Sucursal Deseada</label>
+                        <select id="input-sucursalform" class="form-control input-text" required>
+                            <option value="" disabled selected>------ Seleccione ------</option>
+                            <option>Viña del mar</option>
+                            <option>Quilpue</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor selecciona una sucursal.
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="inputDetalle">Detalles de tu Situacion</label>
+                        <textarea class="form-control input-text" required></textarea>
+                        <div class="invalid-feedback">
+                            Por favor ingresa los detalles de tu situación.
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <button type="submit" class="btn btn-contacto">Enviar</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Enviado</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Su mensaje ha sido correctamente enviado.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/contacto.js' %}"></script>
+    {% endblock %}
+</html>

@@ -1,0 +1,81 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block title %}Servicios{% endblock %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/servicios.css' %}">
+    
+
+    <section id="vista-servicios">
+
+        <h1>Servicios</h1>
+
+        <div class="contenido-servicio">
+            
+            <img class="img-servicio" loading="lazy" src="{% static 'img/servicio-1.png' %}" alt="img servicio 1">
+
+            <div class="texto-servicio">
+    
+                <h1>Limpieza de Vehiculo</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam culpa
+                    ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus. Repellendus
+                    perferendis neque voluptatum.
+                </p>
+
+                <div class="contenedor-boton-servicios">
+                    <img class="img-fluid img-carrito" src="{% static 'img/cart-shopping-solid.svg' %}" alt="imagen carrito">
+                    <button type="button" class="boton-servicio">Anadir a carrito</button>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="contenido-servicio ">
+            
+            <img class="img-servicio" loading="lazy" src="{% static 'img/servicio-2.jpg' %}" alt="img servicio 1">
+
+            <div class="texto-servicio">
+    
+                <h1 class="text-center ">Cambio de aceite</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam culpa
+                    ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus. Repellendus
+                    perferendis neque voluptatum.
+                </p>
+
+                <div class="contenedor-boton-servicios">
+                    <img class="img-carrito" src="{% static 'img/cart-shopping-solid.svg' %}" alt="imagen carrito">
+                    <button type="button" class="boton-servicio">Anadir a carrito</button>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <div class="contenido-servicio">
+            
+            <img class="img-servicio" loading="lazy" src="{% static 'img/servicio-3.jpg' %}" alt="img servicio 1">
+
+            <div class="texto-servicio">
+    
+                <h1 class="text-center ">Cambio de bujia</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam culpa
+                    ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus. Repellendus
+                    perferendis neque voluptatum.
+                </p>
+
+                <div class="contenedor-boton-servicios">
+                    <img class="img-fluid img-carrito" src="{% static 'img/cart-shopping-solid.svg' %}" alt="imagen carrito">
+                    <button type="button" class="boton-servicio">Anadir a carrito</button>
+                </div>
+
+            </div>
+        </div> 
+    </section>
+
+
+    {% endblock %}
+</html>
