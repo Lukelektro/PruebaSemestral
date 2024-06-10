@@ -1,0 +1,12 @@
+
+section {
+    height: 100%;
+    margin-top: 7rem;
+}
+
+
+.table {
+    background-color: var(--gris);
+    margin: 0 auto;
+    padding: 5rem;
+}

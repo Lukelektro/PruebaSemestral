@@ -6,7 +6,7 @@ $(document).ready(function(){
       interval: 2000
     });
     
-  });
+});
 
 
 // Permite a la navbar salirse de los bordes de la pantalla
