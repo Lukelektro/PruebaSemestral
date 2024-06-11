@@ -13,7 +13,6 @@ class mecanico(models.Model):
     especialidad = models.CharField(max_length=50)
     experiencia = models.CharField(max_length=50)
     fecha_ingreso = models.DateField()
-    estado = models.IntegerField()
 
     def __str__(self):
         return self.nombre + ' ' + self.apellido
