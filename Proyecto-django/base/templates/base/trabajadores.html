@@ -1,0 +1,85 @@
+{% extends '../base.html' %}
+{% load static %}
+
+
+{% block title %}Trabajadores{% endblock %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/trabajadores.css' %}">
+
+    
+
+    <section id="vista-trabajadores">
+
+        <h1>Conoce sobre Nosotros</h1>
+
+        <div class="contenido-trabajadores">
+            
+            <img class="img-trabajadores contenedor-imagen" loading="lazy" src="{% static 'img/trabajadores/trabajador1.jpg' %}" alt="img nosotros">
+
+            <div class="texto-nosotros">
+    
+                <h2>Federico Fernet</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam culpa
+                    ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus. Repellendus
+                    perferendis neque voluptatum.
+                </p>
+
+            </div>
+        </div>
+        
+        <div class="contenido-trabajadores">
+            
+            <div class="texto-nosotros pb-5">
+    
+                <h2>Hernando Martinez</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam culpa
+                    ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus. Repellendus
+                    perferendis neque voluptatum.
+                </p>
+
+            </div>
+
+            <img class="img-trabajadores" loading="lazy" src="{% static 'img/trabajadores/trabajador2.jpg' %}" alt="img nosotros">
+
+        </div>
+        
+        <div class="contenido-trabajadores">
+            
+            <img class="img-trabajadores" loading="lazy" src="{% static 'img/trabajadores/trabajador4.jpg' %}" alt="img nosotros">
+
+            <div class="texto-nosotros">
+    
+                <h2>Federico Guiter</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam culpa
+                    ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus. Repellendus
+                    perferendis neque voluptatum.
+                </p>
+
+            </div>
+
+        </div> 
+
+        <div class="contenido-trabajadores">
+            
+            <div class="texto-nosotros">
+    
+                <h2>Matias Gonzalez</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam culpa
+                    ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus. Repellendus
+                    perferendis neque voluptatum.
+                </p>
+
+            </div>
+
+            <img class="img-trabajadores" loading="lazy" src="{% static 'img/trabajadores/trabajador3.jpg' %}" alt="img nosotros">
+
+        </div> 
+    </section>
+
+    
+
+    {% endblock %}
+</html>
