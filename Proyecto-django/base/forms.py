@@ -1,5 +1,6 @@
 from django import forms
 from .models import mecanico
+<<<<<<< HEAD
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 class mecanicoForm(forms.ModelForm):
@@ -14,3 +15,13 @@ class mecanicoForm(forms.ModelForm):
         model = mecanico 
         fields = ['nombre', 'apellido', 'telefono', 'correo', 'direccion', 'especialidad','imagen']
 
+=======
+
+from django.forms import ModelForm
+
+
+class mecanicoForm(ModelForm):
+    class Meta:
+        model = mecanico 
+        fields = ['nombre', 'apellido', 'telefono', 'correo', 'direccion', 'especialidad']
+>>>>>>> 6fab12373ed2ff4fb03d74f63cba00f28d2ceec4
