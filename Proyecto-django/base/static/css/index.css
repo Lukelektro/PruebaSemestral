@@ -214,6 +214,7 @@ h2 {
 /* SECCION SERVICIOS */
 #services {
     background-color: var(--gris);
+    margin-bottom: 2rem;
 }
 
 #services .card {

@@ -55,228 +55,80 @@
     <!--Seccion Trabajadores-->
     <section id="trabajadores">
         <h1>Nuestros<br>Trabajadores</h1>
+
         <!--Contenedor/Grupo de CARD-->
-        <div class="card-group">
-            <!-- CARTA1 -->
-            <div class="card rounded-5 color-gris m-3">
-                <img src="{%static 'img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg'%}"
-                    class="card-img-top rounded-5 img-fluid rounded-radius w-75 h-75 mt-3 mx-auto"
-                    alt="imagen-trabajador1">
-                <div class="card-body">
-                    <h5 class="card-title text-white">Federico Fernet</h5>
-                    <br>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item color-gris-chico text-white">Tiempo completo</li>
-                        <li class="list-group-item color-gris-chico text-white">Weno pal catre</li>
-                        <li class="list-group-item color-gris-chico text-white">10 años de servicio</li>
-                    </ul>
-                    <br>
-                    <!-- Boton de accion del modal -->
-                    <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop1">
-                        Consultar disponibilidad
-                    </button>
+        
+            <div class="card-group">
+                <!-- CARTA -->
+                {% for mecanico in mecanicos|slice:":3"%}
+                <div class="card rounded-5 color-gris m-3">
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
-                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Solicitar Reunion</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <!--Script de API Clandky-->
-                                    <div class="calendly-inline-widget" style="width:100%; height: 500px;"
-                                        data-auto-load="false">
-                                        <script type="text/javascript"
-                                            src="https://assets.calendly.com/assets/external/widget.js"></script>
-                                        <script>
-                                            Calendly.initInlineWidget({
-                                                "url": 'https://calendly.com/el-paredes/cotizacion-de-servicio'
-                                            });
-                                        </script>
+                    {% if mecanico.imagen %}
+                        <img class="card-img-top rounded-2 img-fluid rounded-radius w-75 h-75 mt-3 mx-auto" src="{{ mecanico.imagen.url }}" alt="Imagen del mecanico">
+                    {% else %}
+                        <p>Sin Imagen</p>
+                    {% endif %}</td>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title text-white">{{mecanico}}</h5>
+                        <br>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item color-gris-chico text-white"> +56 {{ mecanico.telefono|stringformat:"s"|slice:":1" }} {{ mecanico.telefono|stringformat:"s"|slice:"1:" }}  </li>
+                            <li class="list-group-item color-gris-chico text-white">{{mecanico.correo}}</li>
+                            <li class="list-group-item color-gris-chico text-white">{{mecanico.especialidad}}</li>
+                        </ul>
+                        <br>
+                        <!-- Boton de accion del modal -->
+                        <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop1">
+                            Consultar disponibilidad
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Solicitar Reunion</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
                                     </div>
+                                    <div class="modal-body">
+                                        <!--Script de API Clandky-->
+                                        <div class="calendly-inline-widget" style="width:100%; height: 500px;"
+                                            data-auto-load="false">
+                                            <script type="text/javascript"
+                                                src="https://assets.calendly.com/assets/external/widget.js"></script>
+                                            <script>
+                                                Calendly.initInlineWidget({
+                                                    "url": 'https://calendly.com/el-paredes/cotizacion-de-servicio'
+                                                });
+                                            </script>
+                                        </div>
 
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Regresar</button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Regresar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- CARTA2 -->
-            <div class="card rounded-5 color-gris m-3">
-                <img src="{%static 'img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg'%}"
-                    class="card-img-top rounded-5 img-fluid rounded-radius w-75 h-75 mt-3 mx-auto"
-                    alt="imagen-trabajador1">
-                <div class="card-body">
-                    <h5 class="card-title text-white">Fransisco Mongoliano</h5>
-                    <br>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item color-gris-chico text-white">Tiempo completo</li>
-                        <li class="list-group-item color-gris-chico text-white">Siempre esta cochino
-                        </li>
-                        <li class="list-group-item color-gris-chico text-white">12 años de servicio</li>
-                    </ul>
-                    <br>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop2">
-                        Consultar disponibilidad
-                    </button>
+                {% endfor %}
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
-                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Solicitar Reunion</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="calendly-inline-widget" style="width:100%; height: 500px;"
-                                        data-auto-load="false">
-                                        <script type="text/javascript"
-                                            src="https://assets.calendly.com/assets/external/widget.js"></script>
-                                        <script>
-                                            Calendly.initInlineWidget({
-                                                "url": 'https://calendly.com/el-paredes/consulta-general'
-                                            });
-                                        </script>
-                                    </div>
+            </div>            
 
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Regresar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- CARTA3 -->
-            <div class="card rounded-5 color-gris m-3">
-                <img src="{%static 'img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg'%}"
-                    class="card-img-top rounded-5 img-fluid rounded-radius w-75 h-75 mt-3 mx-auto"
-                    alt="imagen-trabajador1">
-                <div class="card-body">
-                    <h5 class="card-title text-white">Mauricio Fortnite</h5>
-                    <br>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item color-gris-chico text-white">Tiempo completo</li>
-                        <li class="list-group-item color-gris-chico text-white">Hizo un auto con palos y
-                            piedras</li>
-                        <li class="list-group-item color-gris-chico text-white">6 años de servicio</li>
-                    </ul>
-                    <br>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop3">
-                        Consultar disponibilidad
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false"
-                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Solicitar Reunion</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="calendly-inline-widget" style="width:100%; height: 500px;"
-                                        data-auto-load="false">
-                                        <script type="text/javascript"
-                                            src="https://assets.calendly.com/assets/external/widget.js"></script>
-                                        <script>
-                                            Calendly.initInlineWidget({
-                                                "url": 'https://calendly.com/el-paredes/cotizacion-de-servicio'
-                                            });
-                                        </script>
-                                    </div>
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Regresar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- CARTA4 -->
-            <div class="card rounded-5 color-gris m-3">
-                <img src="{%static 'img/trabajadores/19663475-trabajador-profesional-coches-trabajador-mecánico.jpg'%}"
-                    class="card-img-top rounded-5 img-fluid rounded-radius w-75 h-75 mt-3 mx-auto"
-                    alt="imagen-trabajador1">
-                <div class="card-body">
-                    <h5 class="card-title text-white">Patricio Martini</h5>
-                    <br>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item color-gris-chico text-white">Tiempo completo</li>
-                        <li class="list-group-item color-gris-chico text-white">No sabe lo que es un
-                            auto</li>
-                        <li class="list-group-item color-gris-chico text-white">23 años de servicio</li>
-                    </ul>
-                    <br>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop4">
-                        Consultar disponibilidad
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false"
-                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Solicitar Reunion</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="calendly-inline-widget" style="width:100%; height: 1000px;"
-                                        data-auto-load="false">
-                                        <script type="text/javascript"
-                                            src="https://assets.calendly.com/assets/external/widget.js"></script>
-                                        <script>
-                                            Calendly.initInlineWidget({
-                                                "url": 'https://calendly.com/el-paredes/consulta-general'
-                                            });
-                                        </script>
-                                    </div>
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Regresar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!--Boton para ver mas trabajadores (redirecciona a trabajadores.html)-->
         <div class="p-5">
             <h3>Conoce a mas trabajadores</h3>
             <button type="button" class="btn boton-trabajador mt-1 w-auto border-0 rounded-pill fw-bold py-2 px-5"
-                onclick="window.location.href = 'trabajadores.html';">Mas trabajadores</button>
+                onclick="window.location.href = '{% url 'trabajadores' %}';">Mas trabajadores</button>
         </div>
+
     </section>
 
     <section id="partner-con-api">
@@ -397,13 +249,9 @@
                                 class="btn btn-outline-secondary mt-3 text-white">
                                 Contratar servicio</button>
                         </div>
-                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>   </div>
                 </div>
             </div>
         </div>
-        <br>
-        <th scope="col">Acciones</th>
     </section>
 
 

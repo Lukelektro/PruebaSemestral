@@ -18,7 +18,9 @@ def Contacto(request):
     return render(request, 'base/Contacto.html')
 
 def trabajadores(request):
-    return render(request, 'base/trabajadores.html')
+    mecanicos = mecanico.objects.all()
+    context={"mecanicos":mecanicos}
+    return render(request, 'base/trabajadores.html',context)
 
 def servicios(request):
     return render(request, 'base/servicios.html')
@@ -53,7 +55,7 @@ def mecanico_add(request, id_mecanico=None):
     if request.method == 'POST':
 
         #Si existe id_mecanico, se instancia el formulario con la instancia del mecanico
-        form = mecanicoForm(request.POST, request.FILES, instance=instance)
+        form = mecanicoForm(request.POST,request.FILES ,instance=instance)
 
         #Si el formulario es valido, se guarda el mecanico
         if form.is_valid():
@@ -68,6 +70,7 @@ def mecanico_add(request, id_mecanico=None):
                 mensaje = 'Mecanico agregado correctamente'
             
             form = mecanicoForm(instance=mecanico_instance)
+            
             #Se retorna el mensaje de que el mecanico fue guardado correctamente
             context = {'mensaje':mensaje,'form': form}
             return render(request, 'base/mecanico_add.html', context)
