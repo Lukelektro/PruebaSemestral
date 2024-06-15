@@ -10,10 +10,10 @@ class mecanico(models.Model):
     apellido = models.CharField(max_length=50)
     telefono = models.IntegerField(validators=[MaxValueValidator(9999999999)])
     correo = models.CharField(max_length=50)
-    direccion = models.CharField(max_length=50)
+    sucursal = models.CharField(max_length=50,null=True, blank=True)
     especialidad = models.CharField(max_length=50)
     experiencia = models.CharField(max_length=50)
-    fecha_ingreso = models.DateField(auto_now_add=True)
+    descripcion = models.TextField(default='Sin descripción')
     imagen = models.ImageField(upload_to='mecanicos', null=True, blank=True)
 
     def __str__(self):
@@ -23,6 +23,19 @@ class mecanico(models.Model):
     def delete(self, *args, **kwargs):
         self.imagen.delete(save=False)
         super().delete(*args, **kwargs)
+
+
+class MensajeContacto(models.Model):
+    id_name = models.AutoField(primary_key=True)
+    email  = models.EmailField()
+    telefono = models.IntegerField(validators=[MaxValueValidator(9999999999)])
+    direccion = models.CharField(max_length=50)
+    sucursal = models.CharField(max_length=50)
+    mensaje = models.TextField()
+    creado = models.DateTimeField(auto_now_add=True)
+
+    
+
     
 
 

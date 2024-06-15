@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from django.contrib import messages
+from django.http import JsonResponse
 from datetime import datetime
 from .models import mecanico
-from .forms import mecanicoForm
+from .forms import mecanicoForm,contactoForm
 
 
 # Create your views here.
@@ -14,8 +15,7 @@ def index(request):
     context={"mecanicos":mecanicos}
     return render(request, 'base/index.html', context)
 
-def Contacto(request):
-    return render(request, 'base/Contacto.html')
+
 
 def trabajadores(request):
     mecanicos = mecanico.objects.all()
@@ -87,3 +87,26 @@ def mecanico_add(request, id_mecanico=None):
     
 
     
+#***************** CONTACTO *****************
+
+
+
+def contacto(request):
+    form_submitted = False  # Indicador de que el formulario se ha enviado correctamente
+
+    if request.method == 'POST':
+
+        form = contactoForm(request.POST)
+
+        if form.is_valid():
+
+            form.save()
+            form_submitted = True  # Actualiza el indicador
+
+            form = contactoForm()
+        return render(request, 'base/contacto.html', {'form': form, 'form_submitted': form_submitted})
+
+    else:
+        form = contactoForm()
+    
+    return render(request, 'base/contacto.html', {'form': form, 'form_submitted': form_submitted})
