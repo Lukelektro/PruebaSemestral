@@ -4,6 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
 
 
+#*************** MECANICO ****************
 class mecanico(models.Model):
     id_mecanico = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=50)
@@ -24,6 +25,7 @@ class mecanico(models.Model):
         self.imagen.delete(save=False)
         super().delete(*args, **kwargs)
 
+#*************** MENSAJE CONTACTO ****************
 
 class MensajeContacto(models.Model):
     id_name = models.AutoField(primary_key=True)
@@ -52,6 +54,8 @@ class Servicio(models.Model):
         self.imagen.delete(save=False)
         super().delete(*args, **kwargs)
 
+#*************** CLIENTE ****************
+
 class Cliente(models.Model):
     id_cliente = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=50)
@@ -65,7 +69,7 @@ class Cliente(models.Model):
     def __str__(self):
         return self.nombre + ' ' + self.apellido
 
-
+#*************** CARRITO ****************
     
 class Carrito(models.Model):
     id_carrito = models.AutoField(primary_key=True)

@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.http import JsonResponse
 from datetime import datetime
 from .models import mecanico,Servicio
-from .forms import mecanicoForm,contactoForm
+from .forms import mecanicoForm,contactoForm,servicioForm
 
 
 # Create your views here.
@@ -117,3 +117,27 @@ def servicio_list(request):
     servicios = Servicio.objects.all()
     context={"servicios":servicios}
     return render(request, 'base/servicio_list.html', context)
+
+def servicio_delete(request, id_servicio):
+    servicio_to_delete = get_object_or_404(Servicio, id_servicio=id_servicio)
+    servicio_to_delete.delete()
+
+    messages.success(request, 'Servicio eliminado correctamente')
+    return render(request, 'base/servicio_list.html')
+
+def servicio_add(request):
+
+    if request.method == 'POST':
+
+        form = servicioForm(request.POST,request.FILES)
+
+        if form.is_valid():
+
+            form.save()
+
+            form = servicioForm()
+        return render(request, 'base/servicio_add.html', {'form': form})
+
+    else:
+        form = servicioForm()
+        return render(request, 'base/servicio_add.html', {'form': form})
