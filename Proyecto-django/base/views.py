@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404,redirect
 from django.contrib import messages
 from django.http import JsonResponse
 from datetime import datetime
-from .models import mecanico
+from .models import mecanico,Servicio
 from .forms import mecanicoForm,contactoForm
 
 
@@ -110,3 +110,10 @@ def contacto(request):
         form = contactoForm()
     
     return render(request, 'base/contacto.html', {'form': form, 'form_submitted': form_submitted})
+
+#***************** SERVICIOS *****************
+
+def servicio_list(request):
+    servicios = Servicio.objects.all()
+    context={"servicios":servicios}
+    return render(request, 'base/servicio_list.html', context)

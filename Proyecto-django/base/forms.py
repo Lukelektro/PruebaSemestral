@@ -1,5 +1,5 @@
 from django import forms
-from .models import mecanico,MensajeContacto
+from .models import mecanico,MensajeContacto,Servicio
 from django.core.validators import MaxValueValidator
 
 class mecanicoForm(forms.ModelForm):
@@ -17,7 +17,7 @@ class mecanicoForm(forms.ModelForm):
         model = mecanico 
         fields = ['nombre', 'apellido', 'telefono', 'correo', 'sucursal', 'especialidad','experiencia','descripcion','imagen']
 
-
+#**************** FORM CONTACTO ****************
 class contactoForm(forms.ModelForm):
     email = forms.EmailField(required=True,max_length=50)
     telefono = forms.IntegerField(required=True)
@@ -28,3 +28,15 @@ class contactoForm(forms.ModelForm):
     class Meta:
         model = MensajeContacto
         fields = ['email', 'telefono', 'direccion', 'sucursal', 'mensaje']
+        
+#**************** FORM SERVICIO ****************
+
+class servicioForm(forms.ModelForm):
+    nombre = forms.CharField(required=True,max_length=50)
+    descripcion = forms.CharField(required=True,widget=forms.Textarea)
+    precio = forms.DecimalField(required=True,max_digits=10, decimal_places=2)
+    imagen = forms.ImageField(required=False)
+
+    class Meta:
+        model = Servicio
+        fields = ['nombre', 'descripcion', 'precio', 'imagen']

@@ -1,0 +1,83 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}    
+
+{% block title %}Agregar Servicio{% endblock %}
+
+{% block content %}
+    <section style="height: 100%; margin-top: 5rem; background-color: var(--blanco);">
+
+        <div class="container mb-3 mt-5 pt-4 flex-column align-items-center justify-content-center">
+            <div>
+                <h1 class="mt-5 text-center fw-bold" style="color: var(--gris);">Agregar Servicios</h1>
+            </div>
+            
+            <div>
+                <a href="{% url 'mecanico_list' %}" class="btn btn-secondary fw-bold">Volver</a>
+            </div>
+
+            {% if mensaje %}
+            <div class="alert alert-success alert-dismissible fade show text-center mt-2 " role="alert">
+                <strong>{{ mensaje }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="card col-md-6" style="background-color: var(--gris);">
+
+                    <form id="form-contacto" method="POST" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        <div class="contenedor-campos">
+                            <div class="campo">
+                                {{form.email|as_crispy_field}}
+                                <div class="invalid-feedback">
+                                    Por favor ingresa tu email.
+                                </div>
+                            </div>
+                            <div class="campo">
+                                {{form.telefono|as_crispy_field}}
+                                <div class="invalid-feedback">
+                                    Por favor ingresa tu número de teléfono.
+                                </div>  
+                            </div>
+                            <div class="campo">
+                                {{form.direccion|as_crispy_field}}
+                                <div class="invalid-feedback">
+                                    Por favor ingresa tu dirección.
+                                </div>  
+                            </div>
+                            <div class="campo">
+                                {{form.sucursal|as_crispy_field}}
+                                <div class="invalid-feedback">
+                                    Por favor selecciona una sucursal.
+                                </div>
+                            </div>
+                            <div class="campo">
+                                {{form.mensaje|as_crispy_field}}
+                                <div class="invalid-feedback">
+                                    Por favor ingresa los detalles de tu situación.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2 col-2 mx-auto">
+                            <button type="submit" class="btn btn-contacto">Enviar</button>
+                        </div>
+                            
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+
+        <br>
+        
+        
+        
+    </section>
+    {% endblock %}
+</html>
