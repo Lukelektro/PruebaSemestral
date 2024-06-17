@@ -13,7 +13,7 @@ class mecanico(models.Model):
     sucursal = models.CharField(max_length=50,null=True, blank=True)
     especialidad = models.CharField(max_length=50)
     experiencia = models.CharField(max_length=50)
-    descripcion = models.TextField(default='Sin descripción')
+    descripcion = models.TextField(null=True, blank=True)
     imagen = models.ImageField(upload_to='mecanicos', null=True, blank=True)
 
     def __str__(self):

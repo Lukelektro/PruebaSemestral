@@ -7,13 +7,15 @@ class mecanicoForm(forms.ModelForm):
     apellido = forms.CharField(required=True,max_length=50)
     telefono = forms.IntegerField(required=True,validators=[MaxValueValidator(9999999999)]) 
     correo = forms.EmailField(required=True,max_length=50)
-    direccion = forms.CharField(required=True,max_length=50) 
+    sucursal = forms.ChoiceField(required=True,choices=[('vinadelmar','Viña del Mar'),('quilpue','Quilpue ')]) 
     especialidad = forms.CharField(required=True,max_length=50)
+    experiencia = forms.CharField(max_length=50)
+    descripcion = forms.CharField(required=True,widget=forms.Textarea)
     imagen = forms.ImageField(required=False)
 
     class Meta:
         model = mecanico 
-        fields = ['nombre', 'apellido', 'telefono', 'correo', 'direccion', 'especialidad','imagen']
+        fields = ['nombre', 'apellido', 'telefono', 'correo', 'sucursal', 'especialidad','experiencia','descripcion','imagen']
 
 
 class contactoForm(forms.ModelForm):
