@@ -1,0 +1,238 @@
+/*para cambiar las cartas a color gris */
+
+.color-gris {
+    background-color: #535252;
+    border-radius: 30px;
+}
+
+.color-gris-chico {
+    background-color: #535252;
+}
+
+/* estructura de los titulos (favor de editarlas si quieren otros colors llamando al ID de la seccion que quieran editar)*/
+h1 {
+    font-family: 'Nunito', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+    padding: 5px;
+}
+
+h2 {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    position: absolute;
+}
+
+/*principal*/
+/* Estas 3 clases son del fondo transparente, favor de no cambiar */
+.pagina-principal-container {
+    background-image: url('https://cdn-9.motorsport.com/images/amp/YBeqxXM2/s6/sebastian-vettel-ferrari-sf100.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 900px;
+}
+
+.pagina-principal-overlay {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/*si se agranda o se achica la navbar, debes cambiar si o si #hero-principal, ya que se le tiene un margen en base a la navbar para que no colicionen*/
+#hero-principal {
+    margin-top: 97px;
+}
+
+#hero-principal h2 {
+    color: var(--gris);
+    left: 0;
+    font-size: 120px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    bottom: 0;
+    text-shadow: 4px 4px 0 #4f101a, -1px -1px 0 #4f101a, 1px -1px 0 #4f101a, -1px 1px 0 #4f101a, 4px 4px 2px rgba(0, 0, 0, 0.1238);
+}
+
+#hero-principal h2 span {
+    color: var(--amarillo);
+    font-family: "Poetsen One", sans-serif;
+}
+
+/* para cuando se achique la pantalla, mantenga formato el titulo de "para que tu auto siga de primeras" */
+@media (max-width: 1030px) {
+    #hero-principal h2 {
+        font-size: 80px;
+    }
+}
+
+/* Margen de los logos, con los width pueden mover el tamaño */
+/* reajuste los margenes, no me gustaron como habian quedado los anteriores
+   ya que los reescalaba, estos estan en su completa resolucion */
+.ajuste-foto-logo {
+    margin-top: 90px;
+    width: 430px;
+}
+
+.ajuste-foto-letra {
+    margin-top: 290px;
+    margin-left: 230px;
+    transition: margin-top 0.5s ease;
+}
+
+/* Lamentablemente tuve la horrible idea de hacer hero principal con imagenes, este media arregla ese error, a futuro se puede hacer un h1 nomas pero no encuentro la fuente*/
+@media (max-width: 1169px) {
+
+    .ajuste-foto-letra {
+        width: 70%;
+        margin-top: 350px;
+    }
+}
+
+/* SECCION NOSOTROS*/
+#hero-nosotros h1 {
+    text-align: center;
+    align-items: center;
+    color: #C5A014;
+    text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
+    font-size: 100px;
+}
+
+#hero-nosotros {
+    background-color: var(--piel);
+}
+
+@media (min-width: 768px) {
+    .contenido-nosotros {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Boton para redireccionar a sobre nosotros.html */
+.boton-sobre-nosotros {
+    background: var(--gris);
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.5s ease;
+    background: linear-gradient(270deg, var(--rojo), var(--gris), var(--amarillo));
+    background-size: 600% 600%;
+    animation: difuminacion 7s ease infinite;
+}
+
+@keyframes difuminacion {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* SECCION TRABAJADORES*/
+#trabajadores h1 {
+    text-align: center;
+    align-items: center;
+    color: #C5A014;
+    text-shadow: -2px 0px var(--rojo), 0 2px var(--rojo), 2px 0px var(--rojo), 0 -2px var(--rojo),
+        -2px 2px var(--rojo), -2px -2px var(--rojo), 2px 2px var(--rojo), 2px -2px var(--rojo),
+        -2px 0px var(--rojo), 0 2px var(--rojo), 2px 0px var(--rojo), 0 -2px var(--rojo),
+        -2px 2px var(--rojo), -2px -2px var(--rojo), 2px 2px var(--rojo), 2px -2px var(--rojo),
+        -2px 0px var(--rojo), 0 2px var(--rojo), 2px 0px var(--rojo), 0 -2px var(--rojo),
+        -2px 2px var(--rojo), -2px -2px var(--rojo), 2px 2px var(--rojo), 2px -2px var(--rojo);
+    font-size: 100px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+/*para que las cartas tengan borde*/
+#trabajadores .card {
+    border: 5px solid var(--amarillo);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.9);
+}
+
+/*fondo y texto de la seccion*/
+#trabajadores {
+    background-color: #333333;
+    color: var(--piel);
+    text-align: center;
+}
+
+/*titulo de la seccion trabajadores*/
+#trabajadores h2 {
+    padding-top: 5rem;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+/* BOTON TRABAJADOR Y SU CONTENEDOR*/
+.boton-trabajador {
+    background-color: var(--amarillo);
+    font-size: 16px;
+    line-height: 1.8rem;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    color: var(--gris);
+}
+
+.boton-trabajador:hover {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+
+/*seccion Asociados y cotización*/
+#partner-con-api {
+    background-color: var(--piel);
+    color: var(--gris);
+    text-align: center;
+}
+
+#partner-con-api h1 {
+    color: #C5A014;
+    text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
+    font-size: 100px;
+}
+
+/* SECCION SERVICIOS */
+#services {
+    background-color: var(--gris);
+    margin-bottom: 2rem;
+}
+
+#services .card {
+    border: 5px solid var(--piel);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+#services h1 {
+    color: var(--piel);
+}
+
+.titulo-servicios {
+    color: #C5A014;
+    text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
+        -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
+        -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro);
+    font-size: 100px;
+}

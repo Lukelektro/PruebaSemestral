@@ -1,0 +1,72 @@
+    {% extends '../base.html' %}
+{% load static %}
+
+
+{% block title %}Trabajadores{% endblock %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/trabajadores.css' %}">
+
+    
+
+    <section id="vista-trabajadores">
+
+        
+            
+
+        <h1>Conoce sobre Nosotros</h1>
+
+        {% for mecanico in mecanicos %}
+            {% if forloop.counter|divisibleby:"2" %}
+
+            <div class="contenido-trabajadores">
+                
+                {% if mecanico.imagen %}
+                    <img class="rounded-2 img-trabajadores contenedor-imagen" src="{{ mecanico.imagen.url }}" alt="Imagen del mecanico">
+                {% else %}
+                    <p>Sin Imagen</p>
+                {% endif %}</td>
+
+
+                <div class="texto-nosotros">
+        
+                    <h2>{{mecanico}}</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam culpa
+                        ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus. Repellendus
+                        perferendis neque voluptatum.
+                    </p>
+
+                </div>
+            </div>
+            {% else %}
+
+            <div class="contenido-trabajadores">
+                
+                <div class="texto-nosotros">
+        
+                    <h2>{{mecanico}}</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam culpa
+                        ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus. Repellendus
+                        perferendis neque voluptatum.
+                    </p>
+
+                </div>
+
+                {% if mecanico.imagen %}
+                    <img class="rounded-2 img-trabajadores contenedor-imagen" src="{{ mecanico.imagen.url }}" alt="Imagen del mecanico">
+                {% else %}
+                    <p>Sin Imagen</p>
+                {% endif %}</td>
+            </div>
+            {% endif %}
+        
+        {% endfor %}
+       
+    </section>
+
+    
+
+    {% endblock %}
+</html>

@@ -1,0 +1,259 @@
+{% extends '../base.html' %}
+{% load static %}
+
+
+{% block title %}Trabajadores{% endblock %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+
+
+    <!--Hero principal: lo que contiene las fotos-->
+    <section id="hero-principal" class="position-relative">
+        <div class="pagina-principal-container">
+            <div class="d-flex flex-column w-100 h-100 pagina-principal-overlay">
+                <div class="d-flex flex-row justify-content-center pagina-principal-img">
+                    <img src="{% static 'img/logo-trans-2.png' %}"
+                        class="ajuste-foto-logo d-flex justify-content-center align-items-center h-auto mw-100"
+                        alt="logo-empresa">
+                    <img src="{%static 'img/letra-logo.png'%}" class="ajuste-foto-letra mw-100 position-absolute h-auto"
+                        alt="letras-logo">
+                    <h2>Para que tu auto <br><span>siga de primeras!</span></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--vista previa del Sobre Nosotros-->
+    <section id="hero-nosotros">
+        <div>
+            <h1>Sobre Nosotros</h1>
+        </div>
+        <div class="contenido-nosotros text-center p-0 px-md-5 pb-md-5">
+            <img class="img-fluid" src="{%static 'img/about-us.jpg'%}" alt="img-nosotros">
+            <div class="d-grid align-items-center">
+                <h3 class="fw-bold p-3">MQween: Donde la Magia de Radiador Springs y la Pasión por los
+                    Autos Cobran Vida</h3>
+                <p class="fw-bold p-3">Bienvenidos a MQween, el taller de mecánica más emblemático de Radiador Springs.
+                    En
+                    nuestro taller,
+                    nos dedicamos a mantener en perfecto estado a todos los vehículos que pasan por nuestras puertas,
+                    desde los más veloces hasta los más clásicos.
+                </p>
+                <button
+                    class="border-0 text-white fw-bold position-relative d-flex align-items-center justify-content-center py-3 px-5 rounded-pill boton-sobre-nosotros"
+                    onclick="window.location.href = 'nosotros.html';">Conoce mas
+                    sobre nosotros</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Seccion Trabajadores-->
+    <section id="trabajadores">
+        <h1>Nuestros<br>Trabajadores</h1>
+
+        <!--Contenedor/Grupo de CARD-->
+        
+            <div class="card-group">
+                <!-- CARTA -->
+                {% for mecanico in mecanicos|slice:":3"%}
+                <div class="card rounded-5 color-gris m-3">
+
+                    {% if mecanico.imagen %}
+                        <img class="card-img-top rounded-2 img-fluid rounded-radius w-75 h-75 mt-3 mx-auto" src="{{ mecanico.imagen.url }}" alt="Imagen del mecanico">
+                    {% else %}
+                        <p>Sin Imagen</p>
+                    {% endif %}</td>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title text-white">{{mecanico}}</h5>
+                        <br>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item color-gris-chico text-white"> +56 {{ mecanico.telefono|stringformat:"s"|slice:":1" }} {{ mecanico.telefono|stringformat:"s"|slice:"1:" }}  </li>
+                            <li class="list-group-item color-gris-chico text-white">{{mecanico.correo}}</li>
+                            <li class="list-group-item color-gris-chico text-white">{{mecanico.especialidad}}</li>
+                        </ul>
+                        <br>
+                        <!-- Boton de accion del modal -->
+                        <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop1">
+                            Consultar disponibilidad
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Solicitar Reunion</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!--Script de API Clandky-->
+                                        <div class="calendly-inline-widget" style="width:100%; height: 500px;"
+                                            data-auto-load="false">
+                                            <script type="text/javascript"
+                                                src="https://assets.calendly.com/assets/external/widget.js"></script>
+                                            <script>
+                                                Calendly.initInlineWidget({
+                                                    "url": 'https://calendly.com/el-paredes/cotizacion-de-servicio'
+                                                });
+                                            </script>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Regresar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>            
+
+
+        <!--Boton para ver mas trabajadores (redirecciona a trabajadores.html)-->
+        <div class="p-5">
+            <h3>Conoce a mas trabajadores</h3>
+            <button type="button" class="btn boton-trabajador mt-1 w-auto border-0 rounded-pill fw-bold py-2 px-5"
+                onclick="window.location.href = '{% url 'trabajadores' %}';">Mas trabajadores</button>
+        </div>
+
+    </section>
+
+    <section id="partner-con-api">
+        <h1 class="text-center align-items-center lh-2 m-0 p-0 py-2">Asociados</h1>
+        <br>
+        <p class="fw-bold fs-1">una muestra de las marcas con las cuales trabajamos</p>
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="group-imagenes-logo row justify-content-center">
+                        <img src="{% static 'img/logo-autos/buick-logo.png' %}" class="w-25" alt="buick-logo">
+                        <img src="{% static 'img/logo-autos/ford-logo.png' %}" class="w-25" alt="ford-logo">
+                        <img src="{% static 'img/logo-autos/holden-logo.png' %}" class="w-25" alt="holden-logo">
+                        <img src="{% static 'img/logo-autos/honda-logo.png' %}" class="w-25" alt="honda-logo">
+                        <img src="{% static 'img/logo-autos/hotweels-logo.png' %}" class="w-25" alt="hotweels-logo">
+                        <img src="{% static 'img/logo-autos/hyundai-logo.png' %}" class="w-25" alt="hyundai-logo">
+                        <img src="{% static 'img/logo-autos/kawasaki-logo.png' %}" class="w-25" alt="kawasaki-logo">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="group-imagenes-logo row justify-content-center">
+                        <img src="{% static 'img/logo-autos/cars-logo.png' %}" class="w-25" alt="cars-logo">
+                        <img src="{% static 'img/logo-autos/kia-logo.png' %}" class="w-25" alt="kia-logo">
+                        <img src="{% static 'img/logo-autos/mini-logo.png' %}" class="w-25" alt="mini-logo">
+                        <img src="{% static 'img/logo-autos/mitsu-logo.png' %}" class="w-25" alt="mitsu-logo">
+                        <img src="{% static 'img/logo-autos/nissan-logo.png' %}" class="w-25" alt="nissan-logo">
+                        <img src="{% static 'img/logo-autos/toyota-logo.png' %}" class="w-25" alt="toyota-logo">
+                        <img src="{% static 'img/logo-autos/tesla-logo.png' %}" class="w-25" alt="tesla-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+
+
+    <!--Seccion Servicios-->
+    <section id="services">
+        <h1 class="titulo-servicios text-center align-items-center m-0 lh-1 py-5">Servicios disponibles</h1>
+        <!--Carta 1-->
+        <div class="card mb-5 mx-5 rounded-5">
+            <div class="row g-0 color-gris">
+                <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
+                    <img src="{%static 'img/servicio-1.png'%}" class="img-fluid rounded-5 w-100" alt="servicio-1">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body mt-4">
+                        <h3 class="card-title fw-bold text-center text-white">Limpieza Superficial</h3>
+                        <p class="card-text text-white text-center">Limpieza superficial para aquellos que les gusta lo
+                            bueno y lo
+                            económico</p>
+                        <ul class="list-group list-group-flush mx-auto mt-5">
+                            <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
+                            <li class="list-group-item px-0 color-gris-chico text-white">Federico Fernet</li>
+                            <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
+                                10 minutos</li>
+                        </ul>
+                        <div class="d-flex justify-content-center mt-5" style="width: 100%;">
+                            <button type="button" onclick="window.location.href = 'servicios.html';"
+                                class="btn btn-outline-secondary mt-3 text-white">
+                                Contratar servicio</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Carta 2-->
+        <div class="card mb-5 mx-5 rounded-5">
+            <div class="row g-0 color-gris">
+                <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
+                    <img src="{%static 'img/servicio-2.jpg'%}" class="img-fluid rounded-5 w-100" alt="servicio-1">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body mt-4">
+                        <h3 class="card-title fw-bold text-center text-white">Cambio de aceite</h3>
+                        <p class="card-text text-white text-center">Cambio de aceite para aquellos que les gusta lo
+                            bueno y
+                            lo
+                            económico</p>
+                        <ul class="list-group list-group-flush mx-auto mt-5">
+                            <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
+                            <li class="list-group-item px-0 color-gris-chico text-white">Matias Gonzalez</li>
+                            <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
+                                50 minutos</li>
+                        </ul>
+                        <div class="d-flex justify-content-center mt-5" style="width: 100%;">
+                            <button type="button" onclick="window.location.href = 'servicios.html';"
+                                class="btn btn-outline-secondary mt-3 text-white">
+                                Contratar servicio</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Carta 3-->
+        <div class="card mb-5 mx-5 rounded-5">
+            <div class="row g-0 color-gris">
+                <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
+                    <img src="{%static 'img/servicio-3.jpg'%}" class="img-fluid rounded-5 w-100" alt="servicio-1">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body mt-4">
+                        <h3 class="card-title fw-bold text-center text-white">Cambio de bujia</h3>
+                        <p class="card-text text-white text-center">Cambio de bujia para aquellos que les gusta lo bueno
+                            y
+                            lo
+                            económico</p>
+                        <ul class="list-group list-group-flush mx-auto mt-5">
+                            <li class="list-group-item px-0 color-gris-chico text-white">Económico</li>
+                            <li class="list-group-item px-0 color-gris-chico text-white">Federico Guiter</li>
+                            <li class="list-group-item px-0 color-gris-chico text-white">Duración aproximada de
+                                2 horas</li>
+                        </ul>
+                        <div class="d-flex justify-content-center mt-5" style="width: 100%;">
+                            <button type="button" onclick="window.location.href = 'servicios.html';"
+                                class="btn btn-outline-secondary mt-3 text-white">
+                                Contratar servicio</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {% endblock %}
+</html>
