@@ -23,7 +23,9 @@ def trabajadores(request):
     return render(request, 'base/trabajadores.html',context)
 
 def servicios(request):
-    return render(request, 'base/servicios.html')
+    servicios = Servicio.objects.all()
+    context={"servicios":servicios}
+    return render(request, 'base/servicios.html',context)
 
 def nosotros(request):
     return render(request, 'base/nosotros.html')
@@ -59,17 +61,18 @@ def mecanico_add(request, id_mecanico=None):
 
         #Si el formulario es valido, se guarda el mecanico
         if form.is_valid():
-            mecanico_instance = form.save(commit=False)  
-            mecanico_instance.fecha_ingreso = datetime.now()
-            mecanico_instance.save()
+
+            form.save(commit=False)  
+            form.fecha_ingreso = datetime.now()
+            form.save()
 
             # Determinar si se está agregando o actualizando
             if id_mecanico:
                 mensaje = 'Mecanico actualizado correctamente'
             else:
+                form = mecanicoForm()
                 mensaje = 'Mecanico agregado correctamente'
             
-            form = mecanicoForm(instance=mecanico_instance)
             
             #Se retorna el mensaje de que el mecanico fue guardado correctamente
             context = {'mensaje':mensaje,'form': form}
@@ -111,6 +114,8 @@ def contacto(request):
     
     return render(request, 'base/contacto.html', {'form': form, 'form_submitted': form_submitted})
 
+
+
 #***************** SERVICIOS *****************
 
 def servicio_list(request):
@@ -123,21 +128,35 @@ def servicio_delete(request, id_servicio):
     servicio_to_delete.delete()
 
     messages.success(request, 'Servicio eliminado correctamente')
-    return render(request, 'base/servicio_list.html')
+    return redirect('servicio_list')
 
-def servicio_add(request):
+def servicio_add(request,id_servicio=None):
+
+    instance = get_object_or_404(Servicio, id_servicio=id_servicio) if id_servicio else None
 
     if request.method == 'POST':
 
-        form = servicioForm(request.POST,request.FILES)
+        form = servicioForm(request.POST,request.FILES,instance=instance)
 
         if form.is_valid():
 
             form.save()
 
-            form = servicioForm()
-        return render(request, 'base/servicio_add.html', {'form': form})
+            if id_servicio:
+                mensaje = 'Servicio actualizado correctamente'
+            else:
+                form = servicioForm()
+                mensaje = 'Servicio agregado correctamente'
+
+
+            context = {'mensaje':mensaje,'form': form}
+
+            return render(request, 'base/servicio_add.html', context)
+        else:
+            form = servicioForm(instance=instance)
+            return render(request, 'base/servicio_add.html', {'form': form})
 
     else:
-        form = servicioForm()
+        form = servicioForm(instance=instance)
         return render(request, 'base/servicio_add.html', {'form': form})
+    

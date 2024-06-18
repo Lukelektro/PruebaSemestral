@@ -13,9 +13,6 @@
 
     <section id="vista-trabajadores">
 
-        
-            
-
         <h1>Conoce sobre Nosotros</h1>
 
         {% for mecanico in mecanicos %}
@@ -33,10 +30,10 @@
                 <div class="texto-nosotros">
         
                     <h2>{{mecanico}}</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam culpa
-                        ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus. Repellendus
-                        perferendis neque voluptatum.
-                    </p>
+                    <p>{{mecanico.descripcion}}</p>
+                    <p>Experiencia: {{mecanico.experiencia}}</p>
+                    <p>Expecialidad: {{mecanico.especialidad}}</p>
+
 
                 </div>
             </div>
@@ -47,11 +44,10 @@
                 <div class="texto-nosotros">
         
                     <h2>{{mecanico}}</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dignissimos in. Similique ipsam culpa
-                        ratione hic. Corrupti autem dolore, expedita dolores fuga ipsam sit magni necessitatibus. Repellendus
-                        perferendis neque voluptatum.
-                    </p>
-
+                    <p>{{mecanico.descripcion}}</p>
+                    <p>Experiencia: {{mecanico.experiencia}}</p>
+                    <p>Expecialidad: {{mecanico.especialidad}}</p>
+                    
                 </div>
 
                 {% if mecanico.imagen %}

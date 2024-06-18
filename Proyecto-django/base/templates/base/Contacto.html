@@ -33,33 +33,18 @@
                 <div class="contenedor-campos">
                     <div class="campo">
                         {{form.email|as_crispy_field}}
-                        <div class="invalid-feedback">
-                            Por favor ingresa tu email.
-                        </div>
                     </div>
                     <div class="campo">
                         {{form.telefono|as_crispy_field}}
-                        <div class="invalid-feedback">
-                            Por favor ingresa tu número de teléfono.
-                        </div>  
                     </div>
                     <div class="campo">
                         {{form.direccion|as_crispy_field}}
-                        <div class="invalid-feedback">
-                            Por favor ingresa tu dirección.
-                        </div>  
                     </div>
                     <div class="campo">
                         {{form.sucursal|as_crispy_field}}
-                        <div class="invalid-feedback">
-                            Por favor selecciona una sucursal.
-                        </div>
                     </div>
                     <div class="campo">
                         {{form.mensaje|as_crispy_field}}
-                        <div class="invalid-feedback">
-                            Por favor ingresa los detalles de tu situación.
-                        </div>
                     </div>
                 </div>
                 
@@ -73,8 +58,6 @@
     </section>
 
     <!-- Modal -->
-
-    
     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

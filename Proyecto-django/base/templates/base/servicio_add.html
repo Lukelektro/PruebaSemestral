@@ -36,30 +36,11 @@
                         {% csrf_token %}
 
                         <div class="form-group text-white fs-5 fw-semibold p-3">
-                            <div>
+
                                 {{form.nombre|as_crispy_field}}
-                                <div class="invalid-feedback">
-                                    Por favor ingresa tu nombre.
-                                </div>
-                            </div>
-                            <div>
                                 {{form.precio|as_crispy_field}}
-                                <div class="invalid-feedback">
-                                    Por favor ingresa su precio.
-                                </div>  
-                            </div>
-                            <div>
                                 {{form.descripcion|as_crispy_field}}
-                                <div class="invalid-feedback">
-                                    Por favor ingresa una descripcion.
-                                </div>  
-                            </div>
-                            <div>
                                 {{form.imagen|as_crispy_field}}
-                                <div class="invalid-feedback">
-                                    Por favor ingresa una descripcion.
-                                </div>  
-                            </div>
 
                             {% if form.instance.imagen %}
                                 <div  class="row justify-content-center mb-3">
@@ -84,5 +65,9 @@
         
         
     </section>
+
+    <script src="{% static 'js/validacion-form.js' %}"></script>
+
     {% endblock %}
+    
 </html>

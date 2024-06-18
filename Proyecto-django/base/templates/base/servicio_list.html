@@ -52,7 +52,7 @@
                                     <p>Sin Imagen</p>
                                 {% endif %}</td>
                             <td>
-                                <a  class="btn btn-warning">Editar</a>
+                                <a href="{% url 'servicio_add' Servicio.id_servicio %}" class="btn btn-warning">Editar</a>
                                 <a href="{% url 'servicio_delete' Servicio.id_servicio %}" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>

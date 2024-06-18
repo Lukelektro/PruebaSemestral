@@ -29,34 +29,33 @@
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="card col-md-6" style="background-color: var(--gris);">
-                    <form method="POST" enctype="multipart/form-data">
+                    <form method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                         {% csrf_token %}
 
-                        {% for field in form %}
-                            <div class="form-group text-white p-3">
-                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                {% if field.errors %}
-                                    {{ field|add_class:"form-control is-invalid" }}
-                                    {% for error in field.errors %}
-                                        <div class="alert alert-danger">{{ error }}</div>
-                                    {% endfor %}
-                                {% else %}
-                                    {{ field|add_class:"form-control" }}
-                                {% endif %}
-                            </div>
-                        {% endfor %}
+                        <div class="form-group text-white fs-5 p-3">
 
-                        {% if form.instance.imagen %}
-                            <div  class="row justify-content-center mb-3">
-                                <img class="rounded w-75" id="imagenPreview" src="{{ form.instance.imagen.url }}" alt="Imagen del mecanico">
-                            </div>
-                        {% endif %}
+                                {{form.nombre|as_crispy_field}}
+                                {{form.apellido|as_crispy_field}}
+                                {{form.telefono|as_crispy_field}}
+                                {{form.correo|as_crispy_field}}
+                                {{form.sucursal|as_crispy_field}}
+                                {{form.especialidad|as_crispy_field}}
+                                {{form.experiencia|as_crispy_field}}
+                                {{form.descripcion|as_crispy_field}}
+                                {{form.imagen|as_crispy_field}}
 
-                        <div class="text-end mx-3">
+                            {% if form.instance.imagen %}
+                                <div  class="row justify-content-center mb-3">
+                                    <img class="rounded w-75" id="imagenPreview" src="{{ form.instance.imagen.url }}" alt="Imagen del mecanico">
+                                </div>
+                            {% endif %}
+                            
+                        </div>
+                        
+                        <div class="d-grid gap-2 col-2 mx-auto">
                             <button type="submit" class="btn btn-primary fw-bold mb-3">Guardar</button>
                         </div>
-
-                        
+                            
                     </form>
                 </div>
             </div>
@@ -67,5 +66,7 @@
         
         
     </section>
+
+    <script src="{% static 'js/validacion-form.js' %}"></script>
     {% endblock %}
 </html>
