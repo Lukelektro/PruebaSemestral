@@ -5,12 +5,10 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 #Imports de mensajes
 from django.contrib import messages
-#Imports de JsonResponse
-from django.http import JsonResponse
 from datetime import datetime
 #Imports de modelos y formularios
 from .models import mecanico,Servicio
-from .forms import mecanicoForm,contactoForm,servicioForm
+from .forms import mecanicoForm,contactoForm,servicioForm,citaForm
 
 
 #***************** definiciones de funciones basicas *****************
