@@ -33,7 +33,6 @@
                         <th scope="col">#</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">descripcion</th>
-                        <th scope="col">precio</th>
                         <th scope="col">Imagen</th>
                         <th scope="col">Acciones</th>
                     </tr>
@@ -44,7 +43,6 @@
                             <th scope="row">{{ Servicio.id_servicio }}</th>
                             <td>{{ Servicio }}</td>
                             <td>{{ Servicio.descripcion }}</td>
-                            <td>{{ Servicio.precio }}</td>
                             <td class="w-25">
                                 {% if Servicio.imagen %}
                                     <img class="img-thumbnail w-75" src="{{ Servicio.imagen.url}}" alt="Imagen del Servicio">

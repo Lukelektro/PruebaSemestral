@@ -1,0 +1,52 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Detalles de Servicio{% endblock %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/servicios.css' %}">
+    
+
+    <section>
+
+        <h1 class="" >{{servicio}}</h1>
+
+        <p>{{servicio.descripcion}}</p>
+
+        <div class="container mt-5 mb-5">
+            <div class="row justify-content-center">
+                <div class="card col-md-6" style="background-color: var(--negro);">
+                    <form method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        {% csrf_token %}
+
+                        <div class="form-group text-white fs-5 fw-semibold p-3">
+
+                            {{form.fecha|as_crispy_field}}
+                            {{form.hora|as_crispy_field}}
+                            {{form.marca|as_crispy_field}}
+                            {{form.patente|as_crispy_field}}
+                            {{form.comentario|as_crispy_field}}    
+
+                        </div>
+                        
+                        <div class="d-grid gap-2 col-2 mx-auto">
+                            <button type="submit" class="btn btn-primary fw-bold mb-3">Enviar</button>
+                        </div>
+                            
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+    </section>
+
+    <script src="{% static 'js/validacion-form.js' %}"></script>
+
+    {% endblock %}
+</html>

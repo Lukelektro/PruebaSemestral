@@ -254,3 +254,28 @@ def servicio_add(request,id_servicio=None):
         form = servicioForm(instance=instance)
         return render(request, 'base/servicio_add.html', {'form': form})
     
+def servicio_detail(request,id_servicio):
+    servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
+
+    form = citaForm();
+
+    if request.method == 'POST':
+
+        form = citaForm(request.POST)
+
+        if form.is_valid():
+
+            cita = form.save(commit=False)
+            cita.servicio = servicio
+            cita.save()
+            
+            form = citaForm()
+            
+        return render(request, 'base/servicio_detail.html', context)
+        
+
+
+    context = {'servicio':servicio,'form':form}
+    return render(request, 'base/servicio_detail.html', context)
+
+    

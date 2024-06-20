@@ -45,52 +45,9 @@ p {
     justify-content: center;
 }
 
-/* botones*/
-.boton-servicio{
-    background-color: var(--amarillo);
-    border: 2px solid transparent;
-    border-radius: 1rem ;
-    padding: 1.5rem 4rem;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.5rem;
-    cursor: pointer;
-    width: auto;
-    transition: background-color 0.5s ease;
-    
-}
-
-.boton-servicio:hover {
-    background-color: var(--rojo); 
-    color: var(--piel);
-}
-
-
-/* imagenes */
-.img-servicio {
-    width: 100%;
-    height: 90%;
-}
-
-.img-carrito {
-    max-width: 5rem;
-    margin-right: 2rem;
-    color: var(--gris);
-}
-
 .contenedor-imagen {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-@media screen and (min-width: 768px) {
-
-    .contenido-servicio {
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(2, 1fr);
-    }
-  
 }
