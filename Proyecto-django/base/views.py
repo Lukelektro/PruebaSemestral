@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404,redirect
 #imports de login
-from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 #Imports de mensajes
@@ -9,7 +9,7 @@ from datetime import datetime
 #Imports de modelos y formularios
 from .models import mecanico,Servicio
 from .forms import mecanicoForm,contactoForm,servicioForm, citaForm, CustomUserCreationForm
-
+from django.views.decorators.csrf import csrf_protect
 
 
 #***************** definiciones de funciones basicas *****************
@@ -41,12 +41,13 @@ def iniciar_sesion(request):
 
 #***************** Registro *****************
 
+@csrf_protect
 def registro(request):
     if request.method == 'POST':
         formulario = CustomUserCreationForm(request.POST)
         if formulario.is_valid():
             usuario = formulario.save()
-            login(request, usuario)  # Autenticar al usuario después del registro
+            auth_login(request, usuario)  # Autenticar al usuario después del registro
             return redirect('index')
     else:
         formulario = CustomUserCreationForm()
@@ -97,11 +98,6 @@ def login(request):
 
 def logout(request):
     return render(request, 'base/logout.html')
-
-def admin_cosas(request):
-    #Codigo restante
-    return render(request, 'base/admin_cosas.html')
-
 
 #***************** CRUD Mecanico *****************
 
