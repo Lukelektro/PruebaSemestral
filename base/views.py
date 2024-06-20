@@ -5,7 +5,7 @@ from datetime import datetime
 from .models import mecanico,Servicio
 from .forms import mecanicoForm,contactoForm,servicioForm,CustomUserCreationForm
 from django.contrib.auth.decorators import login_required, permission_required
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login as auth_login
 
 
 # Create your views here.
@@ -38,7 +38,7 @@ def login(request):
 
 #***************** CRUD Mecanico *****************
 @login_required
-@permission_required('app.view_mecanico,')
+@permission_required('app.view_mecanico')
 def mecanico_list(request):
     mecanicos = mecanico.objects.all()
     context={"mecanicos":mecanicos}
@@ -174,7 +174,7 @@ def registro(request):
         if formulario.is_valid():
             formulario.save()
             user=authenticate(username=formulario.cleaned_data["username"],password=formulario.cleaned_data["password1"])
-            login(request, user)
+            auth_login(request, user)
             messages.success(request, "te has registrado correctamente ")
             return redirect(to="index")
         data['form']=formulario
