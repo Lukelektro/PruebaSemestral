@@ -8,7 +8,7 @@ from django.contrib import messages
 from datetime import datetime
 #Imports de modelos y formularios
 from .models import mecanico,Servicio
-from .forms import mecanicoForm,contactoForm,servicioForm, citaForm, CustomUserCreationForm
+from .forms import mecanicoForm,contactoForm,servicioForm, citaForm, usuarioNuevosParametros
 from django.views.decorators.csrf import csrf_protect
 
 
@@ -44,13 +44,13 @@ def iniciar_sesion(request):
 @csrf_protect
 def registro(request):
     if request.method == 'POST':
-        formulario = CustomUserCreationForm(request.POST)
+        formulario = usuarioNuevosParametros(request.POST)
         if formulario.is_valid():
             usuario = formulario.save()
             auth_login(request, usuario)  # Autenticar al usuario después del registro
             return redirect('index')
     else:
-        formulario = CustomUserCreationForm()
+        formulario = usuarioNuevosParametros()
 
     return render(request, 'base/registro.html', {'form': formulario})
 
