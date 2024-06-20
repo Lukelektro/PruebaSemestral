@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404,redirect
 #imports de login
-from django.contrib.auth import login as auth_login
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 #Imports de mensajes
 from django.contrib import messages
@@ -17,6 +17,39 @@ from .forms import mecanicoForm,contactoForm,servicioForm
 
 def soy_admin(user):
     return user.is_authenticated and (user.is_staff or user.is_superuser)
+
+#***************** Autentificacion *****************
+
+def login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.success(request, '¡Inicio de sesión exitoso!')
+                return redirect('dashboard')  # Reemplaza 'dashboard' con el nombre de la URL de tu página principal
+            else:
+                messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
+        else:
+            messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
+    else:
+        form = AuthenticationForm()
+    
+    return render(request, 'tu_app/login.html', {'form': form})
+
+def registro(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('index')
+    else:
+        form = UserCreationForm()
+    return render(request, 'base/registro.html', {'form': form})
 
 #***************** Vistas *****************
 def index(request):
@@ -60,17 +93,6 @@ def login(request):
 
 def logout(request):
     return render(request, 'base/logout.html')
-
-def registro(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            auth_login(request, user)
-            return redirect('index')
-    else:
-        form = UserCreationForm()
-    return render(request, 'base/registro.html', {'form': form})
 
 
 #***************** CRUD Mecanico *****************

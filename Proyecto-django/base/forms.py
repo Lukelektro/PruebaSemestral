@@ -1,6 +1,7 @@
 from django import forms
 from .models import mecanico,MensajeContacto,Servicio
 from django.core.validators import MaxValueValidator
+from django.contrib.auth.forms import AuthenticationForm
 
 class mecanicoForm(forms.ModelForm):
     nombre = forms.CharField(required=True,max_length=50)
@@ -40,3 +41,9 @@ class servicioForm(forms.ModelForm):
     class Meta:
         model = Servicio
         fields = ['nombre', 'descripcion', 'precio', 'imagen']
+        
+#**************** FORM LOGIN ****************
+
+class CustomAuthenticationForm(AuthenticationForm):
+    username = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de usuario'}))
+    password = forms.CharField(required=True,widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Contraseña'}))
