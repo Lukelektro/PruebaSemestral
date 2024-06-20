@@ -1,16 +1,22 @@
 from django.shortcuts import render, get_object_or_404,redirect
+#imports de login
+from django.contrib.auth import login as auth_login
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+#Imports de mensajes
 from django.contrib import messages
+#Imports de JsonResponse
 from django.http import JsonResponse
 from datetime import datetime
+#Imports de modelos y formularios
 from .models import mecanico,Servicio
 from .forms import mecanicoForm,contactoForm,servicioForm
 
+
+#***************** definiciones de funciones basicas *****************
+
 def soy_admin(user):
-    return user.is_staff or user.is_superuser
-
-# Create your views here.
-
+    return user.is_autenticated and (user.is_staff or user.is_superuser)
 
 #***************** Vistas *****************
 def index(request):
@@ -51,6 +57,20 @@ def nosotros(request):
 
 def login(request):
     return render(request, 'base/login.html')
+
+def logout(request):
+    return render(request, 'base/logout.html')
+
+def registro(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            auth_login(request, user)
+            return redirect('index')
+    else:
+        form = UserCreationForm()
+    return render(request, 'base/registro.html', {'form': form})
 
 
 #***************** CRUD Mecanico *****************

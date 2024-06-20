@@ -19,7 +19,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 
     <!-- css -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+     {% if soy_admin %}
+        <link rel="stylesheet" href="{% static 'css/base_admin.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endif %}
 
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -43,7 +47,7 @@
 <body>
     <!--Navbar-->
     <header id="navbar" class="bg-custom">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="{% if soy_admin %}bg-body-tertiary-admin{% else %}bg-body-tertiary{% endif %} navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!--Boton para colapsar el menu-->
                 <button id="navbar-toggler" class="navbar-toggler border-0 shadow-none" type="button"
