@@ -1,12 +1,8 @@
 .bg-body-tertiary-admin {
-    background-color: #464241 !important;
+    background-color: var(--gris) !important;
 }
 
 header .logo-container-admin img {
     max-width: 1px !important;
 }
 
-body {
-    margin: 0;
-    background-color: var(--gris);
-}
