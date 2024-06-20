@@ -29,14 +29,16 @@
       <div class="texto-login">
         
         <div class="contenedor-imagen-login">
-          <h2 class="fs-1 fw-bold mb-5">Has cerrado sesion correctamente</h2>
           <img class="img-fluid img-login" src="{% static 'img/logo-nombre3.png' %}" alt="logo-login"> 
-        </div>  
+        </div>
+
       </div>
 
+      <h2 class="fs-1 fw-bold mb-5">Has cerrado sesion correctamente</h2>
+
       <!-- boton para volver al index-->
-      <div class="mb-5 text-start">
-        <a href="{% url 'index' %}">Volver al inicio</a>
+      <div class="mb-5 text-center">
+        <a href="{% url 'index' %}" class="btn btn-secondary">Volver al inicio</a>
     </div>
 
     

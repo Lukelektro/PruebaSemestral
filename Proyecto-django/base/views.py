@@ -257,6 +257,8 @@ def servicio_add(request,id_servicio=None):
 def servicio_detail(request,id_servicio):
     servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
 
+    cliente = request.user if request.user.is_authenticated else None
+
     form = citaForm();
 
     if request.method == 'POST':
@@ -266,6 +268,7 @@ def servicio_detail(request,id_servicio):
         if form.is_valid():
 
             cita = form.save(commit=False)
+            cita.cliente = cliente
             cita.servicio = servicio
             cita.save()
             

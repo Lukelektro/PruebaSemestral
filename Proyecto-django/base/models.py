@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator
 from django.contrib.auth.models import User
-
+from django.conf import settings
 # Create your models here.
 
 
@@ -75,6 +75,7 @@ class UserProfile(models.Model):
 
 class Cita(models.Model):
     id_cita = models.AutoField(primary_key=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='citas')
     servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
     fecha = models.DateField()
     hora = models.CharField(max_length=50)

@@ -1,4 +1,7 @@
 {% load static %}
+
+{% load crispy_forms_tags %}    
+
 <!DOCTYPE html>
 <html>
 
@@ -26,15 +29,33 @@
 
     <div class="contenedor-registro">
         
-      <h2 class="fs-1 fw-bold mb-5 text-white">Registro</h2>
+      <h2 class="fs-1 fw-bold mb-5 mt-5 text-center text-white">Registro</h2>
 
-      <form method="post" id="form-signup" class="needs-validation text-white" novalidate>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div class="d-grid gap-2 col-6 mx-auto text-white">
-          <button class="btn btn-signup text-white" type="submit">Registrarme</button>
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="card col-md-6" style="background-color: var(--gris);">
+            <form method="post" id="form-signup" class="needs-validation text-white" novalidate>
+              {% csrf_token %}
+
+              {{form.username|as_crispy_field}}
+              {{form.nombre|as_crispy_field}}
+              {{form.apellido|as_crispy_field}}
+              {{form.correo|as_crispy_field}}
+              {{form.telefono|as_crispy_field}}
+              {{form.ciudad|as_crispy_field}}
+              {{form.password1|as_crispy_field}}
+              {{form.password2|as_crispy_field}}
+              
+              <div class="d-grid gap-2 col-6 mx-auto text-white">
+                <button class="btn btn-primary fw-bold mb-3" type="submit">Registrarme</button>
+              </div>
+            
+            </form>
+
+          </div>
         </div>
-      </form>
+      </div>
+
     </div>
   </main>
 
