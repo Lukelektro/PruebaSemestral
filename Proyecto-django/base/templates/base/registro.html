@@ -26,13 +26,13 @@
 
     <div class="contenedor-registro">
         
-      <h2 class="fs-1 fw-bold mb-5">Registro</h2>
+      <h2 class="fs-1 fw-bold mb-5 text-white">Registro</h2>
 
-      <form method="post" id="form-signup" class="needs-validation" novalidate>
+      <form method="post" id="form-signup" class="needs-validation text-white" novalidate>
         {% csrf_token %}
         {{ form.as_p }}
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn btn-signup" type="submit">Registrarme</button>
+        <div class="d-grid gap-2 col-6 mx-auto text-white">
+          <button class="btn btn-signup text-white" type="submit">Registrarme</button>
         </div>
       </form>
     </div>

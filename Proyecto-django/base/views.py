@@ -16,7 +16,7 @@ from .forms import mecanicoForm,contactoForm,servicioForm
 #***************** definiciones de funciones basicas *****************
 
 def soy_admin(user):
-    return user.is_autenticated and (user.is_staff or user.is_superuser)
+    return user.is_authenticated and (user.is_staff or user.is_superuser)
 
 #***************** Vistas *****************
 def index(request):
