@@ -12,3 +12,4 @@ $(document).ready(function(){
         $(this).addClass('was-validated'); // agrega la clase de bootstrap para mostrar los mensajes de validacion
     });
 });
+

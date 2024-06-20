@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404,redirect
 from django.contrib import messages
 from django.http import JsonResponse
 from datetime import datetime
-from .models import mecanico,Servicio
-from .forms import mecanicoForm,contactoForm,servicioForm
+from .models import mecanico,Servicio,Cita
+from .forms import mecanicoForm,contactoForm,servicioForm,citaForm
 
 
 # Create your views here.
@@ -159,4 +159,29 @@ def servicio_add(request,id_servicio=None):
     else:
         form = servicioForm(instance=instance)
         return render(request, 'base/servicio_add.html', {'form': form})
+    
+def servicio_detail(request,id_servicio):
+    servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
+
+    form = citaForm();
+
+    if request.method == 'POST':
+
+        form = citaForm(request.POST)
+
+        if form.is_valid():
+
+            cita = form.save(commit=False)
+            cita.servicio = servicio
+            cita.save()
+            
+            form = citaForm()
+            
+        return render(request, 'base/servicio_detail.html', context)
+        
+
+
+    context = {'servicio':servicio,'form':form}
+    return render(request, 'base/servicio_detail.html', context)
+
     

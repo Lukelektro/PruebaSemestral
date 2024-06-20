@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MaxValueValidator
 
 # Create your models here.
 
@@ -43,7 +43,6 @@ class Servicio(models.Model):
     id_servicio = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=50)
     descripcion = models.TextField()
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
     imagen = models.ImageField(upload_to='servicios', null=True, blank=True)
 
     def __str__(self):
@@ -62,26 +61,27 @@ class Cliente(models.Model):
     apellido = models.CharField(max_length=50)
     telefono = models.IntegerField(validators=[MaxValueValidator(9999999999)])
     correo = models.CharField(max_length=50)
-    direccion = models.CharField(max_length=50)
     ciudad = models.CharField(max_length=50)
     creado = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.nombre + ' ' + self.apellido
-
-#*************** CARRITO ****************
     
-class Carrito(models.Model):
-    id_carrito = models.AutoField(primary_key=True)
-    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    id_servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
-    cantidad = models.IntegerField(validators=[MinValueValidator(1)])
-    total = models.DecimalField(max_digits=10, decimal_places=2)
+#*************** CITA ****************
+
+class Cita(models.Model):
+    id_cita = models.AutoField(primary_key=True)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
+    fecha = models.DateField()
+    hora = models.CharField(max_length=50)
+    marca = models.CharField(max_length=50,null=True)
+    patente = models.CharField(max_length=50,null=True)
+    comentario = models.TextField()
     creado = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.id_cliente + ' ' + self.id_producto
+        return self.cliente.nombre + ' ' + self.cliente.apellido + ' - ' + self.servicio.nombre + ' - ' + str(self.fecha) + ' - ' + str(self.hora)
     
-
 
 

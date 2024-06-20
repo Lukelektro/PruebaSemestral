@@ -12,36 +12,36 @@
 
     <section id="vista-servicios">
 
-        <h1>Servicios</h1>
+        <h1>Cotiza un Servicio</h1>
         
-        {% for servicio in servicios %}
+        <div class="container py-4">
+            <div class="row">
+                {% for servicio in servicios %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
 
-            <div class="contenido-servicio">
-                
-                {% if servicio.imagen %}
-                    <img class="rounded-2 img-trabajadores contenedor-imagen" src="{{ servicio.imagen.url }}" alt="Imagen del servicio">
-                {% else %}
-                    <p>Sin Imagen</p>
-                {% endif %}</td>
-
-                <div class="texto-servicio">
-        
-                    <h1>{{servicio}}</h1>
-                    <p>{{servicio.descripcion}}</p>
-                    <p>{{servicio.precio}}</p>
-
-                    <div class="contenedor-boton-servicios">
-                        <img class="img-fluid img-carrito" src="{% static 'img/cart-shopping-solid.svg' %}" alt="imagen carrito">
-                        <button type="button" class="boton-servicio">Anadir a carrito</button>
+                            {% if servicio.imagen %}
+                                <img class="rounded-2 card-img-top" src="{{ servicio.imagen.url }}" alt="Imagen del servicio">
+                            {% else %}
+                                <p>Sin Imagen</p>
+                            {% endif %}</td>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{servicio}}</li>
+                                    <li class="list-group-item">{{servicio.descripcion}}</li>
+                                </ul>
+                                <a  href="{% url 'servicio_detail' servicio.id_servicio %}"
+                                    class="btn btn-primary fs-6" 
+                                    style="background-color: var(--piel);border-color: var(--negro); color: var(--negro); border: 2px solid ;">
+                                    Ver Detalles
+                                </a>
+                            </div>
+                        </div>
                     </div>
-
-                </div>
+                {% endfor %}
             </div>
-
-        {% endfor %}
-
-        
-        
+        </div>
+            
     </section>
 
 

@@ -1,6 +1,9 @@
 from django import forms
-from .models import mecanico,MensajeContacto,Servicio
 from django.core.validators import MaxValueValidator
+from django.forms.widgets import NumberInput
+import datetime
+from .models import mecanico,MensajeContacto,Servicio,Cita
+
 
 class mecanicoForm(forms.ModelForm):
     nombre = forms.CharField(required=True,max_length=50)
@@ -34,9 +37,28 @@ class contactoForm(forms.ModelForm):
 class servicioForm(forms.ModelForm):
     nombre = forms.CharField(required=True,max_length=50)
     descripcion = forms.CharField(required=True,widget=forms.Textarea)
-    precio = forms.DecimalField(required=True,max_digits=10, decimal_places=2)
     imagen = forms.ImageField(required=False)
 
     class Meta:
         model = Servicio
-        fields = ['nombre', 'descripcion', 'precio', 'imagen']
+        fields = ['nombre', 'descripcion', 'imagen']
+
+#**************** FORM CITA ****************
+HORAS_DISPONIBLES = [
+    ('09:00', '09:00 AM'),
+    ('11:00', '11:00 AM'),
+    ('13:00', '01:00 PM'),
+    ('15:00', '03:00 PM'),
+]
+class citaForm(forms.ModelForm):
+    
+    fecha = forms.DateField(required=True,initial=datetime.date.today,widget=NumberInput(attrs={'type': 'date'}))
+    hora = forms.ChoiceField(required=True,choices=HORAS_DISPONIBLES,widget=forms.Select())
+    marca = forms.CharField(required=True,max_length=50)
+    patente = forms.CharField(required=True,max_length=50)
+    comentario = forms.CharField(required=True,widget=forms.Textarea)
+    
+
+    class Meta:
+        model = Cita
+        fields = ['fecha', 'hora', 'marca', 'patente', 'comentario']
