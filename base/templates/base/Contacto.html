@@ -1,0 +1,84 @@
+{% extends '../base.html' %}
+{% load static %}
+
+
+{% load crispy_forms_tags %}    
+
+{% block title %}Contáctanos{% endblock %}
+
+
+{% block content %}
+
+
+<link rel="stylesheet" href="{% static 'css/contacto.css' %}">
+
+
+    
+
+
+
+    <!-- Seccion Contactos -->
+    <section id="Contacto">
+        <div class="contacto-formulario">
+
+        
+
+        <!--Contact form-->
+        <div>
+
+            <h1 class="text-center">Contáctanos</h1>
+            
+            <form id="form-contacto" method="POST" class="needs-validation" novalidate>
+                {% csrf_token %}
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        {{form.email|as_crispy_field}}
+                    </div>
+                    <div class="campo">
+                        {{form.telefono|as_crispy_field}}
+                    </div>
+                    <div class="campo">
+                        {{form.direccion|as_crispy_field}}
+                    </div>
+                    <div class="campo">
+                        {{form.sucursal|as_crispy_field}}
+                    </div>
+                    <div class="campo">
+                        {{form.mensaje|as_crispy_field}}
+                    </div>
+                </div>
+                
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <button type="submit" class="btn btn-contacto">Enviar</button>
+                </div>
+                    
+            </form>
+        </div>
+
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Enviado</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Su mensaje ha sido correctamente enviado.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if form_submitted %}
+        <script src="{% static 'js/contacto.js' %}"></>   
+
+    {% endif %}
+
+
+    {% endblock %}
+</html>
