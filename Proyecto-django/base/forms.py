@@ -1,6 +1,7 @@
 from django import forms
 from django.core.validators import MaxValueValidator
 from django.forms.widgets import NumberInput
+from django.contrib.auth.forms import AuthenticationForm
 import datetime
 from .models import mecanico,MensajeContacto,Servicio,Cita
 
@@ -47,6 +48,7 @@ class CustomAuthenticationForm(AuthenticationForm):
     username = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de usuario'}))
     password = forms.CharField(required=True,widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Contraseña'}))
     nombre_persona = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre'}))
+    
 #**************** FORM CITA ****************
 HORAS_DISPONIBLES = [
     ('09:00', '09:00 AM'),

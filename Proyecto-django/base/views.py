@@ -10,7 +10,8 @@ from django.http import JsonResponse
 from datetime import datetime
 #Imports de modelos y formularios
 from .models import mecanico,Servicio
-from .forms import mecanicoForm,contactoForm,servicioForm
+from .forms import mecanicoForm,contactoForm,servicioForm, citaForm
+
 
 
 #***************** definiciones de funciones basicas *****************
@@ -51,14 +52,8 @@ def registro(request):
         formulario = UserCreationForm()
     return render(request, 'base/registro.html', {'form': formulario})
 
-def cerrar_sesion(request):
-    auth_logout(request)
-    messages.info(request, 'Has cerrado sesión correctamente.')
-    return redirect('cerrar_sesion')
-
-def logout_view(request):
-    auth_logout(request)
-    return render(request, 'base/cerrar_sesion.html')
+def logout_page(request):
+    return render(request, 'base/logout.html')
 
 #***************** Vistas *****************
 def index(request):
@@ -84,7 +79,6 @@ def trabajadores(request):
 
 def servicios(request):
     
-    is_admin = request.user.is_staff
     #Codigo restante
     servicios = Servicio.objects.all()
     context = {
@@ -94,8 +88,11 @@ def servicios(request):
     return render(request, 'base/servicios.html',context)
 
 def nosotros(request):
+    context = {
+        "soy_admin" :soy_admin(request.user) if request.user.is_authenticated else False
+    }
     #Codigo restante
-    return render(request, 'base/nosotros.html')
+    return render(request, 'base/nosotros.html', context)
 
 def login(request):
     return render(request, 'base/login.html')
@@ -196,7 +193,12 @@ def contacto(request):
     else:
         form = contactoForm()
     
-    return render(request, 'base/contacto.html', {'form': form, 'form_submitted': form_submitted})
+    context = {
+        "soy_admin" :soy_admin(request.user) if request.user.is_authenticated else False,
+        "form":form,
+        "form_submitted": form_submitted
+    }
+    return render(request, 'base/contacto.html', context)
 
 
 
