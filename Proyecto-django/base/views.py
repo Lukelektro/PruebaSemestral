@@ -38,7 +38,7 @@ def login(request):
     else:
         form = AuthenticationForm()
     
-    return render(request, 'tu_app/login.html', {'form': form})
+    return render(request, '/login.html', {'form': form})
 
 def registro(request):
     if request.method == 'POST':
@@ -93,6 +93,10 @@ def login(request):
 
 def logout(request):
     return render(request, 'base/logout.html')
+
+def admin_cosas(request):
+    #Codigo restante
+    return render(request, 'base/admin_cosas.html')
 
 
 #***************** CRUD Mecanico *****************

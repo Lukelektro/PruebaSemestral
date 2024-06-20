@@ -19,8 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 
     <!-- css -->
-     {% if soy_admin %}
+     {% if user.is_staff or user.is_superuser %}
         <link rel="stylesheet" href="{% static 'css/base_admin.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% else %}
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endif %}
@@ -57,10 +58,16 @@
                 </button>
                 <!--Logo de la empresa-->
                 <div class="d-flex flex-row align-items-center">
-                    <div class="logo-container mr-auto ml-auto">
-                        <a href="{% url 'index' %}"><img src="{% static 'img/logo-nombre2.png' %}" class="w-auto" alt="logo-nombre" /></a>
-                        <a href="{% url 'index' %}"><img src="{% static 'img/logo-trans-1.png' %}" class="w-auto" alt="logo-empresa" /></a>
-                    </div>
+                    {% if user.is_staff or user.is_superuser %}
+                        <div class="logo-container mr-auto ml-auto">
+                            <a href="{% url 'index' %}"><img src="{% static 'img/logo-workers.png' %}" class="w-auto" alt="logo-nombre" /></a>
+                        </div>
+                    {% else %}
+                        <div class="logo-container mr-auto ml-auto">
+                            <a href="{% url 'index' %}"><img src="{% static 'img/logo-nombre2.png' %}" class="w-auto" alt="logo-nombre" /></a>
+                            <a href="{% url 'index' %}"><img src="{% static 'img/logo-trans-1.png' %}" class="w-auto" alt="logo-empresa" /></a>
+                        </div>
+                    {% endif %}
                 </div>
                 <!--Primera lista-->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -84,7 +91,7 @@
                         {% if user.is_authenticated %}
                         {% if user.is_staff or user.is_superuser %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url %}">Panel de Administración</a>
+                                <a class="nav-link" href="{% url 'admin_cosas' %}">Panel de Administración</a>
                             </li>
                         {% endif %}
                         <li class="nav-item">
