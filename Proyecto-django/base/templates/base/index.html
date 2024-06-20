@@ -124,9 +124,9 @@
 
         <!--Boton para ver mas trabajadores (redirecciona a trabajadores.html)-->
         <div class="p-5">
-            <h3>Conoce a mas trabajadores</h3>
+            <h3>Conoce a más trabajadores</h3>
             <button type="button" class="btn boton-trabajador mt-1 w-auto border-0 rounded-pill fw-bold py-2 px-5"
-                onclick="window.location.href = '{% url 'trabajadores' %}';">Mas trabajadores</button>
+                    id="ver-mas-trabajadores">Más trabajadores</button>
         </div>
 
     </section>
@@ -254,6 +254,10 @@
         </div>
     </section>
 
-
+    <script>
+        document.getElementById('ver-mas-trabajadores').onclick = function() {
+            window.location.href = "{% url 'trabajadores' %}";
+        };
+    </script>
     {% endblock %}
 </html>

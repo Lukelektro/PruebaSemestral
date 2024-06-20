@@ -82,7 +82,11 @@
                     <!--Segunda lista solo para la autentificación-->
                     <ul class="navbar-nav fw-bold text-center m-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">Autentificación</a>
+                            {% if user.is_authenticated %}
+                                <a class="nav-link" href="{% url 'login' %}">Autentificación</a>
+                            {% else %}
+                                <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+                            {% endif %}
                         </li>
                     </ul>
                 </div>
