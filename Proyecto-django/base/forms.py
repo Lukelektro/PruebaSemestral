@@ -1,10 +1,43 @@
 from django import forms
 from django.core.validators import MaxValueValidator
 from django.forms.widgets import NumberInput
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 import datetime
-from .models import mecanico,MensajeContacto,Servicio,Cita
+from .models import mecanico,MensajeContacto,Servicio,Cita, UserProfile
+
+#**************** FORM REGISTRO/USUARIO ****************
+
+class CustomUserCreationForm(UserCreationForm):
+    nombre = forms.CharField(max_length=100, required=True)
+    apellido = forms.CharField(max_length=100, required=True)
+    correo = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+    telefono = forms.CharField(max_length=20)
+    ciudad = forms.CharField(max_length=50)
+
+    class Meta:
+        model = User  # Formulario basado en el modelo User de Django
+        fields = ('username', 'nombre', 'apellido', 'correo', 'telefono', 'ciudad', 'password1', 'password2')
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data['correo']
+        user.set_password(self.cleaned_data['password1'])
+        if commit:
+            user.save()
+            profile = UserProfile.objects.create(
+                user=user,
+                nombre=self.cleaned_data['nombre'],
+                apellido=self.cleaned_data['apellido'],
+                correo=self.cleaned_data['correo'],
+                telefono=self.cleaned_data['telefono'],
+                ciudad=self.cleaned_data['ciudad']
+            )
+        return user
 
 
+
+#**************** FORM MECANICO ****************
 class mecanicoForm(forms.ModelForm):
     nombre = forms.CharField(required=True,max_length=50)
     apellido = forms.CharField(required=True,max_length=50)
@@ -47,6 +80,8 @@ class CustomAuthenticationForm(AuthenticationForm):
     username = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de usuario'}))
     password = forms.CharField(required=True,widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Contraseña'}))
     nombre_persona = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre'}))
+
+    
 #**************** FORM CITA ****************
 HORAS_DISPONIBLES = [
     ('09:00', '09:00 AM'),

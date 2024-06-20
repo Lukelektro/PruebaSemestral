@@ -7,13 +7,14 @@
 
 {% block content %}
 
+
 <link rel="stylesheet" href="{% static 'css/trabajadores.css' %}">
 
     
 
     <section id="vista-trabajadores">
 
-        <h1>Conoce sobre Nosotros</h1>
+        <h1>Conoce a nuestros mecanicos!</h1>
 
         {% for mecanico in mecanicos %}
             {% if forloop.counter|divisibleby:"2" %}
