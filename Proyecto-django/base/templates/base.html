@@ -19,11 +19,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 
     <!-- css -->
-     {% if user.is_staff or user.is_superuser %}
-        <link rel="stylesheet" href="{% static 'css/base_admin.css' %}">
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% if user.is_staff or user.is_superuser %}
+    <link rel="stylesheet" href="{% static 'css/base_admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% else %}
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endif %}
 
     <!-- Jquery -->
@@ -39,7 +39,7 @@
 
     <!-- API Google maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDbHPBuZkWfS1x2-HAklCMeaFEkYhOq2I&callback=initMap"
-    async defer></script>
+        async defer></script>
 
     <title>{% block title %}Bienvenidos al proyecto{% endblock %}</title>
 
@@ -48,7 +48,8 @@
 <body>
     <!--Navbar-->
     <header id="navbar" class="bg-custom">
-        <nav class="{% if soy_admin %}bg-body-tertiary-admin{% else %}bg-body-tertiary{% endif %} navbar navbar-expand-lg">
+        <nav
+            class="{% if soy_admin %}bg-body-tertiary-admin{% else %}bg-body-tertiary{% endif %} navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!--Boton para colapsar el menu-->
                 <button id="navbar-toggler" class="navbar-toggler border-0 shadow-none" type="button"
@@ -59,14 +60,17 @@
                 <!--Logo de la empresa-->
                 <div class="d-flex flex-row align-items-center">
                     {% if user.is_staff or user.is_superuser %}
-                        <div class="logo-container mr-auto ml-auto">
-                            <a href="{% url 'index' %}"><img src="{% static 'img/logo-workers.png' %}" class="w-auto" alt="logo-nombre" /></a>
-                        </div>
+                    <div class="logo-container mr-auto ml-auto">
+                        <a href="{% url 'index' %}"><img src="{% static 'img/logo-workers.png' %}" class="w-auto"
+                                alt="logo-nombre" /></a>
+                    </div>
                     {% else %}
-                        <div class="logo-container mr-auto ml-auto">
-                            <a href="{% url 'index' %}"><img src="{% static 'img/logo-nombre2.png' %}" class="w-auto" alt="logo-nombre" /></a>
-                            <a href="{% url 'index' %}"><img src="{% static 'img/logo-trans-1.png' %}" class="w-auto" alt="logo-empresa" /></a>
-                        </div>
+                    <div class="logo-container mr-auto ml-auto">
+                        <a href="{% url 'index' %}"><img src="{% static 'img/logo-nombre2.png' %}" class="w-auto"
+                                alt="logo-nombre" /></a>
+                        <a href="{% url 'index' %}"><img src="{% static 'img/logo-trans-1.png' %}" class="w-auto"
+                                alt="logo-empresa" /></a>
+                    </div>
                     {% endif %}
                 </div>
                 <!--Primera lista-->
@@ -90,24 +94,33 @@
                     <ul class="navbar-nav fw-bold text-center m-2">
                         {% if user.is_authenticated %}
                         {% if user.is_staff or user.is_superuser %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'admin_cosas' %}">Panel de Administración</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin:index' %}">Django</a>
+                        </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="{% url 'mecanico_list' %}">Lista mecanicos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'servicio_list' %}">Lista servicios</a>
+                        </li>
                         {% endif %}
                         <li class="nav-item">
                             <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
                                 {% csrf_token %}
                             </form>
-                            <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
+                            <a class="nav-link" href="#"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar
+                                sesión</a>
                         </li>
-                    {% else %}
+                        {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
                         </li>
-                    {% endif %}
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -117,15 +130,15 @@
     <div>
 
         {% block content %}
-      
-        
-      
+
+
+
         <!-- Acá va el contenido dinámico de sus otros html -->
-      
-      
-      
+
+
+
         {% endblock %}
-      
+
     </div>
 
     <!--FOOTER-->
@@ -149,8 +162,8 @@
                     <h3 class="texto-footer px-4">Viña del mar</h3>
                     <h3 class="texto-footer"><span id="temp1"></span><i class="bi bi-thermometer-half"></i> °C</h3>
                 </div>
-                
-                    
+
+
                 <div id="map"></div>
             </div>
 
@@ -166,17 +179,17 @@
     </footer>
 
 
-    
-        
-    
+
+
+
 
 
     <!-- Archivos static -->
     <script src="{% static 'js/app.js' %}"></script>
     <script src="{% static 'js/map.js' %}"></script>
     <script src="{% static 'js/climaApi.js' %}"></script>
-    
-    
+
+
 
 </body>
 

@@ -130,6 +130,11 @@ header .container-fluid{
 
 
 /* FOOTER */
+
+footer {
+    background-color: var(--rojo);
+}
+
 .texto-footer {
     color: var(--piel) !important;
     font-weight: 600;
