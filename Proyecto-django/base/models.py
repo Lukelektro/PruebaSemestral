@@ -57,7 +57,7 @@ class Servicio(models.Model):
 #*************** LOGIN/USUARIO ****************
 
 
-class UserProfile(models.Model):
+class clienteUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
