@@ -1,33 +1,52 @@
 from django.shortcuts import render, get_object_or_404,redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import JsonResponse
 from datetime import datetime
 from .models import mecanico,Servicio
 from .forms import mecanicoForm,contactoForm,servicioForm
 
+def soy_admin(user):
+    return user.is_staff or user.is_superuser
 
 # Create your views here.
 
 
 #***************** Vistas *****************
 def index(request):
+    
+    #Codigo restante
     mecanicos = mecanico.objects.all()
-    context={"mecanicos":mecanicos}
+    context = {
+        "mecanicos":mecanicos,
+        "soy_admin" :soy_admin(request.user) if request.user.is_authenticated else False
+    }
     return render(request, 'base/index.html', context)
 
 
 
 def trabajadores(request):
+    #Codigo restante
     mecanicos = mecanico.objects.all()
-    context={"mecanicos":mecanicos}
+    context = {
+        "mecanicos":mecanicos,
+        "soy_admin" :soy_admin(request.user) if request.user.is_authenticated else False
+    }
     return render(request, 'base/trabajadores.html',context)
 
 def servicios(request):
+    
+    is_admin = request.user.is_staff
+    #Codigo restante
     servicios = Servicio.objects.all()
-    context={"servicios":servicios}
+    context = {
+        "servicios":servicios,
+        "soy_admin" :soy_admin(request.user) if request.user.is_authenticated else False
+    }
     return render(request, 'base/servicios.html',context)
 
 def nosotros(request):
+    #Codigo restante
     return render(request, 'base/nosotros.html')
 
 def login(request):
@@ -36,11 +55,16 @@ def login(request):
 
 #***************** CRUD Mecanico *****************
 
+@login_required
 def mecanico_list(request):
     mecanicos = mecanico.objects.all()
-    context={"mecanicos":mecanicos}
+    context = {
+        "mecanicos":mecanicos,
+        "soy_admin" :soy_admin(request.user)
+    }
     return render(request, 'base/mecanico_list.html', context)
 
+@login_required
 def mecanico_delete(request, id_mecanico):
     mecanico_to_delete = get_object_or_404(mecanico, id_mecanico=id_mecanico)
     mecanico_to_delete.delete()
@@ -48,6 +72,7 @@ def mecanico_delete(request, id_mecanico):
     messages.success(request, 'Mecanico eliminado correctamente')
     return redirect('mecanico_list')
 
+@login_required
 def mecanico_add(request, id_mecanico=None):
 
     #Agarra la instancia del mecanico si existe id _mecanico
@@ -75,7 +100,11 @@ def mecanico_add(request, id_mecanico=None):
             
             
             #Se retorna el mensaje de que el mecanico fue guardado correctamente
-            context = {'mensaje':mensaje,'form': form}
+            context = {
+                'mensaje':mensaje,
+                'form': form,
+                'soy_admin' :soy_admin(request.user)
+            }
             return render(request, 'base/mecanico_add.html', context)
         else:
         
@@ -118,11 +147,16 @@ def contacto(request):
 
 #***************** SERVICIOS *****************
 
+@login_required
 def servicio_list(request):
     servicios = Servicio.objects.all()
-    context={"servicios":servicios}
+    context = {
+        "servicios":servicios,
+        "soy_admin" :soy_admin(request.user)
+    }
     return render(request, 'base/servicio_list.html', context)
 
+@login_required
 def servicio_delete(request, id_servicio):
     servicio_to_delete = get_object_or_404(Servicio, id_servicio=id_servicio)
     servicio_to_delete.delete()
@@ -130,6 +164,7 @@ def servicio_delete(request, id_servicio):
     messages.success(request, 'Servicio eliminado correctamente')
     return redirect('servicio_list')
 
+@login_required
 def servicio_add(request,id_servicio=None):
 
     instance = get_object_or_404(Servicio, id_servicio=id_servicio) if id_servicio else None
@@ -149,7 +184,11 @@ def servicio_add(request,id_servicio=None):
                 mensaje = 'Servicio agregado correctamente'
 
 
-            context = {'mensaje':mensaje,'form': form}
+            context = {
+                'mensaje':mensaje,
+                'form': form,
+                'soy_admin' :soy_admin(request.user)
+            }
 
             return render(request, 'base/servicio_add.html', context)
         else:
