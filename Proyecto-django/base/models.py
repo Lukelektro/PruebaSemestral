@@ -69,19 +69,5 @@ class Cliente(models.Model):
     def __str__(self):
         return self.nombre + ' ' + self.apellido
 
-#*************** CARRITO ****************
-    
-class Carrito(models.Model):
-    id_carrito = models.AutoField(primary_key=True)
-    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    id_servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
-    cantidad = models.IntegerField(validators=[MinValueValidator(1)])
-    total = models.DecimalField(max_digits=10, decimal_places=2)
-    creado = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.id_cliente + ' ' + self.id_producto
-    
-
 
 

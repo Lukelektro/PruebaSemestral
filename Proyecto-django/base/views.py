@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404,redirect
 #imports de login
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 #Imports de mensajes
@@ -20,15 +20,15 @@ def soy_admin(user):
 
 #***************** Autentificacion *****************
 
-def login(request):
+def iniciar_sesion(request):
     if request.method == 'POST':
-        form = AuthenticationForm(request, request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
+        formulario = AuthenticationForm(request, request.POST)
+        if formulario.is_valid():
+            nombre_usuario = formulario.cleaned_data['username']
+            contraseña = formulario.cleaned_data['password']
+            usuario = authenticate(username=nombre_usuario, password=contraseña)
+            if usuario is not None:
+                auth_login(request, usuario)
                 messages.success(request, '¡Inicio de sesión exitoso!')
                 return redirect('index')
             else:
@@ -36,20 +36,29 @@ def login(request):
         else:
             messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
     else:
-        form = AuthenticationForm()
+        formulario = AuthenticationForm()
     
-    return render(request, '/login.html', {'form': form})
+    return render(request, 'login.html', {'form': formulario})
 
 def registro(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
+        formulario = UserCreationForm(request.POST)
+        if formulario.is_valid():
+            usuario = formulario.save()
+            auth_login(request, usuario)
             return redirect('index')
     else:
-        form = UserCreationForm()
-    return render(request, 'base/registro.html', {'form': form})
+        formulario = UserCreationForm()
+    return render(request, 'base/registro.html', {'form': formulario})
+
+def cerrar_sesion(request):
+    auth_logout(request)
+    messages.info(request, 'Has cerrado sesión correctamente.')
+    return redirect('cerrar_sesion')
+
+def logout_view(request):
+    auth_logout(request)
+    return render(request, 'base/cerrar_sesion.html')
 
 #***************** Vistas *****************
 def index(request):
