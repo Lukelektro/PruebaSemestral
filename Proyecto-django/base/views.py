@@ -30,7 +30,7 @@ def login(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, '¡Inicio de sesión exitoso!')
-                return redirect('dashboard')  # Reemplaza 'dashboard' con el nombre de la URL de tu página principal
+                return redirect('index')
             else:
                 messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
         else:
