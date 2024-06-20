@@ -19,7 +19,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 
     <!-- css -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+     {% if user.is_staff or user.is_superuser %}
+        <link rel="stylesheet" href="{% static 'css/base_admin.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endif %}
 
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -43,7 +48,7 @@
 <body>
     <!--Navbar-->
     <header id="navbar" class="bg-custom">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="{% if soy_admin %}bg-body-tertiary-admin{% else %}bg-body-tertiary{% endif %} navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!--Boton para colapsar el menu-->
                 <button id="navbar-toggler" class="navbar-toggler border-0 shadow-none" type="button"
@@ -53,10 +58,16 @@
                 </button>
                 <!--Logo de la empresa-->
                 <div class="d-flex flex-row align-items-center">
-                    <div class="logo-container mr-auto ml-auto">
-                        <a href="{% url 'index' %}"><img src="{% static 'img/logo-nombre2.png' %}" class="w-auto" alt="logo-nombre" /></a>
-                        <a href="{% url 'index' %}"><img src="{% static 'img/logo-trans-1.png' %}" class="w-auto" alt="logo-empresa" /></a>
-                    </div>
+                    {% if user.is_staff or user.is_superuser %}
+                        <div class="logo-container mr-auto ml-auto">
+                            <a href="{% url 'index' %}"><img src="{% static 'img/logo-workers.png' %}" class="w-auto" alt="logo-nombre" /></a>
+                        </div>
+                    {% else %}
+                        <div class="logo-container mr-auto ml-auto">
+                            <a href="{% url 'index' %}"><img src="{% static 'img/logo-nombre2.png' %}" class="w-auto" alt="logo-nombre" /></a>
+                            <a href="{% url 'index' %}"><img src="{% static 'img/logo-trans-1.png' %}" class="w-auto" alt="logo-empresa" /></a>
+                        </div>
+                    {% endif %}
                 </div>
                 <!--Primera lista-->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -77,9 +88,23 @@
                     </ul>
                     <!--Segunda lista solo para la autentificación-->
                     <ul class="navbar-nav fw-bold text-center m-2">
+                        {% if user.is_authenticated %}
+                        {% if user.is_staff or user.is_superuser %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'admin_cosas' %}">Panel de Administración</a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">Autentificación</a>
+                            <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
                         </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
+                        </li>
+                    {% endif %}
                     </ul>
                 </div>
             </div>

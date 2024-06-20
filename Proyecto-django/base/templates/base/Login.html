@@ -25,42 +25,22 @@
   <main class="main-login">
 
     <div class="contenedor-login">
-
       <div class="texto-login">
-        
         <div class="contenedor-imagen-login">
           <h2 class="fs-1 fw-bold mb-5">Iniciar Sesion</h2>
           <img class="img-fluid img-login" src="{% static 'img/logo-nombre3.png' %}" alt="logo-login">
-          
         </div>
-        
       </div>
 
-      <form id="form-login" class="needs-validation" novalidate>
-        <div class="mb-3">
-          <label for="email" class="form-label fs-3">Correo electronico</label>
-          <input type="email" class="form-control" placeholder="Ingresa tu email" id="email" required>
-          <div class="invalid-feedback">
-            Por favor ingresa un correo electrónico válido.
-          </div>
-          <div id="emailHelp" class="form-text fs-5">Nunca compartiremos tus datos!</div>
-        </div>
-        <div class="mb-3">
-          <label for="contraseña" class="form-label fs-3">Contraseña</label>
-          <input type="password" class="form-control" placeholder="Ingresa la contraseña" id="contraseña" required>
-          <div class="invalid-feedback">
-            Por favor ingresa una contraseña.
-          </div>
-        </div>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Iniciar sesión</button>
+    </form>
+
         <div class="mb-5 text-start">
-          <a href="registro.html">Registrame</a>
+          <a href="{% url 'registro' %}">Registrame</a>
         </div>
-
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class=" btn btn-login" type="submit">Ingresar</button>
-        </div>
-      </form>
-
     </div>
 
     
