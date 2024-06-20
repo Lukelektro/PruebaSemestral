@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404,redirect
 #imports de login
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 #Imports de mensajes
 from django.contrib import messages
@@ -10,7 +10,7 @@ from django.http import JsonResponse
 from datetime import datetime
 #Imports de modelos y formularios
 from .models import mecanico,Servicio
-from .forms import mecanicoForm,contactoForm,servicioForm, citaForm
+from .forms import mecanicoForm,contactoForm,servicioForm, citaForm, CustomUserCreationForm
 
 
 
@@ -41,19 +41,19 @@ def iniciar_sesion(request):
     
     return render(request, 'login.html', {'form': formulario})
 
+#***************** Registro *****************
+
 def registro(request):
     if request.method == 'POST':
-        formulario = UserCreationForm(request.POST)
+        formulario = CustomUserCreationForm(request.POST)
         if formulario.is_valid():
             usuario = formulario.save()
-            auth_login(request, usuario)
+            login(request, usuario)  # Autenticar al usuario después del registro
             return redirect('index')
     else:
-        formulario = UserCreationForm()
-    return render(request, 'base/registro.html', {'form': formulario})
+        formulario = CustomUserCreationForm()
 
-def logout_page(request):
-    return render(request, 'base/logout.html')
+    return render(request, 'base/registro.html', {'form': formulario})
 
 #***************** Vistas *****************
 def index(request):
