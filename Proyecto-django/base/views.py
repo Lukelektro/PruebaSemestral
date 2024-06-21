@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from datetime import datetime
 #Imports de modelos y formularios
-from .models import mecanico,Servicio
+from .models import mecanico,Servicio,clienteUser
 from .forms import mecanicoForm,contactoForm,servicioForm, citaForm, usuarioNuevosParametros
 from django.views.decorators.csrf import csrf_protect
 
@@ -249,9 +249,17 @@ def servicio_add(request,id_servicio=None):
     else:
         form = servicioForm(instance=instance)
         return render(request, 'base/servicio_add.html', {'form': form})
-    
+
+
+
+@login_required
 def servicio_detail(request,id_servicio):
     servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
+
+
+    usuario, created = clienteUser.objects.get_or_create(user=request.user)
+    
+
 
     form = citaForm();
 
@@ -262,15 +270,16 @@ def servicio_detail(request,id_servicio):
         if form.is_valid():
 
             cita = form.save(commit=False)
+            cita.usuario = usuario.user
             cita.servicio = servicio
             cita.save()
             
             form = citaForm()
-            
-        return render(request, 'base/servicio_detail.html', context)
+            context = {'servicio':servicio,'form':form,'mensaje':'Cita agendada correctamente'}
+            return render(request, 'base/servicio_detail.html', context)
         
-
-
+        return render(request, 'base/servicio_detail.html', {'servicio':servicio,'form':form})
+    
     context = {'servicio':servicio,'form':form}
     return render(request, 'base/servicio_detail.html', context)
 

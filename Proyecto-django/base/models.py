@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator
 from django.contrib.auth.models import User
-
+from django.conf import settings
 # Create your models here.
 
 
@@ -75,6 +75,7 @@ class clienteUser(models.Model):
 
 class Cita(models.Model):
     id_cita = models.AutoField(primary_key=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='citas',null=True)
     servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
     fecha = models.DateField()
     hora = models.CharField(max_length=50)
@@ -84,7 +85,8 @@ class Cita(models.Model):
     creado = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.cliente.nombre + ' ' + self.cliente.apellido + ' - ' + self.servicio.nombre + ' - ' + str(self.fecha) + ' - ' + str(self.hora)
-    
-
-
+        usuario_info = "Unknown User"
+        if self.usuario:
+            cliente_user = self.usuario.clienteuser  # Assuming reverse relation is named 'clienteuser'
+            usuario_info = f"{cliente_user.nombre} {cliente_user.apellido}"
+        return f"{usuario_info} - {self.servicio.nombre} - {str(self.fecha)} - {str(self.hora)}"
