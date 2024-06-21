@@ -43,6 +43,7 @@ class MensajeContacto(models.Model):
 class Servicio(models.Model):
     id_servicio = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=50)
+    precio = models.IntegerField(null=True,validators=[MaxValueValidator(9999999999)])
     descripcion = models.TextField()
     imagen = models.ImageField(upload_to='servicios', null=True, blank=True)
 

@@ -70,11 +70,12 @@ class contactoForm(forms.ModelForm):
 class servicioForm(forms.ModelForm):
     nombre = forms.CharField(required=True,max_length=50)
     descripcion = forms.CharField(required=True,widget=forms.Textarea)
+    precio = forms.IntegerField(required=True)
     imagen = forms.ImageField(required=False)
 
     class Meta:
         model = Servicio
-        fields = ['nombre', 'descripcion', 'imagen']
+        fields = ['nombre', 'precio','descripcion', 'imagen']
 
 
     
