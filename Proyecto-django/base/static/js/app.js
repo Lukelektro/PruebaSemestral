@@ -2,7 +2,7 @@
 $(document).ready(function() {
     // Función para cambiar el intervalo de tiempo del carousel
     $('.carousel').carousel({
-        interval: 20
+        interval: 5000
     });
 
     // Permite a la navbar salirse de los bordes de la pantalla
