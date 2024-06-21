@@ -103,7 +103,7 @@ h2 {
 }
 
 #hero-nosotros {
-    background-color: var(--piel);
+    background-color: var(--gris);
 }
 
 @media (min-width: 768px) {
@@ -166,7 +166,7 @@ h2 {
 
 /*fondo y texto de la seccion*/
 #trabajadores {
-    background-color: #333333;
+    background-color: var(--gris);
     color: var(--piel);
     text-align: center;
 }
@@ -195,7 +195,7 @@ h2 {
 
 /*seccion Asociados y cotización*/
 #partner-con-api {
-    background-color: var(--piel);
+    background-color: var(--gris);
     color: var(--gris);
     text-align: center;
 }
