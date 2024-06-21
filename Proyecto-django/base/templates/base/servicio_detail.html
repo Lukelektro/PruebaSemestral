@@ -1,7 +1,7 @@
 {% extends '../base.html' %}
 {% load static %}
 
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags %} 
 
 {% block title %}Detalles de Servicio{% endblock %}
 
@@ -13,9 +13,20 @@
 
     <section>
 
+        {% if mensaje %}
+            <div class="alert alert-success alert-dismissible fade show text-center mt-2 " role="alert">
+                <strong>{{ mensaje }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+
         <h1 class="" >{{servicio}}</h1>
 
-        <p>{{servicio.descripcion}}</p>
+        <div class="d-flex justify-content-center align-items-center" style="height: auto; width: 40rem; margin: auto;">
+            <div class="text-center" style="width: 100%; height: 100%;">
+                <p>{{ servicio.descripcion }}</p>
+            </div>
+        </div>
 
         <div class="container mt-5 mb-5">
             <div class="row justify-content-center">

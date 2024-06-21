@@ -78,11 +78,11 @@ def trabajadores(request):
 
 def servicios(request):
     
-    #Codigo restante
     servicios = Servicio.objects.all()
     context = {
-        "servicios":servicios,
-        "soy_admin" :soy_admin(request.user) if request.user.is_authenticated else False
+        "servicios": servicios,  
+        'esta_autentificado': request.user.is_authenticated,
+        "soy_admin": soy_admin(request.user) if request.user.is_authenticated else False
     }
     return render(request, 'base/servicios.html',context)
 
@@ -259,7 +259,6 @@ def servicio_detail(request,id_servicio):
 
     usuario, created = clienteUser.objects.get_or_create(user=request.user)
     
-
 
     form = citaForm();
 
