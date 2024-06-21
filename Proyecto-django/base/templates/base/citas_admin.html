@@ -1,0 +1,56 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}Citas{% endblock %}
+
+
+{% block content %}
+
+<section style="height: 100%; margin-top: 5rem; background-color: var(--gris);">
+
+    <div class="container mb-3 mt-5 pt-4 flex-column align-items-center justify-content-center">
+
+        <div>
+            <h1 class="mt-5 text-center fw-bold" style="color: var(--blanco);">Citas Agendadas</h1>
+        </div>
+        
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Telefono cliente</th>
+                    <th scope="col">Correo cliente</th>
+                    <th scope="col">Comentario</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Patente</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for Cita in citas %}
+                    <tr>
+                        
+                        <th scope="row">{{ Cita.id_cita }}</th>
+                        <td>{{ Cita }}</td>
+                        <td>{{ Cita.usuario.cliente_user.telefono }}</td>
+                        <td>{{ Cita.usuario.cliente_user.correo }}</td>
+                        <td>{{ Cita.comentario }}</td>
+                        <td>{{ Cita.fecha }}</td>
+                        <td>{{ Cita.hora }}</td>
+                        <td>{{ Cita.marca }}</td>
+                        <td>{{ Cita.patente }}</td>
+                            
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}
+</html>

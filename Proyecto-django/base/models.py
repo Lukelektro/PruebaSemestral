@@ -59,7 +59,7 @@ class Servicio(models.Model):
 
 
 class clienteUser(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,related_name='cliente_user')
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     correo = models.EmailField(max_length=254)
@@ -73,7 +73,6 @@ class clienteUser(models.Model):
 
     
 #*************** CITA ****************
-
 class Cita(models.Model):
     id_cita = models.AutoField(primary_key=True)
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='citas',null=True)
@@ -88,6 +87,6 @@ class Cita(models.Model):
     def __str__(self):
         usuario_info = "Unknown User"
         if self.usuario:
-            cliente_user = self.usuario.clienteuser  # Assuming reverse relation is named 'clienteuser'
+            cliente_user = self.usuario.cliente_user 
             usuario_info = f"{cliente_user.nombre} {cliente_user.apellido}"
-        return f"{usuario_info} - {self.servicio.nombre} - {str(self.fecha)} - {str(self.hora)}"
+        return f"{usuario_info} - {self.servicio.nombre}"

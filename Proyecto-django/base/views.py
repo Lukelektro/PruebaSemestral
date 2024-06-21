@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from datetime import datetime
 #Imports de modelos y formularios
-from .models import mecanico,Servicio,clienteUser
+from .models import mecanico,Servicio,clienteUser,Cita
 from .forms import mecanicoForm,contactoForm,servicioForm, citaForm, usuarioNuevosParametros
 from django.views.decorators.csrf import csrf_protect
 
@@ -64,6 +64,7 @@ def index(request):
         "soy_admin" :soy_admin(request.user) if request.user.is_authenticated else False
     }
     return render(request, 'base/index.html', context)
+
 
 
 
@@ -254,9 +255,8 @@ def servicio_add(request,id_servicio=None):
 
 @login_required
 def servicio_detail(request,id_servicio):
+
     servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
-
-
     usuario, created = clienteUser.objects.get_or_create(user=request.user)
     
 
@@ -282,4 +282,28 @@ def servicio_detail(request,id_servicio):
     context = {'servicio':servicio,'form':form}
     return render(request, 'base/servicio_detail.html', context)
 
+#***************** CITAS *****************
+
+@login_required
+def citas(request):
+
+    citas = Cita.objects.filter(usuario=request.user)  
+
+    context = {
+        "citas": citas,
+        "soy_admin": soy_admin(request.user) 
+    }
+    return render(request, 'base/citas.html', context)
+
+@login_required
+def citas_admin(request):
+
+    citas = Cita.objects.filter()  
+
+    context = {
+        "citas": citas,
+        "soy_admin": soy_admin(request.user) 
+    }
+    return render(request, 'base/citas_admin.html', context)
     
+        
