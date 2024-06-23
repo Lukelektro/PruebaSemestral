@@ -59,7 +59,10 @@ def index(request):
     
     #Codigo restante
     mecanicos = mecanico.objects.all()
+    servicios = Servicio.objects.all()
+
     context = {
+        "servicios":servicios,
         "mecanicos":mecanicos,
         "soy_admin" :soy_admin(request.user) if request.user.is_authenticated else False
     }

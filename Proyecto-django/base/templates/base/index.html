@@ -1,6 +1,7 @@
 {% extends '../base.html' %}
 {% load static %}
-
+{% load humanize %}
+{% load my_filters %}
 
 {% block title %}Trabajadores{% endblock %}
 
@@ -116,7 +117,6 @@
 
             </div>            
 
-
         <!--Boton para ver mas trabajadores (redirecciona a trabajadores.html)-->
         <div class="p-5">
             <h3>Conoce a más trabajadores</h3>
@@ -163,96 +163,60 @@
 
     <!--Seccion Servicios-->
     
-    <section id="services">
+    <section id="services" class="pb-4">
+        
+
         <h1 class="titulo-servicios text-center align-items-center m-0 lh-1 py-5">Servicios disponibles</h1>
         <!--Carta 1-->
-        <div class="card mb-5 mx-5 rounded-5">
-            <div class="row g-0 color-carta-servicio">
-                <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
-                    <img src="{%static 'img/servicio-1.png'%}" class="img-fluid rounded-5 w-100" alt="servicio-1">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body mt-4">
-                        <h3 class="card-title fw-bold text-center text-white">Limpieza Superficial</h3>
-                        <p class="card-text text-white text-center">Limpieza superficial para aquellos que les gusta lo
-                            bueno y lo
-                            económico</p>
-                        <ul class="list-group list-group-flush mx-auto mt-5">
-                            <li class="list-group-item px-0 color-carta-servicio-chico text-white">Económico</li>
-                            <li class="list-group-item px-0 color-carta-servicio-chico text-white">Federico Fernet</li>
-                            <li class="list-group-item px-0 color-carta-servicio-chico text-white">Duración aproximada de
-                                10 minutos</li>
-                        </ul>
-                        <div class="d-flex justify-content-center mt-5" style="width: 100%;">
-                            <button type="button" onclick="window.location.href = 'servicios.html';"
-                                class="btn btn-outline-secondary mt-3 text-white">
-                                Contratar servicio</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Carta 2-->
-        <div class="card mb-5 mx-5 rounded-5">
-            <div class="row g-0 color-carta-servicio">
-                <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
-                    <img src="{%static 'img/servicio-2.jpg'%}" class="img-fluid rounded-5 w-100" alt="servicio-1">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body mt-4">
-                        <h3 class="card-title fw-bold text-center text-white">Cambio de aceite</h3>
-                        <p class="card-text text-white text-center">Cambio de aceite para aquellos que les gusta lo
-                            bueno y
-                            lo
-                            económico</p>
-                        <ul class="list-group list-group-flush mx-auto mt-5">
-                            <li class="list-group-item px-0 color-carta-servicio-chico text-white">Económico</li>
-                            <li class="list-group-item px-0 color-carta-servicio-chico text-white">Matias Gonzalez</li>
-                            <li class="list-group-item px-0 color-carta-servicio-chico text-white">Duración aproximada de
-                                50 minutos</li>
-                        </ul>
-                        <div class="d-flex justify-content-center mt-5" style="width: 100%;">
-                            <button type="button" onclick="window.location.href = 'servicios.html';"
-                                class="btn btn-outline-secondary mt-3 text-white">
-                                Contratar servicio</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!--Carta 3-->
-        <div class="card mb-5 mx-5 rounded-5">
-            <div class="row g-0 color-carta-servicio">
-                <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
-                    <img src="{%static 'img/servicio-3.jpg'%}" class="img-fluid rounded-5 w-100" alt="servicio-1">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body mt-4">
-                        <h3 class="card-title fw-bold text-center text-white">Cambio de bujia</h3>
-                        <p class="card-text text-white text-center">Cambio de bujia para aquellos que les gusta lo bueno
-                            y
-                            lo
-                            económico</p>
-                        <ul class="list-group list-group-flush mx-auto mt-5">
-                            <li class="list-group-item px-0 color-carta-servicio-chico text-white">Económico</li>
-                            <li class="list-group-item px-0 color-carta-servicio-chico text-white">Federico Guiter</li>
-                            <li class="list-group-item px-0 color-carta-servicio-chico text-white">Duración aproximada de
-                                2 horas</li>
-                        </ul>
-                        <div class="d-flex justify-content-center mt-5" style="width: 100%;">
-                            <button type="button" onclick="window.location.href = 'servicios.html';"
-                                class="btn btn-outline-secondary mt-3 text-white">
-                                Contratar servicio</button>
+        {% for Servicio in servicios|slice:":3"%}
+
+            <div class="card mb-5 mx-5 rounded-5">
+
+                <div class="row g-0 color-gris">
+
+                    <div class="col-md-6 d-md-flex align-items-md-center justify-content-md-center">
+
+                        {% if Servicio.imagen %}
+                            <img class="img-fluid rounded-5 w-auto h-auto" src="{{ Servicio.imagen.url }}" alt="Imagen del servicio">
+                        {% else %}
+                            <p>Sin Imagen</p>
+                        {% endif %}</td>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="card-body mt-4">
+
+                            <h3 class="card-title fw-bold text-center text-white pb-2">{{Servicio}}</h3>
+
+                            <p class="card-text text-white text-center">{{Servicio.descripcion}}</p>
+
+                            <ul class="list-group list-group-flush mx-auto mt-2">
+                                <li class="list-group-item fs-4 fw-bold color-gris-chico text-center text-white">$ {{ Servicio.precio|floatformat:0 |comma_to_dot }}</li>
+                            </ul>
+
+                            <div class="d-flex justify-content-center mt-3" style="width: 100%;">
+                                <button type="button"class="btn btn-outline-secondary mt-3 text-white"
+                                        id="ver-mas-servicio">
+                                    Contratar servicio</button>
+                            </div>
                         </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
+        
     </section>
 
     <script>
         document.getElementById('ver-mas-trabajadores').onclick = function() {
             window.location.href = "{% url 'trabajadores' %}";
+        };
+
+        document.getElementById('ver-mas-servicio').onclick = function() {
+            window.location.href = "{% url 'servicios' %}";
         };
     </script>
     {% endblock %}

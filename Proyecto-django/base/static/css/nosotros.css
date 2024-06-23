@@ -1,5 +1,4 @@
 /* Globales para los tags*/
-
 h1 {
     font-family: 'Nunito', sans-serif;
     font-optical-sizing: auto;
@@ -29,6 +28,7 @@ h1 {
         gap: 2rem;
     }
 }
+
 
 /* colores de las secciones */
 #nosotros{
@@ -75,4 +75,16 @@ h1 {
 .icono {
     width: 100px;
     height: 100px;    
+}
+
+.carousel-custom {
+    height: 350px;
+    width: 100%;
+    max-width: 100%;
+}
+.carousel-custom .carousel-item img {
+    height: 350px;
+    width: 100%;
+    
+    object-fit: cover; 
 }
