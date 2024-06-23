@@ -11,7 +11,11 @@
     --rosa: #FF1493 !important;
     --blanco: #FFFFFF !important;
     --negro: #322D2D !important;
-    --bs-border-color: var(--gris) !important; 
+    --bs-body-bg: var(--piel) !important; 
+}
+
+.form-control{
+    border: 1px solid var(--gris) !important;
 }
 
 html {

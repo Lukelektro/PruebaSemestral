@@ -17,11 +17,15 @@
 
 }
 
+.form-control{
+    border: 1px solid var(--gris) !important;
+}
+
 .contenedor-login {
     width: 500px;
     height: 550px;
     background-color: var(--piel);
-    border: 1px solid var(--gris);
+    border: 1px solid var(--gris) !important;
     padding: 20px;
     border-radius: 10px;
 }
