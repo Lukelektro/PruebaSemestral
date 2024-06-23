@@ -1,16 +1,17 @@
 :root {
-    --rojo: #4f101a !important;
+    --rojo: #b03648 !important;
     --gris: #474646 !important;
-    --piel: #dfd4cd !important;
-    --amarillo: #f4c01e !important;
+    --piel: #f3dbc3 !important;
+    --amarillo: #dfdf96 !important;
     --purpura: #612CEE !important;
     --verde: #5FD315 !important;
     --celeste: #26CAC0 !important;
     --naranja: #FF7F50 !important;
-    --azul: #1E90FF !important;
+    --azul: #59aaf5 !important;
     --rosa: #FF1493 !important;
     --blanco: #FFFFFF !important;
     --negro: #322D2D !important;
+    --bs-border-color: var(--gris) !important; 
 }
 
 html {
@@ -29,14 +30,16 @@ html {
     font-family: 'Montserrat',sans-serif;
 }
 
-.text-white {
-    color: #fff;
-}
 
 body {
     margin: 0;
-    background-color: var(--rojo);
+    background-color: var(--piel);
 }
+
+.bg-body-tertiary {
+    background-color: var(--negro) !important;
+}
+
 
 ul {
     list-style: none;
@@ -70,13 +73,9 @@ ul {
     height: 30px; 
 }
 
-.bg-body-tertiary {
-    background-color: #4f101a !important;
-}
-
 .navbar-nav .nav-link {
     font-size: 19px;
-    color: #dfd4cd;
+    color: var(--rojo);
 }
 
 
@@ -135,10 +134,14 @@ header .container-fluid{
 /* FOOTER */
 
 footer {
-    background-color: var(--rojo);
+    background-color: var(--piel);
 }
 
 .texto-footer {
-    color: var(--piel) !important;
+    color: var(--rojo) !important;
     font-weight: 600;
+}
+
+.border-bottom {
+    border-bottom: 1px solid var(--rojo) !important;
 }
