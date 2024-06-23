@@ -17,7 +17,7 @@ h1 {
 }
 
 .contenedor-titulo-fondo{
-    background-color: var(--gris);
+    background-color: var(--piel);
     font-size: 50px;
 }
 
@@ -32,11 +32,11 @@ h1 {
 
 /* colores de las secciones */
 #nosotros{
-    background-color: var(--gris);
+    background-color: var(--piel);
 }
 
 #nosotros h1{
-    color: #F88300;
+    color: var(--rojo);
     text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
         -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
         -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
@@ -46,7 +46,7 @@ h1 {
 }
 
 #nosotros p{
-    color: var(--piel);
+    color: var(--gris);
     text-align: center;
     font-size: 1.3rem;
     margin-bottom: 53px;
