@@ -174,6 +174,7 @@ def mecanico_add(request, id_mecanico=None):
 
 
 def contacto(request):
+
     form_submitted = False  # Indicador de que el formulario se ha enviado correctamente
 
     if request.method == 'POST':
@@ -186,7 +187,13 @@ def contacto(request):
             form_submitted = True  # Actualiza el indicador
 
             form = contactoForm()
-        return render(request, 'base/contacto.html', {'form': form, 'form_submitted': form_submitted})
+
+            context = {
+                "soy_admin" :soy_admin(request.user) if request.user.is_authenticated else False,
+                "form":form,
+                "form_submitted": form_submitted
+            }
+        return render(request, 'base/contacto.html', context)
 
     else:
         form = contactoForm()
