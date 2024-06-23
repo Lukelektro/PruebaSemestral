@@ -166,7 +166,7 @@
     <section id="services" class="pb-4">
         
 
-        <h1 class="titulo-servicios text-center align-items-center m-0 lh-1 py-5">Servicios disponibles</h1>
+        <h1 class="titulo-servicios text-center align-items-center m-0 lh-1 py-5">Servicios mas populares</h1>
         <!--Carta 1-->
 
         {% for Servicio in servicios|slice:":3"%}
@@ -207,6 +207,13 @@
                 </div>
             </div>
         {% endfor %}
+
+        <!--Boton para ver mas servicios (redirecciona a servicios.html)-->
+        <div class="p-5">
+            <h3>Conoce nuestros servicios</h3>
+            <button type="button" class="btn boton-servicio mt-1 w-auto border-0 rounded-pill fw-bold py-2 px-5"
+                    id="ver-mas-servicio">todos los servicios</button>
+        </div>
         
     </section>
 
