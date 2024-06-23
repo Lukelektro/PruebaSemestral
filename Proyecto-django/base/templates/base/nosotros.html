@@ -9,19 +9,50 @@
 
 <link rel="stylesheet" href="{% static 'css/nosotros.css' %}">
 
-        <div style="background-color: var(--rojo); height: 7rem;"></div>
-        <!--esta pagina nose porque si le pongo esto, funciona background color-->
+    <div style="background-color: var(--rojo); height: 7rem;"></div>
+    <!--esta pagina nose porque si le pongo esto, funciona background color-->
+
+
+    <div id="carouselExampleIndicators" class="carousel slide carousel-custom" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="{% static 'img/Carusel-1.jpg' %}" class="d-block w-100" alt="foto-carousel-1">
+            </div>
+            <div class="carousel-item">
+            <img src="{% static 'img/Carusel-2.jpg' %}" class="d-block w-100" alt="foto-carousel-2">
+            </div>
+            <div class="carousel-item">
+            <img src="{% static 'img/Carusel-3.jpg' %}" class="d-block w-100" alt="foto-carousel-3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
 
     <!--Nosotros-->
     <section id="nosotros">
         <div class="container-fluid">
             <div class="row">
+
+
+                
+
                 <h1 class="text-center contenedor-titulo-fondo p-5">¿Quienes somos?</h1>
-                <div class="col-lg-6 d-flex justify-content-center flex-column">
-                    <img class="w-100 img-fluid m-0 mb-3 rounded-5 h-100" src="{% static 'img/fondo-principal.avif' %}"
-                        alt="imagen-nosotros">
-                </div>
-                <div class="col-lg-6">
+
+                
+                <div class="pt-3">
                     <p class="fw-bold">Desde nuestras raíces en las carreras hasta nuestros talleres accesibles para
                         todos, en CMQween celebramos nuestra trayectoria única. Como una familia apasionada por los
                         motores y las películas, cada reparación es una oportunidad para fusionar habilidad técnica con
@@ -34,16 +65,12 @@
                         amor por los autos se funden en cada reparación. Así nació CMQween, una mezcla única de
                         velocidad y cariño por los motores.
                     </p>
-                    <p class="fw-bold">Nuestros clientes no solo confían en nuestra habilidad técnica, sino también en
-                        nuestra capacidad para entender la conexión emocional que tienen con sus vehículos. Al igual que
-                        el vínculo entre Relámpago McQueen y Mate en Cars, nosotros valoramos esa relación especial y
-                        nos esforzamos por mantenerla en cada interacción. En CMQween, tu auto no es solo una máquina;
-                        es parte de tu historia, y nos comprometemos a cuidarlo como tal.
-                    </p>
+                    
                 </div>
             </div>
         </div>
     </section>
+
 
     <section id="mas-nosotros" class="p-5 color-seccion">
         <h1 class="pb-5">¿Que ofrecemos a diferencia de la competencia?</h1>
@@ -54,29 +81,21 @@
                 <p class="fw-bold">En CMQween, la seguridad de tu vehículo y tu bienestar son nuestra principal
                     preocupación. Nos destacamos por nuestro enfoque meticuloso en cada reparación, realizando
                     inspecciones exhaustivas y utilizando únicamente piezas certificadas para garantizar que tu
-                    automóvil esté en condiciones óptimas para enfrentar cualquier desafío en la carretera. Desde la
-                    revisión de frenos hasta la inspección de sistemas de seguridad, cada paso que damos está diseñado
-                    para brindarte la tranquilidad y confianza que necesitas al volante.</p>
+                    automóvil esté en condiciones óptimas.</p>
             </div>
             <div class="contenedor-icono">
                 <img class="icono" src="{% static 'img/icono2.svg' %}" alt="Icono precio">
                 <h1>Precio</h1>
                 <p class="fw-bold">Además de nuestra dedicación a la seguridad, en CMQween nos enorgullecemos de ofrecer
                     servicios de alta calidad a precios justos y transparentes. Creemos firmemente que mantener tu
-                    vehículo en condiciones óptimas no debería ser un lujo inalcanzable, por lo que nos esforzamos por
-                    mantener tarifas competitivas sin sacrificar la calidad de nuestro trabajo. Con nosotros, puedes
-                    estar seguro de que no habrá sorpresas desagradables en tu factura final; solo recibirás un servicio
-                    confiable y asequible que se adapte a tus necesidades y presupuesto.</p>
+                    vehículo en condiciones óptimas no debería ser un lujo inalcanzable.</p>
             </div>
             <div class="contenedor-icono">
                 <img class="icono" src="{% static 'img/icono3.svg' %}" alt="Icono Tiempo">
                 <h1>Tiempo</h1>
                 <p class="fw-bold">Y cuando se trata de tu tiempo, entendemos lo valioso que es. Es por eso que en
                     CMQween nos comprometemos a ofrecer un servicio rápido y eficiente sin comprometer la excelencia.
-                    Con técnicos altamente capacitados y un enfoque centrado en la eficiencia, trabajamos diligentemente
-                    para minimizar el tiempo de inactividad de tu vehículo y devolvértelo en óptimas condiciones en el
-                    menor tiempo posible. En un mundo donde cada minuto cuenta, en CMQween te ofrecemos la rapidez que
-                    necesitas sin comprometer la calidad.</p>
+                    Con técnicos altamente capacitados y un enfoque centrado en la eficiencia.</p>
             </div>
         </div>
     </section>

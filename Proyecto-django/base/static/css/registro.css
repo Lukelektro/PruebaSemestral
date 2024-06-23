@@ -1,3 +1,14 @@
+label {
+    color: var(--blanco);
+    font-weight: bold;
+}
+  
+body {
+    background: rgb(51, 51, 51);
+    background: linear-gradient(150deg, rgba(51, 51, 51, 1) 39%, rgba(71, 26, 33, 1) 65%);
+}
+
 .form-text {
-    color: #FFF !important;
+    color: var(--piel) !important;
+    font-style: italic; 
 }
