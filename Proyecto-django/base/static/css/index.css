@@ -1,12 +1,30 @@
 /*para cambiar las cartas a color gris */
 
-.color-gris {
-    background-color: #535252;
+.color-carta-trabajador {
+    background-color: var(--gris);
     border-radius: 30px;
 }
 
-.color-gris-chico {
-    background-color: #535252;
+.color-carta-trabajador-chico {
+    background-color: var(--azul);
+}
+
+.texto-color-trabajador{
+    color: var(--blanco) !important;
+}
+
+.color-carta-servicio {
+    background-color: var(--gris);
+    border-radius: 30px;
+}
+
+.color-carta-servicio-chico {
+    background-color: var(--rojo);
+}
+
+
+.texto-color{
+    color: var(--gris) !important;
 }
 
 /* estructura de los titulos (favor de editarlas si quieren otros colors llamando al ID de la seccion que quieran editar)*/
@@ -35,7 +53,7 @@ h2 {
 }
 
 .pagina-principal-overlay {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(206, 172, 139, 0.7);
 }
 
 /*si se agranda o se achica la navbar, debes cambiar si o si #hero-principal, ya que se le tiene un margen en base a la navbar para que no colicionen*/
@@ -92,7 +110,7 @@ h2 {
 #hero-nosotros h1 {
     text-align: center;
     align-items: center;
-    color: #C5A014;
+    color: var(--rojo);
     text-shadow: -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
         -2px 2px var(--negro), -2px -2px var(--negro), 2px 2px var(--negro), 2px -2px var(--negro),
         -2px 0px var(--negro), 0 2px var(--negro), 2px 0px var(--negro), 0 -2px var(--negro),
@@ -103,7 +121,7 @@ h2 {
 }
 
 #hero-nosotros {
-    background-color: var(--gris);
+    background-color: var(--piel);
 }
 
 @media (min-width: 768px) {
@@ -145,13 +163,13 @@ h2 {
 #trabajadores h1 {
     text-align: center;
     align-items: center;
-    color: #C5A014;
-    text-shadow: -2px 0px var(--rojo), 0 2px var(--rojo), 2px 0px var(--rojo), 0 -2px var(--rojo),
-        -2px 2px var(--rojo), -2px -2px var(--rojo), 2px 2px var(--rojo), 2px -2px var(--rojo),
-        -2px 0px var(--rojo), 0 2px var(--rojo), 2px 0px var(--rojo), 0 -2px var(--rojo),
-        -2px 2px var(--rojo), -2px -2px var(--rojo), 2px 2px var(--rojo), 2px -2px var(--rojo),
-        -2px 0px var(--rojo), 0 2px var(--rojo), 2px 0px var(--rojo), 0 -2px var(--rojo),
-        -2px 2px var(--rojo), -2px -2px var(--rojo), 2px 2px var(--rojo), 2px -2px var(--rojo);
+    color: var(--azul);
+    text-shadow: -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris),
+        -2px 2px var(--gris), -2px -2px var(--gris), 2px 2px var(--gris), 2px -2px var(--gris),
+        -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris),
+        -2px 2px var(--gris), -2px -2px var(--gris), 2px 2px var(--gris), 2px -2px var(--gris),
+        -2px 0px var(--gris), 0 2px var(--gris), 2px 0px var(--gris), 0 -2px var(--gris),
+        -2px 2px var(--gris), -2px -2px var(--gris), 2px 2px var(--gris), 2px -2px var(--gris);
     font-size: 100px;
     line-height: 1;
     margin: 0;
@@ -160,14 +178,14 @@ h2 {
 
 /*para que las cartas tengan borde*/
 #trabajadores .card {
-    border: 5px solid var(--amarillo);
+    border: 5px solid var(--azul);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.9);
 }
 
 /*fondo y texto de la seccion*/
 #trabajadores {
-    background-color: var(--gris);
-    color: var(--piel);
+    background-color: var(--piel);
+    color: var(--gris);
     text-align: center;
 }
 
@@ -180,7 +198,7 @@ h2 {
 
 /* BOTON TRABAJADOR Y SU CONTENEDOR*/
 .boton-trabajador {
-    background-color: var(--amarillo);
+    background-color: var(--azul);
     font-size: 16px;
     line-height: 1.8rem;
     cursor: pointer;
@@ -195,8 +213,7 @@ h2 {
 
 /*seccion Asociados y cotización*/
 #partner-con-api {
-    background-color: var(--gris);
-    color: var(--gris);
+    background-color: var(--piel);
     text-align: center;
 }
 
@@ -213,17 +230,17 @@ h2 {
 
 /* SECCION SERVICIOS */
 #services {
-    background-color: var(--gris);
+    background-color: var(--piel);
     margin-bottom: 2rem;
 }
 
 #services .card {
-    border: 5px solid var(--piel);
+    border: 5px solid var(--rojo);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
 }
 
 #services h1 {
-    color: var(--piel);
+    color: var(--rojo);
 }
 
 .titulo-servicios {
