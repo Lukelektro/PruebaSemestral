@@ -4,6 +4,7 @@ from django.forms.widgets import NumberInput
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 import datetime
+
 from .models import mecanico,MensajeContacto,Servicio,Cita, clienteUser
 
 #**************** FORM REGISTRO/USUARIO ****************
@@ -11,9 +12,16 @@ from .models import mecanico,MensajeContacto,Servicio,Cita, clienteUser
 class usuarioNuevosParametros(UserCreationForm):
     nombre = forms.CharField(max_length=100, required=True)
     apellido = forms.CharField(max_length=100, required=True)
-    correo = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
-    telefono = forms.CharField(max_length=20)
-    ciudad = forms.CharField(max_length=50)
+    correo = forms.EmailField(max_length=254, help_text='Necesitamos el correo para contactarte.')
+    telefono = forms.CharField(max_length=20, help_text='En caso de que agendes una hora, necesitaremos tu número de contacto.')
+    ciudad = forms.CharField(max_length=50, help_text='Actualmente solo trabajamos en Viña del Mar y Quilpue, pero si eres de otra ciudad, no dudes en contactarnos.')
+    
+    # Cambia el mensajito de ayuda de la contraseña y usuario
+    username = forms.CharField(label='Usuario', max_length=150, help_text='Obligatorio, 150 caracteres o menos. Letras, dígitos y @/./+/-/_ solamente.')
+    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput, help_text="""Tu contraseña NO puede ser muy común ni similar a tu información personal.
+                                                                         Tu contraseña debe contener al menos 8 caracteres.
+                                                                         Tu contraseña no puede ser solo numérica.""")
+    password2 = forms.CharField(label='Confirme su contraseña',widget=forms.PasswordInput, help_text='escribe tal cual la misma contraseña para verificar.')
 
     class Meta:
         model = User 

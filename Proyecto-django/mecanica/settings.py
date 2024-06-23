@@ -44,9 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 ]
 
+#admitir el uso de los formularios de crispy
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
-# Add or update the CRISPY_TEMPLATE_PACK setting
+#para utilizar el template pack de bootstrap 5
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
