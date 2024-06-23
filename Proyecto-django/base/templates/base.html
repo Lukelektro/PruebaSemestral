@@ -88,9 +88,9 @@
                     <ul class="navbar-nav fw-bold text-center m-2">
                         {% if user.is_authenticated %} 
                             {% if user.cliente_user %} 
-                            <li class="nav-item"> 
-                                <a class="nav-link" href="{% url 'citas' %}">Citas Agendadas</a> 
-                            </li> 
+                                <li class="nav-item"> 
+                                    <a class="nav-link" href="{% url 'citas' %}">Citas Agendadas</a> 
+                                </li> 
                             {% endif %} 
                         {% endif %}
                         
