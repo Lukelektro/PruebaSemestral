@@ -55,8 +55,10 @@
                 <div class="d-flex flex-row align-items-center">
                     {% if user.is_staff or user.is_superuser %}
                     <div class="logo-container mr-auto ml-auto">
-                        <a href="{% url 'index' %}"><img src="{% static 'img/logo-workers.png' %}" class="w-auto"
-                                alt="logo-nombre" /></a>
+                        <a href="{% url 'index' %}"><img src="{% static 'img/logo-nombre-admin.png' %}" class="w-auto"
+                                alt="logo-nombre-admin" /></a>
+                        <a href="{% url 'index' %}"><img src="{% static 'img/logo-bar-admin.png' %}" class="w-auto"
+                                alt="logo-empresa-admin" /></a>
                     </div>
                     {% else %}
                     <div class="logo-container mr-auto ml-auto">

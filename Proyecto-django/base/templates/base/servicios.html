@@ -15,6 +15,8 @@
 
         <h1>Cotiza un Servicio</h1>
 
+        <img src="{% static 'img/logo-servicios.png' %}" class="ajuste-foto-servicios" alt="logo-servicios">
+
         <h3>Tienes que estar registrado para agendar una hora</h3>
 
         <div class="fw-bolder fs-5 text-center">
@@ -25,7 +27,7 @@
             <div class="row">
                 {% for servicio in servicios %}
                     <div class="col-md-4 mb-4">
-                        <div class="card">
+                        <div class="card color-carta">
 
                             {% if servicio.imagen %}
                                 <img class="rounded-2 card-img-top" src="{{ servicio.imagen.url }}" alt="Imagen del servicio">
@@ -34,8 +36,8 @@
                             {% endif %}</td>
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">{{servicio}}</li>
-                                    <li class="list-group-item">$ {{ servicio.precio|comma_to_dot }}</li>
+                                    <li class="list-group-item color-carta-chica text-white">{{servicio}}</li>
+                                    <li class="list-group-item color-carta-chica text-white">$ {{ servicio.precio|comma_to_dot }}</li>
                                 </ul>
 
                                 <span class="d-inline-block" tabindex="0" 

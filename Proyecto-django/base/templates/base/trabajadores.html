@@ -15,6 +15,7 @@
     <section id="vista-trabajadores">
 
         <h1>Conoce a nuestros mecanicos!</h1>
+        <img src="{% static 'img/logo-trabajadores.png' %}" class="ajuste-foto-trabajadores" alt="logo-trabajadores">
 
         {% for mecanico in mecanicos %}
             {% if forloop.counter|divisibleby:"2" %}

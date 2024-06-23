@@ -88,3 +88,16 @@ h1 {
     
     object-fit: cover; 
 }
+
+.ajuste-foto-quienes-somos {
+    width: 480px;
+    margin-top: -140px;
+    margin-bottom: -50px;
+}
+
+.contenedor-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

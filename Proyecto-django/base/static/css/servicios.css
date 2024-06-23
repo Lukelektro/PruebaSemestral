@@ -1,9 +1,9 @@
 /* Globales para los tags*/
 section {
-    background-color: var(--gris);
+    background-color: var(--piel);
     padding-top: 10rem;
     text-align: center;
-    color: var(--piel);
+    color: var(--gris);
     padding-bottom: 10rem;
 }
 
@@ -50,4 +50,19 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.color-carta{
+    background-color: var(--gris) !important;
+}
+
+
+.color-carta-chica{
+    background-color: var(--gris) !important;
+    border: 1.5px solid var(--rojo) !important;
+}
+
+.ajuste-foto-servicios {
+    width: 430px;
+    margin-top: -60px;
 }

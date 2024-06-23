@@ -269,3 +269,14 @@ h2 {
     background-color: var(--gris);
     color: var(--blanco);
 }
+
+.list-group-item:first-child {
+    border-top-left-radius: 30px !important; 
+    border-top-right-radius: 30px !important;
+}
+
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 30px !important;
+    border-bottom-right-radius: 30px !important;
+}

@@ -1,9 +1,9 @@
 /* Globales para los tags*/
 section {
-    background-color: var(--gris);
+    background-color: var(--piel);
     padding-top: 10rem;
     text-align: center;
-    color: var(--piel);
+    color: var(--gris);
 }
 
 h1 {
@@ -50,4 +50,9 @@ p {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.ajuste-foto-trabajadores {
+    width: 430px;
+    margin-top: -60px;
 }
