@@ -2,6 +2,10 @@
     background-color: var(--gris) !important;
 }
 
+.nav-link-admin {
+    color: var(--azul) !important;
+}
+
 header .logo-container-admin img {
     max-width: 1px !important;
 }

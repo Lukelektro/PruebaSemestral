@@ -53,7 +53,7 @@ h2 {
 }
 
 .pagina-principal-overlay {
-    background-color: rgba(206, 172, 139, 0.7);
+    background-color: rgba(243, 219, 195, 0.7);
 }
 
 /*si se agranda o se achica la navbar, debes cambiar si o si #hero-principal, ya que se le tiene un margen en base a la navbar para que no colicionen*/

@@ -41,8 +41,8 @@
 
 <body>
     <!--Navbar-->
-    <header>
-        <nav id="navbar"
+    <header id="navbar">
+        <nav
             class="{% if soy_admin %}bg-body-tertiary-admin{% else %}bg-body-tertiary{% endif %} navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!--Boton para colapsar el menu-->
@@ -98,17 +98,17 @@
                             {% if user.is_staff or user.is_superuser %}
                         
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'admin:index' %}">Django</a>
+                                    <a class="nav-link nav-link-admin" href="{% url 'admin:index' %}">Django</a>
                                 </li>
                                 <li class="nav-item">
 
-                                    <a class="nav-link" href="{% url 'mecanico_list' %}">Lista mecanicos</a>
+                                    <a class="nav-link nav-link-admin" href="{% url 'mecanico_list' %}">Lista mecanicos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'servicio_list' %}">Lista servicios</a>
+                                    <a class="nav-link nav-link-admin" href="{% url 'servicio_list' %}">Lista servicios</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'citas_admin' %}">Citas Agendadas</a>
+                                    <a class="nav-link nav-link-admin" href="{% url 'citas_admin' %}">Citas Agendadas</a>
                                 </li>
                             {% endif %}
 
@@ -116,7 +116,7 @@
                                 <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
                                     {% csrf_token %}
                                 </form>
-                                <a class="nav-link" href="#"
+                                <a class="nav-link nav-link-admin" href="#"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar
                                     sesión</a>
                             </li>
