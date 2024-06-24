@@ -101,7 +101,10 @@
                             {% if user.cliente_user %} 
                                 <li class="nav-item"> 
                                     <a class="nav-link" href="{% url 'citas' %}">Citas Agendadas</a> 
-                                </li> 
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'carrito' %}">Carrito</a> 
+                                </li>
                             {% endif %} 
                         {% endif %}
                         
@@ -207,8 +210,5 @@
     <script src="{% static 'js/map.js' %}"></script>
     <script src="{% static 'js/climaApi.js' %}"></script>
 
-
-
 </body>
-
 </html>

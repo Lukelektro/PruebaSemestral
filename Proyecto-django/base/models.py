@@ -3,6 +3,10 @@ from django.core.validators import MaxValueValidator
 from django.contrib.auth.models import User
 from django.conf import settings
 # Create your models here.
+from django.db.models import Sum, F
+from django.db.models.functions import Coalesce
+from django.core.validators import MinValueValidator
+from django.db.models.constraints import UniqueConstraint
 
 
 #*************** MECANICO ****************
@@ -90,3 +94,33 @@ class Cita(models.Model):
             cliente_user = self.usuario.cliente_user 
             usuario_info = f"{cliente_user.nombre} {cliente_user.apellido}"
         return f"{usuario_info} - {self.servicio.nombre}"
+    
+    
+#*************** CARRITO ****************
+class Carrito(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='carrito_usuario')
+    servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE, related_name='carrito_servicio')
+    patente = models.CharField(max_length=10)
+    cantidad = models.IntegerField(default=1, validators=[MinValueValidator(1)])
+    precio_en_el_momento = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    fecha_añadido = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.servicio.nombre} - {self.usuario.username}"
+
+    @property
+    def total_por_servicio(self):
+        precio = self.precio_en_el_momento if self.precio_en_el_momento is not None else 0
+        return self.cantidad * precio
+
+    @staticmethod
+    def total_carrito(usuario_id):
+        # Calcula el total usando aggregate para mejorar la eficiencia
+        return Carrito.objects.filter(usuario_id=usuario_id).aggregate(
+            total=Coalesce(Sum(F('cantidad') * F('precio_en_el_momento')), 0)
+        )['total']
+
+    class Meta:
+        constraints = [
+            UniqueConstraint(fields=['patente', 'servicio'], name='unique_patente_servicio')
+        ]

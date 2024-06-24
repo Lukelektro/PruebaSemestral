@@ -1,15 +1,18 @@
 from django.shortcuts import render, get_object_or_404,redirect
+from django.http import JsonResponse
 #imports de login
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 #Imports de mensajes
 from django.contrib import messages
 from datetime import datetime
 #Imports de modelos y formularios
-from .models import mecanico,Servicio,clienteUser,Cita
-from .forms import mecanicoForm,contactoForm,servicioForm, citaForm, usuarioNuevosParametros
+from .models import mecanico,Servicio,clienteUser,Cita,Carrito
+from .forms import mecanicoForm,contactoForm,servicioForm, citaForm, usuarioNuevosParametros, CarritoForm
 from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.http import require_POST
 
 
 #***************** definiciones de funciones basicas *****************
@@ -315,5 +318,29 @@ def citas_admin(request):
         "soy_admin": soy_admin(request.user) 
     }
     return render(request, 'base/citas_admin.html', context)
-    
-        
+
+#***************** Carrito *****************
+
+def carrito(request):
+    return render(request, 'base/carrito.html')
+
+@require_POST
+def agregar_al_carrito(request):
+    usuario_id = request.user.id
+    servicio_id = request.POST.get('servicio_id')
+    patente = request.POST.get('patente')
+    servicio = Servicio.objects.get(id_servicio=servicio_id)
+    usuario = User.objects.get(id=usuario_id)
+
+    carrito, created = Carrito.objects.get_or_create(
+        usuario=usuario,
+        servicio=servicio,
+        patente=patente,
+        defaults={'cantidad': 1, 'precio_en_el_momento': servicio.precio}
+    )
+
+    if not created:
+        carrito.cantidad += 1
+        carrito.save()
+
+    return JsonResponse({'success': True, 'mensaje': 'Servicio agregado al carrito correctamente'})

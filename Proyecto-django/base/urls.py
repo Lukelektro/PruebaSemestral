@@ -24,4 +24,6 @@ urlpatterns = [
     path('servicio_detail/<int:id_servicio>/',views.servicio_detail, name='servicio_detail'),
     path('citas/', views.citas, name='citas'),
     path('citas_admin/', views.citas_admin, name='citas_admin'),
+    path('agregar_al_carrito/', views.agregar_al_carrito, name='agregar_al_carrito'),
+    path('carrito/', views.carrito, name='carrito'),	
 ]

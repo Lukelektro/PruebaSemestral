@@ -66,3 +66,10 @@ p {
     width: 430px;
     margin-top: -60px;
 }
+
+.martin-no-uses-style{
+    background-color: var(--piel) !important;
+    border-color: var(--negro) !important;
+    color: var(--negro) !important; 
+    border: 2px solid !important;
+}

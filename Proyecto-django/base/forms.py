@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 import datetime
 
-from .models import mecanico,MensajeContacto,Servicio,Cita, clienteUser
+from .models import mecanico,MensajeContacto,Servicio,Cita, clienteUser, Carrito
 
 #**************** FORM REGISTRO/USUARIO ****************
 
@@ -106,3 +106,10 @@ class citaForm(forms.ModelForm):
     class Meta:
         model = Cita
         fields = ['fecha', 'hora', 'marca', 'patente', 'comentario']
+        
+#**************** FORM CARRITO ****************
+
+class CarritoForm(forms.ModelForm):
+    class Meta:
+        model = Carrito
+        fields = ['usuario', 'servicio', 'patente', 'cantidad', 'precio_en_el_momento']
