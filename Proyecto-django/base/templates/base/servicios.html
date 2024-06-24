@@ -85,7 +85,7 @@
         var patenteInput = document.getElementById('patenteInput');
         var patente = patenteInput ? patenteInput.value : null;
 
-        // Si no hay un elemento de entrada para la patente, solicita al usuario que la ingrese
+        // si patente no tiene nada, ingresa aca
         if (!patente) {
             patente = prompt("Por favor, ingresa la patente del vehículo:");
             if (!patente) {
@@ -113,7 +113,5 @@
         });
     }
 </script>
-
-
     {% endblock %}
 </html>
