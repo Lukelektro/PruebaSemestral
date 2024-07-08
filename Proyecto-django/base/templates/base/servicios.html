@@ -46,13 +46,7 @@
                                     {% endif %}>
 
                                     {% if esta_autentificado %}
-                                        <a href="{% url 'servicio_detail' servicio.id_servicio %}" 
-                                        class="btn btn-primary fs-6 martin-no-uses-style">Ver Detalles</a>
-                                        <a href="javascript:void(0);" 
-                                        class="btn btn-primary fs-6 martin-no-uses-style" 
-                                        onclick="agregarAlCarrito({{ servicio.id_servicio }})">
-                                         Contratar Servicio
-                                     </a>
+                                        
                                     {% else %}
                                         <a class="btn btn-primary fs-6 disabled" 
                                         style="background-color: var(--piel);border-color: var(--negro); color: var(--negro); border: 2px solid;">

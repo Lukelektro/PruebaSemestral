@@ -41,7 +41,8 @@
                     <h3 class="fw-bold mb-3">MQween: Donde la Magia de Radiador Springs y la Pasión por los Autos Cobran Vida</h3>
                     <div class="d-flex flex-column align-items-center"> 
                         <p>Bienvenidos a MQween, el taller de mecánica más emblemático de Radiador Springs. En nuestro taller, nos dedicamos a mantener en perfecto estado a todos los vehículos que pasan por nuestras puertas, desde los más veloces hasta los más clásicos.</p>
-                        <button class="border-0 text-white fw-bold py-3 px-5 rounded-pill boton-sobre-nosotros" onclick="window.location.href = 'nosotros.html';">Conoce más sobre nosotros</button>
+                        <button class="border-0 text-white fw-bold py-3 px-5 rounded-pill boton-sobre-nosotros" 
+                                id='ver-mas-nosotros'>Conoce más sobre nosotros</button>
                     </div>
                 </div>
             </div>
@@ -225,6 +226,11 @@
         document.getElementById('ver-mas-servicio').onclick = function() {
             window.location.href = "{% url 'servicios' %}";
         };
+
+        document.getElementById('ver-mas-nosotros').onclick = function() {
+            window.location.href = "{% url 'nosotros' %}";
+        };
+        
     </script>
     {% endblock %}
 </html>
