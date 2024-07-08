@@ -3,7 +3,7 @@ from django.http import JsonResponse
 #imports de login
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User
 #Imports de mensajes
 from django.contrib import messages
@@ -19,6 +19,10 @@ from django.views.decorators.http import require_POST
 
 def soy_admin(user):
     return user.is_authenticated and (user.is_staff or user.is_superuser)
+
+def is_superuser(user):
+    return user.is_superuser
+
 
 #***************** Autentificacion *****************
 
@@ -109,6 +113,7 @@ def logout(request):
 #***************** CRUD Mecanico *****************
 
 @login_required
+@user_passes_test(is_superuser)
 def mecanico_list(request):
     mecanicos = mecanico.objects.all()
     context = {
@@ -118,6 +123,7 @@ def mecanico_list(request):
     return render(request, 'base/mecanico_list.html', context)
 
 @login_required
+@user_passes_test(is_superuser)
 def mecanico_delete(request, id_mecanico):
     mecanico_to_delete = get_object_or_404(mecanico, id_mecanico=id_mecanico)
     mecanico_to_delete.delete()
@@ -126,6 +132,7 @@ def mecanico_delete(request, id_mecanico):
     return redirect('mecanico_list')
 
 @login_required
+@user_passes_test(is_superuser)
 def mecanico_add(request, id_mecanico=None):
 
     #Agarra la instancia del mecanico si existe id _mecanico
@@ -213,6 +220,7 @@ def contacto(request):
 #***************** SERVICIOS *****************
 
 @login_required
+@user_passes_test(is_superuser)
 def servicio_list(request):
     servicios = Servicio.objects.all()
     context = {
@@ -222,6 +230,7 @@ def servicio_list(request):
     return render(request, 'base/servicio_list.html', context)
 
 @login_required
+@user_passes_test(is_superuser)
 def servicio_delete(request, id_servicio):
     servicio_to_delete = get_object_or_404(Servicio, id_servicio=id_servicio)
     servicio_to_delete.delete()
@@ -230,6 +239,7 @@ def servicio_delete(request, id_servicio):
     return redirect('servicio_list')
 
 @login_required
+@user_passes_test(is_superuser)
 def servicio_add(request,id_servicio=None):
 
     instance = get_object_or_404(Servicio, id_servicio=id_servicio) if id_servicio else None
@@ -309,6 +319,7 @@ def citas(request):
     return render(request, 'base/citas.html', context)
 
 @login_required
+@user_passes_test(is_superuser)
 def citas_admin(request):
 
     citas = Cita.objects.filter()  
