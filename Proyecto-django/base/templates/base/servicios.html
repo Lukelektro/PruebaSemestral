@@ -40,19 +40,36 @@
                                     <li class="list-group-item color-carta-chica text-white">$ {{ servicio.precio|comma_to_dot }}</li>
                                 </ul>
 
-                                <span class="d-inline-block" tabindex="0" 
-                                    {% if not esta_autentificado %}
-                                    data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover focus" data-bs-content="Tienes que registrarte primero"
-                                    {% endif %}>
+                                <span class="d-inline-block" tabindex="0"> 
+                                    {% if not user.is_authenticated %}
+                                        <a href="{% url 'servicio_detail' servicio.id_servicio %}" class="btn btn-primary fs-6 disabled" 
+                                        style="background-color: var(--piel);border-color: var(--negro); color: var(--negro); border: 2px solid;" 
+                                        data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover focus" data-bs-content="Tienes que registrarte primero">
+                                            Ver Detalles
+                                        </a>
+                                    
+                                    {% endif %} 
 
-                                    {% if esta_autentificado %}
-                                        
-                                    {% else %}
-                                        <a class="btn btn-primary fs-6 disabled" 
+                                    {% if user.is_authenticated %}
+
+                                        <a href="{% url 'servicio_detail' servicio.id_servicio %}" class="btn btn-primary fs-6" 
                                         style="background-color: var(--piel);border-color: var(--negro); color: var(--negro); border: 2px solid;">
                                             Ver Detalles
                                         </a>
+                                    
                                     {% endif %}
+
+                                    
+
+
+                                    <!--  <a href="{% url 'servicio_detail' servicio.id_servicio %}" 
+                                    class="btn btn-primary fs-6 martin-no-uses-style">Ver Detalles</a>
+                                    <a href="javascript:void(0);" 
+                                    class="btn btn-primary fs-6 martin-no-uses-style" 
+                                    onclick="agregarAlCarrito({{ servicio.id_servicio }})">
+                                        Contratar Servicio
+                                    </a> -->
+                                        
                                 </span>
                                 
                             </div>
@@ -74,7 +91,7 @@
           });
     </script>
 
-<script>
+    <!--<script>
     function agregarAlCarrito(servicioId) {
         var patenteInput = document.getElementById('patenteInput');
         var patente = patenteInput ? patenteInput.value : null;
@@ -106,6 +123,6 @@
             }
         });
     }
-</script>
+    </script> -->
     {% endblock %}
 </html>
